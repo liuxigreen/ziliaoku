@@ -109,7 +109,7 @@ collected: "YYYY-MM-DD"
   - [X] YouTube：yt-dlp 未装（中文 YouTube 普遍无字幕，暂用 `opencli youtube` 元数据 + 英文字幕，非紧要）
   - [X] 全网语义搜索（Exa via mcporter）：mcporter 已装但 Exa 未 `config add`，需 `mcporter config add exa https://mcp.exa.ai/mcp`
 - ✅ SoPilot RSS：feedparser，`scripts/collect.py` 已实现
-- ⏳ **firecrawl MCP**：需在 WorkBuddy 加 mcp server（命令 `npx -y firecrawl-mcp`，env `FIRECRAWL_API_KEY=<key>`），当前 `.mcp.json` 未含，待用户配 Key
+- ✅ **firecrawl MCP（keyless 托管层，免 API Key）**：已加进 `~/.workbuddy/.mcp.json`（type http, url `https://mcp.firecrawl.dev/v2/mcp`）。可用工具：`scrape`（抓单页）/ `search`（搜索）/ `interact`；`crawl`/`extract` 需升级付费 Key（采集层暂不需要）。作 NewsNow / 今日热榜 / 公众号 / SoPilot 长文抓取主路径。
 - ⏳ **小红书实战**：doctor 显示 opencli 可用，但拉真实数据需 OpenCLI Chrome 扩展已装 + Chrome 登录 xiaohongshu
 
 ## 与 collect.py 的关系

@@ -68,20 +68,21 @@
 
 ### 环境结论
 - **agent-reach v1.5.0 已装**（venv: `C:\Users\liuxi\.agent-reach-venv`，Python 3.12.10），`doctor` 实测 **10/15 渠道可用**。
-- **firecrawl MCP 尚未接入**：WorkBuddy 的 `~/.workbuddy/.mcp.json` 当前只含 `connector-proxy`，需加 `firecrawl` server（命令 `npx -y firecrawl-mcp`，env `FIRECRAWL_API_KEY`）并配 Key。
+- **firecrawl MCP 已接入（keyless 托管层，免 API Key）**：`~/.workbuddy/.mcp.json` 已加 `firecrawl-mcp`（type http, url `https://mcp.firecrawl.dev/v2/mcp`）。可用 `scrape`/`search`/`interact`；`crawl`/`extract` 需升级 Key（采集层暂不需要）。
 - **小红书 opencli 可用但需登录态**：doctor 显示 `opencli xiaohongshu` ✅，实际拉数据需 OpenCLI Chrome 扩展已装 + Chrome 登录 xiaohongshu。
 - **Exa via mcporter 待 config add**：mcporter 已装，需 `mcporter config add exa https://mcp.exa.ai/mcp`。
 
-### 渠道最终状态（10/15 可用，WorkBuddy 环境）
+### 渠道最终状态（11/15 可用，WorkBuddy 环境）
 - ✅ GitHub（gh CLI 完整）/ V2EX（公开 API）/ RSS（feedparser）/ 任意网页（Jina Reader：`curl https://r.jina.ai/URL`）
 - ✅ X/Twitter、Reddit、B站、Facebook、Instagram、**小红书**（均经 OpenCLI，复用 Chrome 登录态）
+- ✅ Firecrawl MCP（**keyless 托管层，免 API Key**：`scrape`/`search`/`interact` 可用；`crawl`/`extract` 需升级 Key）
 - [X] YouTube：yt-dlp 未装（中文 YouTube 普遍无字幕，暂用 `opencli youtube` 元数据 + 英文字幕）
 - [X] 全网语义搜索（Exa via mcporter）：未 `config add`
 - ❌ LinkedIn / 雪球 / 小宇宙播客（未配置）
 
 ### 本轮决策（用户，基于 X 帖子 @Eejoylove 起号手册印证）
 1. **ComfyUI 不装** → 配图改走 **即梦 API（Dreamina）**（支持中文渲染），已更新 `ziliaoku-image` SKILL。
-2. **firecrawl + agent-reach 要装**：agent-reach 已就位；firecrawl 待配 Key。
+2. **firecrawl + agent-reach 要装**：agent-reach 已就位；firecrawl 已接 **keyless 托管 MCP（免 API Key）**。
 3. **小红书请回作信号源**（非正文源）：只抽标题公式 + 封面模式，进 `titles_pool.jsonl` / `image-styles/`，不抓正文。已更新 `ziliaoku-collect` SKILL。
 4. **资料库最重要，要有营业**：发布平台后续可能含小红书 + 公众号，但选题库是核心，需持续运行采集。
 5. **先从第一个工作流 skill（collect / 搜索）优化** → 本轮已完成 collect SKILL 重构（5 发现入口 + 小红书信号流 + 真实 fetch 层）。
