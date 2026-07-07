@@ -44,8 +44,25 @@
   但当前 `collect.py` 尚未接入，只实现了 SoPilot + Exa 两条源。
 - **SoPilot RSS**：`https://sopilot.net/rss/hottweets`，历史出现过 502 不稳定，脚本已做容错。
 
+## 流水线技能（接口已冻结）
+
+各阶段已固化为 WorkBuddy 技能，放在 `.workbuddy/skills/`（含 `README.md` 索引与数据流图）。设计理念：**先冻结接口，再逐个优化**——纯 LLM 的 7 个阶段当前环境即可按接口实跑，依赖外部工具的 2 个（采集 / 配图）待接工具后实跑。
+
+| 阶段 | 技能 | 状态 |
+|------|------|------|
+| 采集 | `ziliaoku-collect` | 接口冻结；`collect.py` 实现 SoPilot+Exa，v5 四入口待接 firecrawl/agent-reach |
+| 质检 | `ziliaoku-gate`（Prompt-A0） | ✅ 纯 LLM，可实跑 |
+| 提取 | `ziliaoku-extract`（Prompt-A） | ✅ 纯 LLM，可实跑 |
+| 聚类 | `ziliaoku-cluster`（Prompt-B） | ✅ 纯 LLM，可实跑 |
+| 风向标 | `ziliaoku-signal`（Prompt-S） | ✅ 纯 LLM，可实跑 |
+| 选题库 | `ziliaoku-topics`（Prompt-C） | ✅ 纯 LLM，可实跑 |
+| 成稿 | `ziliaoku-draft`（Prompt-E） | ✅ 纯 LLM，可实跑 |
+| 配图 | `ziliaoku-image`（Prompt-F） | 接口冻结；待接 ComfyUI/即梦 |
+| 周复盘 | `ziliaoku-review`（Prompt-D） | ✅ 纯 LLM，可实跑 |
+
 ## 当前进度 / 缺口
 
-- ✅ **采集阶段（collect）** 已实现并跑通。
-- ❌ **提取 / 聚类 / 成稿 / 复审** 四个下游阶段目前没有脚本，相关目录为空；原设计由 AI 代理（Prompt-B）填充。
-- ⚠️ `collect.py` 硬编码了 Windows 路径（`C:\Program Files\nodejs\mcporter.cmd`），非 Windows 环境需改为可配置。
+- ✅ **采集阶段（collect）**：`collect.py` 已实现 SoPilot RSS + Exa，跑通；v5 四发现入口的聚合站发现 + firecrawl 抓取接口已冻结在 `ziliaoku-collect`，待接工具。
+- ✅ **下游 8 阶段技能接口已冻结**（质检/提取/聚类/风向标/选题库/成稿/配图/周复盘），其中 7 个纯 LLM 阶段当前即可实跑。
+- ⚠️ `collect.py` 硬编码了 Windows 路径（`C:\Program Files\nodejs\mcporter.cmd`），非 Windows 环境需改为可配置；且 v5 的四入口尚未接入（仅 SoPilot+Exa）。
+- ⚠️ `data/raw/2026-07-07/_summary.json` 与实际目录不一致（过期），需随采集逻辑修复。
