@@ -1,0 +1,16 @@
+# 成品选题库（按周归档）
+
+每周从 `output/topics_{week}.md` 人工勾选收口进这里。
+
+文件命名：`{YYYY}-W{ww}.md`（如 `2026-W28.md`）。
+文首 frontmatter 建议字段：
+```
+---
+title: "2026 第 28 周精选选题"
+week: 2026-W28
+status: pending          # pending | published
+tier: 免费                # 免费 | 会员
+count: 12                # 本周精选条数
+collected: "2026-07-07"
+---
+```
