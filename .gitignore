@@ -7,3 +7,7 @@ node_modules/
 __pycache__/
 *.pyc
 .venv/
+
+# Obsidian vault (本地浏览层配置，不进版本库)
+.obsidian/
+*.canvas
