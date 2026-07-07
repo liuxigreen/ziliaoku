@@ -1,0 +1,50 @@
+{"file": "data/raw/2026-07-07/01_exa_ai_writing_compare.md", "verdict": "collect", "reason": "真实文章/教程，可拆解行文结构", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/02_exa_n8n_gzh.md", "verdict": "collect", "reason": "真实文章/教程，可拆解行文结构", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/03_exa_cursor_tutorial.md", "verdict": "collect", "reason": "真实文章/教程，可拆解行文结构", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/04_yt_claudecode_tutorial.md", "verdict": "collect", "reason": "默认收录（拿不准判collect）", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/05_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/05_yt_search_results.md", "verdict": "discard", "reason": "采集发现产物（搜索结果列表），非单篇内容，不入库", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/06_sopilot_x.md", "verdict": "discard", "reason": "离题：外汇交易员 为炒股/财经号，不在 AI 六赛道", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/06_yt_techwithtim_claudecode_transcript.md", "verdict": "discard", "reason": "字幕抓取失败（opencli transcript 返回空），无正文", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/07_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/07_yt_kevinstratvert_claudecode_transcript.md", "verdict": "collect", "reason": "默认收录（拿不准判collect）", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/08_fc_n8n_gzh_full.md", "verdict": "collect", "reason": "真实文章/教程，可拆解行文结构", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/08_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/09_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/10_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/11_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/12_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/13_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/14_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/15_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/16_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/17_sopilot_x.md", "verdict": "hack_only", "reason": "駿HaYaO 同款芯片新闻，hack_only", "reusable_core": "产业动向解读角度", "from_comments": false}
+{"file": "data/raw/2026-07-07/18_sopilot_x.md", "verdict": "discard", "reason": "离题：川沐｜Trumoo🐮 为炒股/财经号，不在 AI 六赛道", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/19_sopilot_x.md", "verdict": "collect", "reason": "AI 向热帖（模型/工具/编码 Agent 解读），爆因可迁移", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/20_sopilot_x.md", "verdict": "discard", "reason": "离题：华尔街观察 Xtrader 为炒股/财经号，不在 AI 六赛道", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/21_sopilot_x.md", "verdict": "hack_only", "reason": "博通/苹果芯片合作，科技产业新闻有时效性，蹭法=产业动向解读", "reusable_core": "产业动向解读角度", "from_comments": false}
+{"file": "data/raw/2026-07-07/22_sopilot_x.md", "verdict": "discard", "reason": "离题：Summer 在交易 为炒股/财经号，不在 AI 六赛道", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/27_reddit_ClaudeAI.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/28_reddit_ClaudeCode.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/29_reddit_ClaudeAI.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/30_reddit_ClaudeAI.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/31_reddit_AiAutomations.md", "verdict": "discard", "reason": "软广伪装干货：正文结尾导向 kadirx.io 外链，score 仅 25，价值承诺最终导向站外引流", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/32_reddit_n8n.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/33_reddit_n8n.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/34_reddit_n8n.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/35_reddit_deadbydaylight.md", "verdict": "discard", "reason": "离题：游戏公司 BHVR 用生成式 AI 的行业新闻，不在 AI工具/创作/自媒体/副业 六赛道", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/36_reddit_StableDiffusion.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/37_reddit_AIToolsAndTips.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/38_reddit_StableDiffusion.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/39_reddit_aipromptprogramming.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/40_reddit_generativeAI.md", "verdict": "hack_only", "reason": "低质提问帖，但评论区可能有优质 AI video 推荐，from_comments 可单收", "reusable_core": "评论区一手经验", "from_comments": true}
+{"file": "data/raw/2026-07-07/41_reddit_StableDiffusion.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/42_reddit_SoraAi.md", "verdict": "discard", "reason": "产品/展望文：Cannon Studio 支持 Sora 2，score 51 偏低，无一手实测结构", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/43_reddit_passive_income.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/44_reddit_passive_income.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/45_reddit_sidehustle.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/46_reddit_passive_income.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/47_reddit_DigitalIncomePath.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/48_reddit_n8n.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/49_reddit_ContentCreators.md", "verdict": "discard", "reason": "低质提问帖：'你依赖什么AI工具' 无正文结构，score 40", "reusable_core": "", "from_comments": false}
+{"file": "data/raw/2026-07-07/50_reddit_automation.md", "verdict": "collect", "reason": "Reddit 一手经验帖，爆因可迁移（技能/工作流/收入结构），符合 collect 四条", "reusable_core": "", "from_comments": false}

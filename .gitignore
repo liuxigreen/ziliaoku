@@ -11,3 +11,7 @@ __pycache__/
 # Obsidian vault (本地浏览层配置，不进版本库)
 .obsidian/
 *.canvas
+
+# YouTube cookie 导出（一次性，含登录态，禁止进版本库）
+cookies.txt
+cookies.example.txt

@@ -6,37 +6,25 @@
 
 ## 2026-07-07 渠道联调与 YouTube 字幕
 
-### 踩坑
-1. **YouTube 字幕必须加 `--lang` 参数**：`opencli youtube transcript URL` 不加 `--lang en` 会报 "Caption URL returned empty response"。正确用法：`opencli youtube transcript URL --lang en -f md`
-2. **中文 YouTube 频道普遍无字幕**：手动字幕和自动字幕都没有。中文视频只能靠 `opencli youtube video` 拿元数据（描述+章节+关键词）
-3. **英文字幕有时不稳定**：可能是 rate limit，同一条视频有时成功有时失败
-4. **yt-dlp 在 Windows 上被 YouTube 反爬拦截**：需要 cookies 但 Chrome cookie 数据库被 Chrome 锁定，复制需管理员权限。放弃 yt-dlp，改用 opencli youtube
-5. **SoPilot RSS 不稳定**：curl 返回 502，feedparser 返回 0 条。需要容错回退方案
-6. **Chrome cookie 文件位置**：`~\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies`（注意 Network 子目录），Chrome 运行时锁定该文件
+### 踩坑（v3 验证，2026-07-07 晚）
+1. **opencli `youtube transcript` 适配器实测不可用**：加 `--lang zh-Hans` 仍 `TIMEOUT 60s`，中文/英文视频均返回空。已弃用，改 yt-dlp 抓字幕。
+2. **yt-dlp 撞 YouTube 反爬墙**（"Sign in to confirm you're not a bot"）：需 cookies。裸 `--cookies-from-browser chrome` 在 Chrome 运行时失败——Windows 锁住 Cookie 数据库（`AppData\Local\Google\Chrome\User Data\Default\Network\Cookies`），复制报错。
+3. **解法 = cookies.txt（一次性）**：浏览器装「Get cookies.txt LOCALLY」扩展 → 打开 youtube.com → 导出 cookies.txt 存项目根（已 gitignore）。yt-dlp `--cookies cookies.txt` 稳定绕过反爬抓字幕。
+4. **原始语言字幕**：yt-dlp 返回 `language` 字段即视频原始语言，fetch 时优先选该轨，缺失按 zh-Hans→zh→en 兜底（用户强调"设置原始语言"）。
+5. **SoPilot RSS 不稳定**：curl 502，feedparser 0 条，需容错回退。
 
 ### 新路由
-1. **Firecrawl MCP 已装**：作为自定义 MCP 添加到 `qoderwork.settings.connector.custom`，26 个工具可用（scrape/search/crawl/map/extract/agent/monitor + arXiv + GitHub）
-2. **GitHub gh CLI 已认证**：`liuxigreen` 账号，可搜索仓库和 issue
-3. **Reddit OpenCLI 可用**：`opencli reddit search "query" -f yaml --limit N`，已验证 r/ClaudeCode 和 r/ClaudeAI 搜索
-4. **YouTube 搜索**：`opencli youtube search "query" -f yaml --limit N`，可获取播放量、时长、频道等元数据
+1. **YouTube 字幕稳定路径 = yt-dlp + cookies.txt**（见 `scripts/collect_sources.py` v3）。搜索/元数据也走 yt-dlp `-j`（带 cookie），一次拿全字段（description/like_count/tags/language）。
+2. **Reddit OpenCLI 可用（免登录直出真实帖）**：`opencli reddit search "query" -f yaml --limit N`，已验证 r/AI_Agents 等。
+3. **YouTube 搜索/元数据**：`opencli youtube search` + `opencli youtube video` 走浏览器登录态也可用，但字幕必须 yt-dlp+cookies。
 
-### 渠道最终状态（11/15 可用）
-- ✅ YouTube（搜索+元数据+英文字幕）
-- ✅ GitHub（gh CLI 搜索仓库/issue）
-- ✅ Reddit（OpenCLI 搜索）
-- ✅ 小红书（OpenCLI 搜索/笔记/评论/Feed）
-- ✅ B站（OpenCLI 搜索/视频/字幕/排行）
-- ✅ X/Twitter（OpenCLI 搜索/文章/用户帖子）
-- ✅ Facebook、Instagram（OpenCLI，需 Chrome 登录）
-- ✅ V2EX（公开 API）
-- ✅ RSS（feedparser）
-- ✅ 全网语义搜索（Exa via mcporter）
-- ✅ 任意网页（Jina Reader + Firecrawl scrape）
-- ✅ Firecrawl MCP（scrape/search/crawl/extract/agent/monitor）
-- ❌ LinkedIn（未配置）
-- ❌ 雪球（需登录 cookie）
-- ❌ 小宇宙播客（需 ffmpeg）
-- ❌ GitHub CLI（已装但 agent-reach 未识别，直接用 gh 命令）
+### 渠道最终状态（WorkBuddy 环境，去重后）
+- ✅ YouTube（搜索+元数据+**字幕 via yt-dlp+cookies，原始语言优先**）
+- ✅ Reddit（OpenCLI 搜索，免登录）
+- ✅ X/Twitter、小红书、B站、Facebook、Instagram（OpenCLI，复用 Chrome 登录态）
+- ✅ GitHub（gh CLI）/ V2EX（公开 API）/ RSS（feedparser）/ 任意网页（Jina + Firecrawl keyless）
+- ✅ Firecrawl MCP（keyless：scrape/search/interact）
+- ❌ LinkedIn / 雪球 / 小宇宙播客（未配置）
 
 ---
 
@@ -76,7 +64,7 @@
 - ✅ GitHub（gh CLI 完整）/ V2EX（公开 API）/ RSS（feedparser）/ 任意网页（Jina Reader：`curl https://r.jina.ai/URL`）
 - ✅ X/Twitter、Reddit、B站、Facebook、Instagram、**小红书**（均经 OpenCLI，复用 Chrome 登录态）
 - ✅ Firecrawl MCP（**keyless 托管层，免 API Key**：`scrape`/`search`/`interact` 可用；`crawl`/`extract` 需升级 Key）
-- [X] YouTube：yt-dlp 未装（中文 YouTube 普遍无字幕，暂用 `opencli youtube` 元数据 + 英文字幕）
+- ✅ YouTube：yt-dlp + cookies.txt 抓字幕（原始语言优先）；opencli transcript 弃用（实测超时）
 - [X] 全网语义搜索（Exa via mcporter）：未 `config add`
 - ❌ LinkedIn / 雪球 / 小宇宙播客（未配置）
 
