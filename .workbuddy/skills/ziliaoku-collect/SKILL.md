@@ -41,6 +41,7 @@ agent_created: true
 ### 入口3 SoPilot（sopilot.net/zh/hot-tweets）— X 爆帖
 - 频率：每日 1 次（RSS: https://sopilot.net/rss/hottweets）
 - 用法：RSS 抓取 → 赛道初筛 → 命中用 firecrawl 抓推文全文（含长文 Article，已验证可穿透）
+- 抓全文工具：firecrawl `scrape` 可穿透 X 推文 / 文章 URL（抗反爬，已验证可读）；agent-reach `opencli twitter` 为备用读者。注意 firecrawl keyless 层 `scrape`/`search`/`interact` 可用，`crawl` 需升级 Key，故以"具体 URL 的 scrape + search 搜"为主，不依赖 crawl。
 - 与入口4配合：SoPilot 管"陌生爆帖发现"，watchlist 管"已知作者跟踪"；SoPilot 中连续 2 次出现的作者 → 自动提名进 `watchlist.md` 候选
 
 ### 入口4 作者监控（watchlist.md）— 定向跟踪
@@ -52,6 +53,32 @@ agent_created: true
 - 频率：每周 1 次
 - 用法：agent-reach reddit 抓取 → 翻译摘要 → 走质检
 - 价值：大量"还没热但马上会热"的一手实测，是抢首发的金矿
+
+## 发现增强：RSSHub（推荐，更稳的发现格式）
+
+把 NewsNow / 今日热榜 这类"HTML 聚合页"升级为**稳定 RSS**，是搜索层最该做的一处加固：
+- RSSHub 能给知乎 / 微博 / B站 / GitHub Trending / Hacker News / Product Hunt（及部分 X 路由）生成 RSS，feed 格式稳定，**不怕聚合站改版**（契合"稳定性规则：提取条目数 > 10 校验"，失效即告警）。
+- 接入：把 RSSHub feed URL 直接喂 agent-reach 的 RSS 渠道（feedparser 已装），与 SoPilot RSS 同源处理。
+- 实例：公共 `rsshub.app`（有速率限制，先用着）；要稳可自托管（Docker 一条命令，生产建议自托管）。
+- 路由示例（按需取）：GitHub Trending `https://rsshub.app/github/trending/daily`、Hacker News `https://rsshub.app/hackernews/...`、Product Hunt `https://rsshub.app/producthunt/...`、B站 `https://rsshub.app/bilibili/...`、知乎 `https://rsshub.app/zhihu/...`
+- **不是第 6 个发现入口**（仍守 ≤6 纪律），而是让入口1/2 的发现格式从"HTML 抓取"升级为"RSS"，更稳、更易校验。
+
+## 搜索执行：关键词驱动查询库（让搜索层可执行，不止靠聚合站发现）
+
+发现层靠聚合站"被动发现"；这一层用 keywords.md 赛道词**主动搜索**深水区内容（抢首发）。工具已就位：firecrawl `search`（免 Key）/ agent-reach opencli（reddit / twitter）/ Jina。
+
+### firecrawl search（keyless 可用；注意 keyless 不支持 `crawl`，用 `scrape` 抓具体 URL + `search` 搜）
+对齐 W1–W4 周轮转，每周跑对应查询（每词 1 次，limit 10）：
+- W1：搜索 "AI写作 去AI味 教程" / "ChatGPT Claude 实测 对比" / "ComfyUI 工作流 小红书"
+- W2：搜索 "n8n 自动化 实战" / "Dify 工作流 搭建" / "小红书 起号 实操 涨粉"
+- W3：搜索 "可灵 即梦 Sora 实测" / "AI副业 真实案例 一人公司" / "AI做短视频 教程"
+- W4：搜索 "Cursor AI编程 教程" / "AI工具 横评 合集" / "效率工具 清单 免费"
+- 通投：搜索 "AI Agent 工作流 MCP" / "AI 提示词 写作模板"
+
+### agent-reach 深水区搜索（英文一手实测，抢首发金矿）
+- Reddit：`opencli reddit search "AI agent workflow n8n" -f yaml --limit 15` / `opencli reddit search "ComfyUI workflow" -f yaml`
+- X：`opencli twitter search "AI写作 去AI味" -f yaml --limit 15`（复用 Chrome 登录态，抓热帖 + thread）
+- 命中 X 长文 / 文章 URL → firecrawl `scrape` 穿透抓全文（firecrawl 抗 X 反爬，已验证可读推文 / 文章）。
 
 ## 信号源（独立流，非发现入口）：小红书
 
@@ -75,12 +102,14 @@ opencli xiaohongshu feed --type user --id <user_id> -f yaml
 - 封面 URL 另存 `data/image-styles/{date}_xhs_covers.jsonl`（供 ziliaoku-image 提炼封面模式）
 ### 频率：每周 2~3 次（与 watchlist 同节奏），仅更新信号库，不进正文质检流
 
-## 抓取方式（fetch layer）
-- 正文全文：`firecrawl`（`scrape` / `search`）或 `agent-reach` opencli（X / Reddit / B站）
-- X 爆帖：`SoPilot RSS`（已验证，`scripts/collect.py`）+ firecrawl 穿透长文
-- 公众号：搜狗微信入口 + firecrawl
+## 抓取方式（fetch layer，当前环境实测）
+- 正文全文：`firecrawl` `scrape`（具体 URL，含 X 推文 / 文章，抗反爬）/ `search`（搜）/ `agent-reach` opencli（X / Reddit / B站）
+- X 爆帖发现：`SoPilot RSS`（已验证，`scripts/collect.py`）+ 命中用 firecrawl `scrape` 穿透长文
+- 公众号：搜狗微信入口 + firecrawl `scrape`
 - 任意网页：`Jina Reader`（`curl https://r.jina.ai/URL`）作 firecrawl 降级
+- 发现增强：`RSSHub` 生成的 RSS → agent-reach RSS 渠道（更稳，替代 HTML 抓 NewsNow / 今日热榜）
 - 小红书：仅信号（标题 + 封面），不抓正文
+- ⚠️ firecrawl keyless 限制：`scrape` / `search` / `interact` 可用；`crawl` / `extract` 需升级 Key。故以"具体 URL 的 scrape + search 搜"为主，不依赖 crawl 整站。
 
 ## 输出契约（冻结）
 ### 正文
@@ -109,6 +138,7 @@ collected: "YYYY-MM-DD"
   - [X] YouTube：yt-dlp 未装（中文 YouTube 普遍无字幕，暂用 `opencli youtube` 元数据 + 英文字幕，非紧要）
   - [X] 全网语义搜索（Exa via mcporter）：mcporter 已装但 Exa 未 `config add`，需 `mcporter config add exa https://mcp.exa.ai/mcp`
 - ✅ SoPilot RSS：feedparser，`scripts/collect.py` 已实现
+- ✅ **RSSHub（发现增强，可选）**：把知乎/微博/B站/GitHub Trending/HN/PH 生成稳定 RSS，喂 agent-reach RSS 渠道。公共实例 `rsshub.app`（有限流），生产建议 Docker 自托管。让入口1/2 从 HTML 抓取升级为 RSS，更稳。
 - ✅ **firecrawl MCP（keyless 托管层，免 API Key）**：已加进 `~/.workbuddy/.mcp.json`（type http, url `https://mcp.firecrawl.dev/v2/mcp`）。可用工具：`scrape`（抓单页）/ `search`（搜索）/ `interact`；`crawl`/`extract` 需升级付费 Key（采集层暂不需要）。作 NewsNow / 今日热榜 / 公众号 / SoPilot 长文抓取主路径。
 - ⏳ **小红书实战**：doctor 显示 opencli 可用，但拉真实数据需 OpenCLI Chrome 扩展已装 + Chrome 登录 xiaohongshu
 
