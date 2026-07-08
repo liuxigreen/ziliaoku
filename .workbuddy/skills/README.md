@@ -6,12 +6,12 @@
 
 | # | 技能 | 对应 Prompt | 输入 | 输出 | 依赖 |
 |---|------|------------|------|------|------|
-| 1 | `ziliaoku-collect` | 采集层 | keywords.md / watchlist.md / 小红书信号源 | `data/raw/{date}/*.md` + `titles_pool.jsonl` + `image-styles/` | firecrawl / agent-reach(opencli) / SoPilot RSS（部分待接） |
-| 2 | `ziliaoku-gate` | Prompt-A0 | raw md（含 source_type/source_platform） | verdict: collect/hack_only/signal/discard | 纯 LLM ✅ |
+| 1 | `ziliaoku-collect` | 采集层 | keywords.md / watchlist.md / 小红书信号源 | `data/raw/{date}/*.md` + `titles_pool.jsonl` + `image-styles/` + `xhs_winning_structures.jsonl`（拆平台爆款） | firecrawl / agent-reach(opencli) / SoPilot RSS（部分待接） |
+| 2 | `ziliaoku-gate` | Prompt-A0 | raw md（含 source_type/source_platform）；另含 `publish_check` 模式（成稿 draft → 红线问题清单） | verdict: collect/hack_only/signal/discard；publish_check: pass/fail+issues | 纯 LLM ✅ |
 | 3 | `ziliaoku-extract` | Prompt-A | 过闸 raw md | `data/extracted/{date}.jsonl` | 纯 LLM ✅ |
 | 4 | `ziliaoku-cluster` | Prompt-B | 本周 extracted | `data/clusters/{week}.json` + formulas.md | 纯 LLM ✅ |
 | 4b | `ziliaoku-signal` | Prompt-S | gate 判 signal 的条目 | `data/signals/{week}.json` | 纯 LLM ✅ |
-| 5 | `ziliaoku-topics` | Prompt-C | clusters + formulas + account | `output/topics_{week}.md` | 纯 LLM ✅ |
+| 5 | `ziliaoku-topics` | Prompt-C | clusters + formulas + account | `output/topics_{week}.md`（含 `monetization_role` 漏斗配比 + 周排期） | 纯 LLM ✅ |
 | 6 | `ziliaoku-draft` | Prompt-E | 一条选题 + account | `output/posts/{date}/` | 纯 LLM ✅ |
 | 7 | `ziliaoku-image` | Prompt-F | draft 的 image_briefs + image-styles + 小红书封面信号 | 图像提示词（同目录） | 即梦 API（首选，待接 Key）/ ComfyUI（不装） |
 | 8 | `ziliaoku-review` | Prompt-D | 本周发布数据 + gate 统计 | `reviews/{week}.md` | 纯 LLM ✅ |
@@ -30,6 +30,7 @@
 - **小红书请回作信号源**（非正文源）：只抽标题公式 + 封面模式，进 `titles_pool.jsonl` / `image-styles/`，不抓正文；标题公式来源 = 公众号爆文 + X 爆帖 + 热榜标题 + 小红书信号四路。
 - **信号第四态**：GitHub/工具类条目判 `signal` 走风向标通道，不进爆文库聚类。
 - **人工卡点**：任何内容上线前必须经用户终审——自动化的是生产和排期，不是决策权。
+- **变现漏斗 + 节奏纪律**：`topics` 输出须含 `monetization_role`（引流/信任/转化）配比与「周排期」；排期只是建议，发布决策权在用户（自动化的是排期，不是决策权）。
 
 ## 当前可立即运行（纯 LLM，不需外部工具）
 gate / extract / cluster / signal / topics / draft / review 七个技能当前环境即可按接口实测。

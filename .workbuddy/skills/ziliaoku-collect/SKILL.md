@@ -43,6 +43,7 @@ agent_created: true
 - 用法：RSS 抓取 → 赛道初筛 → 命中用 firecrawl 抓推文全文（含长文 Article，已验证可穿透）
 - 抓全文工具：firecrawl `scrape` 可穿透 X 推文 / 文章 URL（抗反爬，已验证可读）；agent-reach `opencli twitter` 为备用读者。注意 firecrawl keyless 层 `scrape`/`search`/`interact` 可用，`crawl` 需升级 Key，故以"具体 URL 的 scrape + search 搜"为主，不依赖 crawl。
 - 与入口4配合：SoPilot 管"陌生爆帖发现"，watchlist 管"已知作者跟踪"；SoPilot 中连续 2 次出现的作者 → 自动提名进 `watchlist.md` 候选
+- ⚠️ **空壳防护（2026-07-08 修正）**：若 firecrawl 不可达/限流导致抓不到推文全文，该命中**只进 `data/titles_pool.jsonl`（标题信号），绝不写无正文的 raw 文件**。之前产生的 `sopilot_x` 类空壳（只有标题/链接无正文）已清理——发现与抓取分离纪律下，没抓到全文的聚合命中不应占用 raw 正文库。
 
 ### 入口4 作者监控（watchlist.md）— 定向跟踪
 - 频率：每周 2 次
@@ -53,6 +54,28 @@ agent_created: true
 - 频率：每周 1 次
 - 用法：agent-reach reddit 抓取 → 翻译摘要 → 走质检
 - 价值：大量"还没热但马上会热"的一手实测，是抢首发的金矿
+
+### GitHub API 源（三通道：trending 风向标 + topic 高 star 正文 + watch 个人收藏）
+
+> 接入依据：reviews/2026-07-08_github_source.md + 用户 2026-07-08 指令（加风向标/增长快/个人收藏/2000阈值）。GitHub 比公众号友好：README 无反爬可直接抓，api.github.com 匿名拿 star/pushed_at 信号（无需 Key）。用户确认：高 star 库的 README 介绍写得好、是优质内容源；且用户自己收藏了很多库，应单独成一路。
+
+- **发现**：
+  - trending：`github.com/trending?since=daily|weekly` 抓「增长速度快的」库（HTML 刮取，无 API 消耗）→ 出**风向标 signal**（进 `data/signal/`）。
+  - topic：`api.github.com/search/repositories?q=topic:ai-agents&sort=stars`（topic 可配：ai-agents / rag / prompt-engineering / llm / agentic-ai），匿名限速 60/h，无需 Key。
+  - watch：读 `data/github_watchlist.md`（用户个人收藏库，每行一个 repo + 备注）→ 绕过 star 阈值直接 collect。
+- **信号**：`stargazers_count`（社区热度背书）+ `pushed_at`（近期活跃度）+ **trending 当日/周新增 star（增长速度快慢）**。高 star 且近期活跃 = 工具在涨；trending 上榜 = 正在涨。
+- **抓取**：`api.github.com/repos/{full}` 拿 `default_branch` → `raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md` 抓正文（无反爬，远优于公众号）。
+- **三通道分工（不占 6 发现入口，挂在 signal / 今日热榜增强）**：
+  - **① trending 风向标**（增长速度快的）：刮 `github.com/trending?since=daily`，按当日新增 star 排序，新增 ≥50★ 的库 → **`signal`**（写 `data/signal/{日期}_github_trending_daily.jsonl`，进 Prompt-S 风向标，**不进爆文库**）。这是"什么工具正在火"的实时雷达。
+  - **② topic 高 star 正文**：高 star(≥**2000**) + 近期活跃(pushed_at 近 180 天) + README 讲「怎么用/适用场景/有代码示例」→ **`collect`**（进爆文库做「神库推荐 / 工具盘点」选题，自带 star 数字背书）。
+  - **③ watch 个人收藏**（用户人工背书）：`data/github_watchlist.md` 里的库，**绕过 star 阈值**直接 collect（用户亲自认可 = 最高质量信号）。备注写进 frontmatter `curated_note`。
+  - 例外：纯公告 / release / 无介绍代码库 → `signal`/`discard`；软广卖课 → `discard`。
+- **脚本**：`scripts/collect_github.py`
+  - 风向标：`python scripts/collect_github.py --mode trending --since daily`
+  - 高 star 正文：`python scripts/collect_github.py --mode topic --topics ai-agents,rag --top-n 8 --min-stars 2000`
+  - 个人收藏：`python scripts/collect_github.py --mode watch`（读 `data/github_watchlist.md`）
+  - 全跑：`python scripts/collect_github.py --mode all`
+  - 频率：每日 1 次，`--mode all` 单日一次不触 API 限速。
 
 ## 发现增强：RSSHub（推荐，更稳的发现格式）
 
@@ -101,6 +124,23 @@ opencli xiaohongshu feed --type user --id <user_id> -f yaml
 ```
 - 封面 URL 另存 `data/image-styles/{date}_xhs_covers.jsonl`（供 ziliaoku-image 提炼封面模式）
 ### 频率：每周 2~3 次（与 watchlist 同节奏），仅更新信号库，不进正文质检流
+
+### ★ 拆平台爆款（结构化解构，涨粉命门，2026-07-08 新增）
+> **为什么做**：知道"写什么选题"不够，得知道"在小红书/公众号这个写法灵不灵"。竞品 7 步的第 2 步就是**拆目标平台自家低粉高赞爆款的结构**——这是涨粉的命门。咱们原本只抽标题公式，缺"结构/开头/标签"的完整解构。本环节补足。
+
+- **选样**：从上面信号里挑 `likes`/`collects` 明显高于同赛道同期、且作者粉丝低的笔记（低粉高赞 = 公式可复制，非人设红利）。每次取 Top 5~10。
+- **解构（LLM 步骤，不抓正文，只用标题+开头预览+标签+互动）**：对每篇拆出
+  1. 标题公式（套用 `titles_pool` 七类之一并标注）
+  2. 开头 3 句结构（钩子怎么抛）
+  3. 内容骨架（段落逻辑，如"痛点→反常识→步骤→证据→互动"）
+  4. 话题标签组合（大流量+垂类配比）
+  5. 封面模式（从 `image-styles` 已存）
+- **产物** → 写 `data/xhs_winning_structures.jsonl`（与 `titles_pool` 并列，供 `ziliaoku-draft` 当 `structure_ref` 的真实平台样本）：
+```json
+{"platform":"xiaohongshu","note_title":"原笔记标题","title_formula":"痛点型","opening_3":"开头3句骨架（脱敏摘要）","skeleton":"痛点→反常识→3步→证据→互动","tags":["标签1","标签2"],"engagement":{"likes":数字,"collects":数字},"source":"xiaohongshu_deconstruct"}
+```
+- **公众号同源**：搜狗微信搜到的同赛道高赞文章，用 WebFetch 抓"标题+开头2段+小标题结构"（不抓全文），同样解构进 `xhs_winning_structures.jsonl`（`platform:"wechat"`）。
+- ⚠️ 只解构"结构/公式"，绝不搬运原文句子（守红线 + 版权）。
 
 ## 抓取方式（fetch layer，当前环境实测）
 - 正文全文：`firecrawl` `scrape`（具体 URL，含 X 推文 / 文章，抗反爬）/ `search`（搜）/ `agent-reach` opencli（X / Reddit / B站）

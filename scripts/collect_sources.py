@@ -65,7 +65,7 @@ REDDIT_QUERIES = [
     ("n8n automation workflow tutorial", "赛道1-AI工具/自动化"),
     ("ComfyUI image generation workflow","赛道2-AI创作"),
     ("AI video generation Sora Kling",   "赛道2-AI视频"),
-    ("AI side hustle passive income",    "赛道4-副业"),
+    ("AI side hustle passive income",    "信号源-副业标题公式"),  # 降级：副业不实采正文，仅信号参考
     ("AI content creation strategy",     "赛道3-自媒体"),
 ]
 REDDIT_LIMIT = 4
@@ -76,7 +76,7 @@ YT_QUERIES = [
     ("AI 短视频 即梦 可灵",     "赛道2-AI视频"),
     ("n8n 自动化 工作流",       "赛道1/4-自动化"),
     ("小红书 起号 实操",        "赛道3-自媒体"),
-    ("AI 副业 真实案例",        "赛道4-副业"),
+    ("AI 副业 真实案例",        "信号源-副业标题公式"),  # 降级：副业不实采正文，仅信号参考
 ]
 YT_LIMIT = 2
 

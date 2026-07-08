@@ -54,6 +54,6 @@
     "49_reddit_ContentCreators.md",
     "50_reddit_automation.md"
   ],
-  "generated_by": "scripts/collect_sources.py",
-  "note": "本 summary 由脚本实时统计实际文件生成，修复旧版路径/命名不一致 bug"
+  "generated_by": "cleanup_after_gate_review",
+  "note": "删除 verdict!=collect 及全部 sopilot_x(无正文)，保留 collect 级正文"
 }

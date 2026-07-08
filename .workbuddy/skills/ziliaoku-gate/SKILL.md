@@ -38,7 +38,12 @@ agent_created: true
 4. **一手性**：作者是"做了这件事的人"（有截图 / 数据 / 命令 / 踩坑细节）。转述型内容即使爆了也最高判 `hack_only`。
 
 ## 新信源特别规则
-- **GitHub 条目**：README 是产品文档不是爆文，不走常规四条标准，改判"选题信号"——`star` 周增 > 1000 或解决的问题一句话能说清 → 直接 `verdict: "signal"`（第四种结果，进风向标层走 `ziliaoku-signal`，不进爆文库）。
+- **GitHub 条目（三通道，2026-07-08 升级）**：
+  - **watch 个人收藏**（`source_type: github_curated`，来自 `data/github_watchlist.md`）：用户人工背书 = 最高质量信号，**无条件 `verdict: "collect"`**（绕过 star 阈值）。`curated_note` 作为 reusable_core 的重要来源。
+  - **topic 高 star 正文**（`source_type: github_discovery`）：高 star(≥**2000**) + 近期活跃(pushed_at 近 180 天) + README 讲「怎么用 / 适用场景 / 有代码示例」→ **`verdict: "collect"`**（进 `ziliaoku-extract` 做「神库推荐 / 工具盘点」选题，自带 star 数字背书）。
+  - **trending 风向标**（`source_type: github_trending`，来自 `data/signal/`）：本就是 signal 通道产物，**不进爆文库**，下游 `ziliaoku-signal` 直接消费；如某 trending 库同时 README 质量极高且 ≥2000★，可升级为 collect（由 signal 技能二次判定）。
+  - 纯公告 / release / 无介绍代码库 / 软广卖课 → `signal` 或 `discard`。
+  - ⚠️ README 常有营销腔（leading / superior），extract 时须去营销化、落实操；守红线：不写收益数字、不绝对化。
 - **HN / V2EX 帖**：高赞评论可能比正文值钱，质检时正文 + 前 5 条高赞评论一起判，评论中的一手经验可单独收（标 `"from_comments": true`）。
 - **热榜标题（未抓全文的）**：不走质检，直接进 `data/titles_pool.jsonl`（纯标题样本库，供聚类提炼公式用，与正文库分开）。
 
@@ -60,3 +65,29 @@ agent_created: true
 
 ## 与周复盘联动
 `ziliaoku-review` 统计各入口 `collect` 率（按 `source_platform` 分组）与总体 `discard` 率；`discard` 率 > 60% 连续两周 → 调上游初筛词，不是调严质检。
+
+## ★ 发布前合规自检（publish_check 模式，2026-07-08 新增）
+> **为什么做**：入库质检（上面四态）管"值不值得收"，但不管"发出去会不会被限流"。竞品 7 步第 6 步有独立"合规检查 Prompt"扫绝对化/收益承诺/硬引流。咱们红线散在 `account.md` + `draft` 去AI味规则里，缺一道**发布前的自动红线扫描关卡**。限流=掉粉，这道关比入库关更贴近"涨粉"目标。
+
+- **触发**：`ziliaoku-draft` 出稿后、用户终审前，必经一次 `publish_check`。
+- **输入**：`output/posts/{日期}/{slug}.md`（成稿 draft 的 `final_title` + `body` + `cta` + `tags`）。
+- **检查清单**（逐条扫，命中即列）：
+  1. **绝对化用语**：最 / 第一 / 唯一 / 全网 / 必 / 一定 / 100% / 绝对 / 史上
+  2. **收益承诺 / 数字**：具体金额、收益数字、"月入 X""赚 X 元""X 天见效"（除非是引用他人案例且标注）
+  3. **硬引流**：直接留微信 / 私信我 / 加我 / 主页有链接（合规应为提问式 `cta`，不直给联系方式）
+  4. **AI 味残留**：开头套话（"在当今时代/随着AI发展"）、禁用词（赋能/抓手/闭环/颗粒度/底层逻辑）、单句过长（>25字）、无口语化/无个人经历细节
+  5. **平台合规**：小红书违禁词（诱导点赞/关注、医疗断言等）、公众号夸大（标题党）
+- **输出**（JSON，写 `data/gate/{日期}_publish_check.jsonl`，每条成稿一行）：
+```json
+{
+  "file": "output/posts/{日期}/{slug}.md",
+  "pass": false,
+  "issues": [
+    {"type":"绝对化","hit":"第一支AI笔","suggest":"改为'我试过的第一支'或去掉'第'"},
+    {"type":"硬引流","hit":"主页有微信","suggest":"改为提问式 cta，不直给联系方式"}
+  ],
+  "verdict": "修改后过 | 重写开头"
+}
+```
+- **硬性要求**：`pass=false` 且有 `issues` 时，**不许发布**，退回 `draft` 改；改完复检直到 `pass=true`。这是人工终审之外的第二道自动护栏。
+- ⚠️ 本模式不替代人工终审（红线：自动化的是检查，不是决策权）；它只把明显踩线处标出来，最终发布仍由用户拍板。

@@ -15,3 +15,8 @@ __pycache__/
 # YouTube cookie 导出（一次性，含登录态，禁止进版本库）
 cookies.txt
 cookies.example.txt
+
+# GitHub Personal Access Token（含登录态，禁止进版本库）
+config/github_token.txt
+*.token
+.token

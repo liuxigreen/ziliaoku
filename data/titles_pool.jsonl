@@ -1,1 +1,7 @@
-[]
+{"platform":"xiaohongshu","formula_type":"痛点型","template":"{人群}还在为{痛点}发愁？{动作}帮你搞定","examples":["新手做号还在手动找爆款？一个Agent帮你拆完100篇","写稿卡壳3小时？用AI工作流把选题到成稿压到半小时"],"source":"x_article_Eejoylove_workbuddy_manual","date":"2026-07-08"}
+{"platform":"xiaohongshu","formula_type":"数字型","template":"{数字}+{单位}+{结果/动作}","examples":["我用3个AI工具，把一周内容排期自动化了","0基础第7天，靠工作流攒出30个备用选题"],"source":"x_article_Eejoylove_workbuddy_manual","date":"2026-07-08"}
+{"platform":"xiaohongshu","formula_type":"对比型","template":"{之前} vs {之后}：同样{周期}，{差异}","examples":["手动写稿 vs Agent工作流：同样一周，产出差3倍","收藏吃灰 vs 写进记忆文件：同样的教程，两种结局"],"source":"x_article_Eejoylove_workbuddy_manual","date":"2026-07-08"}
+{"platform":"xiaohongshu","formula_type":"稀缺型","template":"很少有人{动作}，但{价值}","examples":["很少有人把账号档案写进AI记忆，但这一步决定了内容稳不稳","很少人告诉你：去AI味比写初稿更重要"],"source":"x_article_Eejoylove_workbuddy_manual","date":"2026-07-08"}
+{"platform":"xiaohongshu","formula_type":"共鸣型","template":"{群体}的{痛}，谁懂啊","examples":["文科生做AI内容，最怕的就是被说'你不懂技术'","一个人撑起一个号，最缺的不是灵感是复盘模板"],"source":"x_article_Eejoylove_workbuddy_manual","date":"2026-07-08"}
+{"platform":"xiaohongshu","formula_type":"资源型","template":"整理了{资源}，复制就能用","examples":["整理了12个AI内容工作流Prompt，复制就能用","我把爆款拆解公式做成模板，新手照着填就行"],"source":"x_article_Eejoylove_workbuddy_manual","date":"2026-07-08"}
+{"platform":"xiaohongshu","formula_type":"反常识型","template":"别再{常识}，其实{反常识}","examples":["别再天天发笔记了，先拆100篇爆款比发10篇有用","别迷信涨粉技巧，账号档案没建对，流量都是虚的"],"source":"x_article_Eejoylove_workbuddy_manual","date":"2026-07-08"}
