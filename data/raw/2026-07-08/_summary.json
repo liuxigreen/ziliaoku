@@ -1,6 +1,6 @@
 {
   "date": "2026-07-08",
-  "total_files": 54,
+  "total_files": 56,
   "output_dir": "D:\\WorkBuddyProjects\\ziliaoku\\data\\raw\\2026-07-08",
   "files": [
     "01_github_ECC.md",
@@ -44,6 +44,7 @@
     "39_github_Agent-Reach.md",
     "40_github_talk-normal.md",
     "41_github_nuwa-skill.md",
+    "41_x_Eejoylove_workbuddy_xhs_manual.md",
     "42_github_gbrain.md",
     "43_github_claw-code.md",
     "44_github_MoneyPrinterTurbo.md",
@@ -56,8 +57,9 @@
     "51_github_VideoLingo.md",
     "52_github_awesome-openclaw.md",
     "53_github_gstack.md",
-    "54_github_autoresearch.md"
+    "54_github_autoresearch.md",
+    "56_github_AiToEarn.md"
   ],
-  "generated_by": "scripts/collect_github.py",
-  "note": "GitHub 高 star 库 + 用户 starred 收藏，经去重(4)与离题/灰产筛选(16)后保留 54 个；已重编号 01-54"
+  "generated_by": "重建于 2026-07-08（原 summary 记录的是早期 54 库旧清单，与实际目录不一致；本次按真实目录重建）",
+  "note": "56 个 .md = 55 个 collect 样本 + 1 个 signal(AiToEarn)；编号 41 存在两个文件(重号)、55 缺失(跳至56_AiToEarn)，属历史采集重编号遗留，不影响流程。"
 }

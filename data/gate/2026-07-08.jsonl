@@ -53,3 +53,5 @@
 {"file": "data\\raw\\2026-07-08\\53_github_gstack.md", "verdict": "collect", "reason": "用户收藏/starred 的 AI 内容工作流相关库（120327★），人工背书 collect", "reusable_core": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer,…", "from_comments": false}
 {"file": "data\\raw\\2026-07-08\\54_github_autoresearch.md", "verdict": "collect", "reason": "用户收藏/starred 的 AI 内容工作流相关库（90288★），人工背书 collect", "reusable_core": "AI agents running research on single-GPU nanochat training automatically", "from_comments": false}
 {"file": "data\\raw\\2026-07-08\\41_x_Eejoylove_workbuddy_xhs_manual.md", "verdict": "collect", "reason": "同赛道竞品实操手册(WorkBuddy做小红书)，方法论与本人流水线同构，可借鉴对标；标题公式已抽进titles_pool；含少量红线需中性化改写", "reusable_core": "7步工作流可对标我们9段流水线；7类标题公式已入库；合规自检Prompt可固化进gate", "from_comments": false}
+
+{"file": "data\\raw\\2026-07-08\\56_github_AiToEarn.md", "verdict": "signal", "reason": "GitHub工具类(一站式AI内容营销智能体,4 Agent含小红书自动发帖+AI回评论),直接对标账号定位且命中用户发帖/评论维护需求,走风向标通道", "reusable_core": "One-stop AI content marketing agent: Create/Publish/Engage/Monetize across 14 platforms including Xiaohongshu", "from_comments": false}

@@ -1,0 +1,4 @@
+{"file": "output/posts/2026-07-08/finished_aitoearn.md", "pass": false, "issues": [{"type": "绝对化", "hit": "最容易废掉你的人设", "suggest": "改为'很容易废掉'或'容易废掉'，去掉最高级'最'以守'不绝对化'红线"}], "verdict": "修改后过"}
+}
+
+{"file": "output/posts/2026-07-08/finished_aitoearn.md", "pass": true, "issues": [], "verdict": "过（已修 最容易→很容易，其余4类检查无命中：无收益数字/无硬引流/AI味可控/平台合规）"}

@@ -14,3 +14,14 @@
 
 ---
 （每周 Prompt-B 维度4 的新发现追加在此文件下方）
+
+## 2026-W28 维度4 新发现
+
+### 风格D 技术主视觉徽章
+GitHub README 式：顶部 logo/hero 主视觉 + 多行 status 徽章（stars/forks/License/Trendshift #1）+ 一句话标语。适用：工具推荐首图，科技感强、可信。
+
+### 风格E 痛点对比卡
+Before/After 或痛点九宫格，左烂片右成品 / 左痛点右方案（如 InstantID 对比图、Agent-Reach 痛点九宫格、seedance「Ask cinematic vs Direct it」对比）。适用：避坑/反差/教程类，信息密度高。
+
+### 风格F 成果演示三联
+竖屏/横屏样例视频或图文三联并排（如 MoneyPrinterTurbo、VideoLingo 演示）。适用：可视化成果型，眼见为实、收藏率高。

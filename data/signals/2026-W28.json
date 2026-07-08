@@ -1,0 +1,16 @@
+{
+  "week": "2026-W28",
+  "summary": "本周 gate 共 55 篇 verdict=collect + 1 篇追加 verdict=signal（AiToEarn，用户指定接入）。常驻风向由 github_curated / github_starred watchlist 作为持续趋势观测源；signal 通道承接 gate=signal 的 GitHub/工具类条目（现 1 条：AiToEarn，验证'发帖+评论自动化'已成红海卖点）。",
+  "signals": [
+    {
+      "id": "S-AiToEarn",
+      "source_file": "data/raw/2026-07-08/56_github_AiToEarn.md",
+      "type": "tool_launch",
+      "title": "AiToEarn：一站式 AI 内容营销智能体（含小红书自动发帖 + AI 回评论）",
+      "signal": "内容工作流自动化从'单点工具'走向'全链路平台'；自动发帖 + AI 回评论成为标配卖点",
+      "evidence": "GitHub yikart/AiToEarn, MIT, 14 平台, 4 Agent(Create/Publish/Engage/Monetize), 自带 CPS/CPE/CPM 内容交易市场",
+      "relevance": "高——直接对标账号定位'AI内容工作流博主'，且验证'发帖+评论自动化'已成红海卖点；账号差异化应落在 human-in-loop / 账号安全",
+      "watch_action": "观察其 OpenClaw/MCP 生态采纳度与更新频率；作为'全自动 vs 实操'对立面选题源"
+    }
+  ]
+}
