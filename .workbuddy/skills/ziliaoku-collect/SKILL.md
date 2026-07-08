@@ -50,10 +50,15 @@ agent_created: true
 - 覆盖：X 作者 + 公众号名单（公众号走搜狗微信）
 - 维护：命中 +1、连续 4 周零命中移出、高命中作者的互动对象提名候选
 
-### 入口5 Reddit（r/LocalLLaMA, r/StableDiffusion 等）— 英文深水区
-- 频率：每周 1 次
-- 用法：agent-reach reddit 抓取 → 翻译摘要 → 走质检
-- 价值：大量"还没热但马上会热"的一手实测，是抢首发的金矿
+### 入口5 Reddit（r/LocalLLaMA, r/AI_Agents, r/SocialMediaManagers, r/Entrepreneur 等）— 英文深水区 + 内容型一手源
+- 频率：每周 1 次（技术风向）；内容创作类 sub 每日可补采
+- 抓取命令（**必须用 opencli，firecrawl 对 reddit 域名 403 不可用**）：
+  - 搜内容型帖：`opencli reddit search "AI content workflow" -f json --limit 15`
+  - 抓单帖+评论全文：`opencli reddit read <post-id> -f md > data/raw/reddit_<sub>_<id>_*.md`
+- 用法分流：
+  - 技术/工具 sub（r/LocalLLaMA, r/AI_Agents, r/selfhosted）→ 命中走 `extract`（工具拆解）或 `signal`（风向标）
+  - **内容创作/营销 sub（r/SocialMediaManagers, r/Entrepreneur, r/ContentMarketing）→ 进 `data/raw` 喂 `decode` 拆写法**（这是国内小红书/公众号博主搬运的一手源头，比拆二手爆款更准；用 `opencli reddit read` 抓单帖+评论全文，免登录直出真实帖）
+- 价值：大量"还没热但马上会热"的一手实测 + 真实用户痛点讨论，是抢首发与喂写作库的金矿
 
 ### GitHub API 源（三通道：trending 风向标 + topic 高 star 正文 + watch 个人收藏）
 
@@ -99,7 +104,7 @@ agent_created: true
 - 通投：搜索 "AI Agent 工作流 MCP" / "AI 提示词 写作模板"
 
 ### agent-reach 深水区搜索（英文一手实测，抢首发金矿）
-- Reddit：`opencli reddit search "AI agent workflow n8n" -f yaml --limit 15` / `opencli reddit search "ComfyUI workflow" -f yaml`
+- Reddit（**firecrawl 抓不到 reddit 正文，一律走 opencli**）：搜 `opencli reddit search "AI agent workflow n8n" -f yaml --limit 15`；抓单帖+评论全文 `opencli reddit read <post-id> -f md`（免登录直出真实帖，带读者真实反应，拆写法比 firecrawl 强）
 - X：`opencli twitter search "AI写作 去AI味" -f yaml --limit 15`（复用 Chrome 登录态，抓热帖 + thread）
 - 命中 X 长文 / 文章 URL → firecrawl `scrape` 穿透抓全文（firecrawl 抗 X 反爬，已验证可读推文 / 文章）。
 
@@ -143,6 +148,14 @@ opencli xiaohongshu feed --type user --id <user_id> -f yaml
 - ⚠️ 只解构"结构/公式"，绝不搬运原文句子（守红线 + 版权）。
 
 ## 抓取方式（fetch layer，当前环境实测）
+### ⚠️ 工具选型优先级 + firecrawl 额度纪律（2026-07-08 用户强调：fire 就那点额度要省着用）
+- **firecrawl 是付费额度（Key: fc-97a52f...，存 mcp.json），严禁浪费**。能走 opencli(agent-reach) 免费抓的源，**一律走 opencli**：
+  - Reddit → `opencli reddit read/search`（免登录直出真实帖+评论；firecrawl 对 reddit 域名 403，抓不到还浪费额度）
+  - X/Twitter → `opencli twitter`（复用 Chrome 登录态）；仅 firecrawl 能穿透的长文 Article 才用 firecrawl `scrape`
+  - 小红书 → `opencli xiaohongshu`（仅信号，不抓正文）
+  - YouTube/B站 → `opencli youtube` / `opencli bilibili` + yt-dlp
+- **firecrawl 只留给 opencli 抓不到的源**：公众号（搜狗微信）、SoPilot 长文穿透、任意网页（Jina 为降级）、以及无 opencli 适配的陌生 URL。
+- **绝不用 firecrawl 抓 reddit**（域名 403 + 浪费付费额度），这是已踩坑结论。
 - 正文全文：`firecrawl` `scrape`（具体 URL，含 X 推文 / 文章，抗反爬）/ `search`（搜）/ `agent-reach` opencli（X / Reddit / B站）
 - X 爆帖发现：`SoPilot RSS`（已验证，`scripts/collect.py`）+ 命中用 firecrawl `scrape` 穿透长文
 - 公众号：搜狗微信入口 + firecrawl `scrape`

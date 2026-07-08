@@ -53,6 +53,8 @@ def search(query: str, limit: int = 5, fresh_days: int = 30):
         "limit": limit,
         "lang": "en",
         "country": "us",
+        # 让 search 结果直接附带全文 markdown（绕过 scrape 对部分域名的限制，如 reddit）
+        "scrapeOptions": {"formats": ["markdown"], "onlyMainContent": True},
     }
     if fresh_days:
         payload["tbs"] = f"qdr:m"  # 近一月，保证时效性

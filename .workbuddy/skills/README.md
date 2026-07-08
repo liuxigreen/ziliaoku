@@ -32,6 +32,9 @@
 - **人工卡点**：任何内容上线前必须经用户终审——自动化的是生产和排期，不是决策权。
 - **变现漏斗 + 节奏纪律**：`topics` 输出须含 `monetization_role`（引流/信任/转化）配比与「周排期」；排期只是建议，发布决策权在用户（自动化的是排期，不是决策权）。
 
+## 横切技能（不纳入 1-8 编号，产物喂给 draft）
+- `ziliaoku-decode`：爆款内容拆解。用户提供/我们精选一篇爆款文章原文链接（小红书/公众号/视频均可）→ firecrawl 抓全文 → LLM 拆它为什么爆 → 写 `data/winning_cases.jsonl`。产物横切进 `ziliaoku-draft`：draft 成稿时读 winning_cases 借鉴可复用写法，而非死用 4 段模板。触发：用户说"拆解这篇爆款" / 周复盘把本周自家爆帖回拆进库。与 `ziliaoku-extract`（拆工具）对称——extract 进爆文库，decode 进写作库，两库不混。
+
 ## 当前可立即运行（纯 LLM，不需外部工具）
 gate / extract / cluster / signal / topics / draft / review 七个技能当前环境即可按接口实测。
 采集（缺 firecrawl MCP Key / Exa 未 config add）、配图（缺即梦 API Key）需接工具后实跑；agent-reach 已装（10/15 渠道可用，含小红书 opencli）。
