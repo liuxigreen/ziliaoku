@@ -21,6 +21,14 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+# Windows GBK 编码防护：管道/重定向输出时 stdout 默认 GBK，✓/↗ 等符号会抛
+# UnicodeEncodeError 中断脚本。强制 utf-8（Python 3.7+）。
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 WORKFLOW_DIR = Path(__file__).resolve().parent.parent
 RAW_DIR = WORKFLOW_DIR / "data" / "raw"
 SIGNAL_DIR = WORKFLOW_DIR / "data" / "signal"

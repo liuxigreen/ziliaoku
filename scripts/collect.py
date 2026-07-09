@@ -44,9 +44,15 @@ EXA_QUERIES = [
 # mcporter 路径（支持环境变量覆盖，跨平台/非默认安装友好）
 # 默认 Windows 完整路径；非 Windows 默认从 PATH 取 mcporter
 NODE_DIR = os.environ.get("NODE_DIR", r"C:\Program Files\nodejs")
-MCPORTER = os.environ.get(
-    "MCPORTER_PATH",
+# npm 全局可能装在 node_global 子目录，按候选顺序探测真实路径
+_MCPORTER_CANDIDATES = [
+    os.environ.get("MCPORTER_PATH"),
+    os.path.join(NODE_DIR, "node_global", "mcporter.cmd") if os.name == "nt" else "mcporter",
     os.path.join(NODE_DIR, "mcporter.cmd") if os.name == "nt" else "mcporter",
+]
+MCPORTER = next(
+    (c for c in _MCPORTER_CANDIDATES if c and os.path.exists(c)),
+    _MCPORTER_CANDIDATES[-1],
 )
 # Exa 搜索 Key（可选；未设置时 Exa 源静默跳过，仅 SoPilot 生效）
 # 配置方式：环境变量 EXA_API_KEY，或在 config/mcporter.json 的 exa server 加 apiKey
@@ -159,6 +165,10 @@ collected: "{get_today_str()}"
 def collect_exa(out_dir: Path, queries: list = None):
     """通过 mcporter + Exa 搜索公众号/网页深度文章"""
     print("[Exa] 搜索公众号/网页深度文章...")
+    # mcporter 未安装时静默跳过（设计如此：无 Key/无工具则仅 SoPilot 生效）
+    if not os.path.exists(MCPORTER):
+        print(f"[Exa] mcporter 未找到（{MCPORTER}），跳过 Exa 源")
+        return 0
     if queries is None:
         queries = EXA_QUERIES
 

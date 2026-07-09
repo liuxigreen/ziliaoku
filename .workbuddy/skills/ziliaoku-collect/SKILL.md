@@ -82,6 +82,21 @@ agent_created: true
   - 全跑：`python scripts/collect_github.py --mode all`
   - 频率：每日 1 次，`--mode all` 单日一次不触 API 限速。
 
+## YouTube 源头优先策略（找源头、识别搬运、订阅频道，2026-07-09 新增）
+
+> 用户强调：YouTube 上大部分中文内容是搬运，**真正源头一般是英语原创**。采集要"找源头"，而非采搬运；并要支持按订阅频道抓源头。
+
+- **查询词一律用英文**（找源头）：`scripts/collect_sources.py` 的 `YT_QUERIES` 已全部改为英文（Claude Code workflow / ComfyUI workflow / AI video Sora Kling / n8n automation / content creator growth / AI side hustle）。中文关键词泛搜易命中搬运号，已弃用。
+- **源头/搬运判别**（`classify_origin`）：
+  - opencli 直采路径（搜索发现 + `youtube transcript` 字幕）**无需 cookies**：判别主要靠**标题 CJK 占比启发式**——ASCII 为主 → `english_source`（源头优先）；CJK 占比高 → `suspect_repost`（疑似搬运降权）。
+  - yt-dlp + cookies.txt 仅作为 `fetch_transcript` 的**兜底**（opencli 失败且用户已导出 cookie 时），不再是必选项。
+  - 结果写入每篇 raw 的 `origin_flag` + `lang_hint` frontmatter，供 `ziliaoku-gate` 阶段对 `suspect_repost` 降权（优先 `signal` 而非 `collect`，或人工复核）。
+- **订阅频道优先（`youtube_watchlist.md`）**：
+  - 用户手动维护订阅的源头频道（每行 `@handle | 备注 | 赛道`，格式同 `github_watchlist.md`）。
+  - `collect_youtube_watchlist` 在关键词泛搜**之前**跑，按频道抓最新视频（collect 级，默认源头）。全程 opencli 直采（搜 `@handle` + `youtube transcript` 字幕），无需 cookies。
+  - **频道名单用户填**：当前仅示例 `@TechWithTim`，用户按自己订阅的真实英语源头频道补充。
+- **为什么这样设计**：关键词泛搜是"被动发现"，易踩搬运；订阅频道是"主动锚定源头"，质量最高。两者结合 = 源头覆盖率 + 质量双保险。
+
 ## 发现增强：RSSHub（推荐，更稳的发现格式）
 
 把 NewsNow / 今日热榜 这类"HTML 聚合页"升级为**稳定 RSS**，是搜索层最该做的一处加固：
@@ -188,7 +203,7 @@ collected: "YYYY-MM-DD"
 - ✅ **agent-reach v1.5.0 已装**（venv: `C:\Users\liuxi\.agent-reach-venv`），`doctor` 实测 **10/15 渠道可用**：
   - ✅ GitHub（gh，完整）/ V2EX（公开 API）/ RSS（feedparser）/ 任意网页（Jina Reader）
   - ✅ X/Twitter、Reddit、B站、Facebook、Instagram、**小红书**（均经 OpenCLI，复用 Chrome 登录态）
-  - [X] YouTube：yt-dlp 未装（中文 YouTube 普遍无字幕，暂用 `opencli youtube` 元数据 + 英文字幕，非紧要）
+  - ✅ YouTube：opencli `youtube transcript` 直采字幕已跑通（无需 cookies），yt-dlp + cookies.txt 仅作兜底（venv 已装 yt-dlp）。搜索发现用 `opencli youtube search`，订阅频道用 `collect_youtube_watchlist`。
   - [X] 全网语义搜索（Exa via mcporter）：mcporter 已装但 Exa 未 `config add`，需 `mcporter config add exa https://mcp.exa.ai/mcp`
 - ✅ SoPilot RSS：feedparser，`scripts/collect.py` 已实现
 - ✅ **RSSHub（发现增强，可选）**：把知乎/微博/B站/GitHub Trending/HN/PH 生成稳定 RSS，喂 agent-reach RSS 渠道。公共实例 `rsshub.app`（有限流），生产建议 Docker 自托管。让入口1/2 从 HTML 抓取升级为 RSS，更稳。
