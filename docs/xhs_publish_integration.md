@@ -19,10 +19,10 @@
 ## 三、四处对接点
 | # | 对接点 | 用仓库的什么 | 进我们哪段 | 状态 |
 |---|---|---|---|---|
-| 1 | 半自动填稿 | `publish_pipeline.py --preview` | 替代 opencli 卡死发布链路 | 待 clone 实测 |
-| 2 | 周复盘数据回填 | `cdp_publish.py content-data` → CSV | `ziliaoku-review` 填真实指标 | 待 clone 实测 |
-| 3 | 评论维护（读取） | `get-notification-mentions` / `get-feed-detail` | 人工评论参考，不自动刷 | 待 clone 实测 |
-| 4 | decode 抓小红书正文 | `search-feeds` / `get-feed-detail` | `ziliaoku-decode` 一手源补充 | 待 clone 实测（firecrawl 抓不到 xhs 正文） |
+| 1 | 半自动填稿 | `publish_pipeline.py --preview` / `--save-draft` | 替代 opencli 卡死发布链路 | **已跑通（2026-07-09）** |
+| 2 | 周复盘数据回填 | `cdp_publish.py content-data` → CSV | `ziliaoku-review` 填真实指标 | 待实测（未跑过） |
+| 3 | 评论维护（读取） | `get-notification-mentions` / `get-feed-detail` | 人工评论参考，不自动刷 | 待实测（未跑过） |
+| 4 | decode 抓小红书正文 | `search-feeds` / `get-feed-detail` | `ziliaoku-decode` 一手源补充 | 待实测（firecrawl 抓不到 xhs 正文） |
 
 ## 四、部署步骤（待用户确认后执行）
 1. `git clone https://github.com/white0dew/XiaohongshuSkills.git D:\tools\XiaohongshuSkills`（项目外，不进 ziliaoku git）。
@@ -43,3 +43,30 @@
 - **--preview 稳定填稿**（替代 opencli 卡死链路，适配 2026 改版）。
 
 生图按用户决策走 ImageGen 内置能力，即梦暂不配。
+
+## 七、实测记录（2026-07-09 跑通半自动填稿）
+> 环境：`D:\tools\XiaohongshuSkills`（项目外，不进 ziliaoku git），独立 `.venv`（managed 3.13.12 + `requests`/`websockets`）；Chrome 固定 `xhs_profile` + 9222 端口常驻。账号=小号「画画的北北」。
+
+### 7.1 跑通结论
+- **半自动填稿已跑通**：`publish_pipeline.py --save-draft --title-file ... --content-file ... --images ...` 能把标题、正文、封面图、话题标签**全部填进**创作者中心编辑器（话题标签会被自动识别为真实 `#话题`，非纯文本）。
+- **发布动作人手动**：用户在我们填好后，在 PC 窗口点操作栏按钮、再到手机创作中心发布。账号安全握自己手里。
+
+### 7.2 关键修复（重要，否则按钮永远点不到）
+- **"存草稿"按钮当前版本文案是「暂存离开」**，不是"存草稿"。原 `_get_draft_button_rect` 搜 `存草稿/存为草稿/保存草稿` 全部 miss。已加 `暂存离开` 关键词。
+- **可见性判断 bug**：原代码用 `node.offsetParent !== null` 判可见，但发布操作栏是 `position: fixed`，**fixed 元素 `offsetParent` 恒为 `null`** → 按钮永远被判"不可见"。已改为 `getComputedStyle`（display/visibility/opacity）+ 包围盒 `width/height > 0` 判断，并放宽候选选择器（含 `a` / `div[class*='button']` / `span[class*='button']`）。
+- 配套加固：`_click_draft` 轮询延长到 **3 分钟** + 每次滚动页面触发 React 懒挂载；失败则 `Page.captureScreenshot` 存 `draft_fallback.png` 兜底让你手动点。
+- 改动文件：`D:\tools\XiaohongshuSkills\scripts\cdp_publish.py`（**项目外，不进 git，重装仓库需重打这两处**）。
+
+### 7.3 其他实测约束
+- **标题 ≤ 20 字（硬限制）**：超了发布页红字提示 `21/20`，必须卡在 20 字内（实测把 "AI写的东西都一个味？Reddit老运营拆透了真相" 21字 改为 "Reddit老运营：AI写的东西都一个味" 20字）。
+- **长图作单图可行**：竖版 1080×~2400 长图当一张图上传正常，是译介帖"图承载"的标准载体。
+- **登录态持久化**：固定 `xhs_profile` + 9222 后，登录 cookie 落在磁盘，不开新窗口、重启电脑也在；登录缓存约 12h，过期重扫一次即可。用完建议 `--kill` 关工具 Chrome 释放端口。
+
+### 7.4 调用示例（填稿 + 存草稿）
+```
+& "D:\tools\XiaohongshuSkills\.venv\Scripts\python.exe" `
+  "D:\tools\XiaohongshuSkills\scripts\publish_pipeline.py" `
+  --save-draft --title-file <title.txt> --content-file <content.txt> `
+  --images <longimage.png>
+```
+正文文件末行若写 `#话题 #标签 ...`，pipeline 会自动识别并选为真实话题标签（不用手点）。

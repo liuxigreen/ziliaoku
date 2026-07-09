@@ -1,7 +1,7 @@
 ---
 title: "全自动发小红书？我扒出3个坑"
 platform: 小红书
-monetization_role: 引流
+monetization_role: 人设
 status: 发布就绪-待手动发布
 note: >
   opencli 自动发布遇 files bug（@jackwener/opencli 旧版与当前 Chrome 不兼容），无法自动化。
@@ -40,6 +40,3 @@ CPS/CPE/CPM 听着美，真要做起来要账号权重+内容质量+合规，不
 
 ▶ 一句大实话
 这篇是我扒完 README 的拆解，没真跑——先给你避坑。发帖这一步我已经用半自动跑通了（AI 写稿、人点发布），全自动平台我不敢替你试，账号安全得自己攥着。
-
-————
-如果你也在折腾「用 Agent 把内容工作流跑顺」，评论区扣「工作流」，我把整理好的工具清单+坑点表发你。

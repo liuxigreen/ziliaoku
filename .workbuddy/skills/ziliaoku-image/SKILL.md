@@ -11,6 +11,7 @@ agent_created: true
 
 ## When to use
 - `ziliaoku-draft` 产出 `image_briefs` 后，说"出图 / 配图 / 生成封面"。
+- **译介帖的"图承载"**：`ziliaoku-draft` 走「模式 B 译介英文」时，说"出长图 / 渲染译介长图"——此时出的是**竖版长图**（全部翻译 + 我的理解），不是 3:4 封面。
 
 ## 输入
 - `final_title` + `image_briefs`（来自 draft 输出）。
@@ -36,6 +37,15 @@ agent_created: true
   - 中文文字若抖动：走"ImageGen 出无文字底图 + 程序化叠字（PIL 写字）"兜底。
 - **可选升级：即梦 API（Dreamina，中文渲染更稳）**——仅当用户后续配 `DREAMINA_API_KEY` 时启用，作封面文字清晰度升级，非必选。
 - **不启用：ComfyUI（localhost:8189）**——用户明确不装。
+
+## 译介长图（Pillow 渲染，区别于 ImageGen 封面）
+> 仅在 `ziliaoku-draft` 走「模式 B 译介英文」、需要"图承载"全部翻译 + 理解时启用。此图是**信息图**，不是营销封面，故不走 ImageGen，而用脚本精准排版（保证中英文不糊、分节清晰）。
+
+- **渲染脚本（可复用模板）**：`scripts/gen_longimage_reddit.py`（已实跑产出 `1080×~2400` 长图）。换素材时只改脚本里的 `blocks` 列表（每行 `("kind", "text")`，kind ∈ `title/h/body/quote/note/src/sep`），无需重写排版逻辑。
+- **字体**：优先 `C:\Windows\Fonts\msyh.ttc`（Microsoft YaHei）；粗体 `msyhbd.ttc`；兜底 `simhei.ttf` / `simsun.ttc`。
+- **尺寸**：宽 `1080`，竖版自适应高度；单图上传小红书即可（实测长图作单图可行）。
+- **排版纪律**：CJK 单字 + 英文词分词自动换行；章节用 `h` + `sep` 分隔；引用原文用 `quote`、我的理解用 `note` 区分视觉层级；底部 `src` 标注来源（译介 + 个人理解，非原帖立场）。
+- **注意**：长图标题与发布页 `final_title` 可不同（长图标题可更长更完整），但都守"不提私有内部系统"红线。
 
 ## 硬性要求
 - 一图一信息：禁止在一张图里塞多个核心信息。
