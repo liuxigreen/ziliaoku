@@ -47,6 +47,36 @@ agent_created: true
 - **排版纪律**：CJK 单字 + 英文词分词自动换行；章节用 `h` + `sep` 分隔；引用原文用 `quote`、我的理解用 `note` 区分视觉层级；底部 `src` 标注来源（译介 + 个人理解，非原帖立场）。
 - **注意**：长图标题与发布页 `final_title` 可不同（长图标题可更长更完整），但都守"不提私有内部系统"红线。
 
+## 封面与插图技能路由（2026-07-10 接入 ponyo + ian-xiaohei）
+
+本段是 image 阶段"封面/插图选型"前置——先决定用哪套模板，再走下面"生成方式"出图。两套精华已入项目 `.workbuddy/skills/`。
+
+### 封面 → cover-anchor-system（ponyo 精华）
+- 位置：`.workbuddy/skills/cover-anchor-system/`（SKILL.md + references/）。
+- 方法论：**信息密度 × 视觉锚点**——封面要 3 秒让人决定点不点，不是"好看"。
+- 流程：
+  1. 读 `references/template-formulas.md` 选模板（冲突型/数字型/截图型/情绪型 + 涂鸦/阳光拼贴两生活风）；AI 工具/干货类默认**数字型**或**冲突型**。
+  2. 读 `references/finished-cover-prompts.md` 拿对应模板的成品提示词结构（画布/中文文案/锚点位置/字重层级/配色/约束）。
+  3. 按 ponyo 输出规范给：模板类型+理由、锚点位置、配色(HEX)、字重层级、生图提示词。
+  4. 旧封面要改？读 `references/cover-diagnosis-checklist.md` 打分（信息密度/视觉锚点/缩略图可读性）出改版提示词。
+- **平台尺寸**：小红书 3:4(1080×1440)、公众号头图 2.35:1(900×383)、公众号次图 1:1(500×500)。
+- **中文叠字铁律不变**：ponyo 原版让 AI 出"成品带字封面"，但实测生图引擎写中文必乱码 → 仍按本技能"生成方式"的**无字生图 + PIL 叠中文**纪律执行（提示词写 `NO text`，标题后期 PIL 叠）。ponyo 提供模板/锚点/配色方法论，文字仍后期叠。
+- **punk-cover 降为备用**：封面首选 ponyo；punk-cover（`~/.workbuddy/skills/Punk-Skill/skills/punk-cover`）作为风格备选（要商业杂志/黑红剪影等特定风时再用）。
+
+### 正文插图 → ian-xiaohei-illustrations（小黑精华）
+- 位置：`.workbuddy/skills/ian-xiaohei-illustrations/`（SKILL.md + references/）。
+- 用途：公众号长文/小红书长图的**正文内插图**（不是封面），把文章认知锚点（判断/流程/隐喻）画成 16:9 白底手绘小黑图。
+- 流程：
+  1. 读 `references/style-dna.md`（风格 DNA：纯白/手绘/留白/红橙蓝批注/禁忌）+ `references/xiaohei-ip.md`（小黑形象动作库）。
+  2. 读 `references/composition-patterns.md` 选结构类型（Workflow/前后对比/概念隐喻/方法分层等），从当前文章**重新发明隐喻**，不照抄案例。
+  3. 按 `references/prompt-template.md` 单张生成提示词（16:9/纯白/小黑承担核心动作/最多5-8处中文标注/不写类型标题）。
+  4. 生成后按 `references/qa-checklist.md` 检查（小黑是否装饰化/画面太满/像PPT/中文错字/左上角标题）。
+- 一篇文章默认 4-8 张，短文 1-3 张；够用就好，别做成画册。
+- **中文标注越短越稳**：小黑图里中文用 PIL 叠或让生图引擎写极少量（≤8字/处），多了必乱。
+
+### 与 ziliaoku-publish-gzh 的关系
+- 公众号封面由 `ziliaoku-publish-gzh` 第①步统一调本路由的 ponyo 出 2.35:1；正文插图由本技能直接出（draft 阶段 image_briefs 标注"插图"的走 ian）。
+
 ## 硬性要求
 - 一图一信息：禁止在一张图里塞多个核心信息。
 - 文字 ≤ 15 字 / 处，最多 2 处文字区。
