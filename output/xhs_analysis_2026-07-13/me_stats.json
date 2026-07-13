@@ -1,0 +1,47 @@
+[
+  {
+    "metric": "观看数 (views)",
+    "total": 445,
+    "trend": "0 → 128 → 25 → 218 → 68 → 4 → 2"
+  },
+  {
+    "metric": "平均观看时长 (avg view time ms)",
+    "total": 7173,
+    "trend": "0 → 1688 → 137 → 4183 → 1065 → 94 → 6"
+  },
+  {
+    "metric": "主页访问 (home views)",
+    "total": 8,
+    "trend": "0 → 2 → 1 → 5 → 0 → 0 → 0"
+  },
+  {
+    "metric": "点赞数 (likes)",
+    "total": 16,
+    "trend": "0 → 2 → 0 → 11 → 3 → 0 → 0"
+  },
+  {
+    "metric": "收藏数 (collects)",
+    "total": 16,
+    "trend": "0 → 0 → 0 → 10 → 6 → 0 → 0"
+  },
+  {
+    "metric": "评论数 (comments)",
+    "total": 0,
+    "trend": "0 → 0 → 0 → 0 → 0 → 0 → 0"
+  },
+  {
+    "metric": "弹幕数 (danmaku)",
+    "total": 0,
+    "trend": "-"
+  },
+  {
+    "metric": "分享数 (shares)",
+    "total": 3,
+    "trend": "0 → 1 → 0 → 2 → 0 → 0 → 0"
+  },
+  {
+    "metric": "涨粉数 (new followers)",
+    "total": 2,
+    "trend": "0 → 0 → 0 → 2 → 0 → 0 → 0"
+  }
+]
