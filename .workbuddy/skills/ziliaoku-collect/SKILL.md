@@ -60,6 +60,47 @@ agent_created: true
   - **内容创作/营销 sub（r/SocialMediaManagers, r/Entrepreneur, r/ContentMarketing）→ 进 `data/raw` 喂 `decode` 拆写法**（这是国内小红书/公众号博主搬运的一手源头，比拆二手爆款更准；用 `opencli reddit read` 抓单帖+评论全文，免登录直出真实帖）
 - 价值：大量"还没热但马上会热"的一手实测 + 真实用户痛点讨论，是抢首发与喂写作库的金矿
 
+## X/Twitter 采集（免费直采，走 Edge 登录态，2026-07-13 打通）
+
+> **为什么这样接**：agentkey / firecrawl 抓 X 都是按次付费。opencli 引擎（`C:\Users\liuxi\.opencli`）内置完整 Twitter CLI，走**本机浏览器登录态（cookie）免费直采**，是 X 采集的首选路径，firecrawl 仅留作 opencli 抓不动时的付费兜底。
+
+### 前置（一次性，已完成）
+- opencli Browser Bridge 扩展**已装在 Edge**（Edge 已登录 x.com，账号 `@AdelaideMilne1`）。
+- Edge 的 profile alias = **`edge`**（contextId `wwwrh6sz`）；Chrome 的是 `kzbaq3xs`（登录着小红书用）。
+- ⚠️ **两个 profile 同时连着，X 命令必须显式 `--profile edge`**（否则报 `BROWSER_CONNECT: Multiple Browser Bridge profiles`）。`opencli profile use edge` 设了默认但对 twitter 子命令不稳，一律带 `--profile edge` 最保险。
+- 登录态失效时（cookie 过期）：重新打开 Edge 登录 x.com 即可，无需重装扩展；或 `opencli --profile edge twitter login`。
+
+### 只读采集命令（正文源 + 信号源，免费）
+```bash
+OC="opencli --profile edge twitter"
+# ① 关键词搜（正文源）：按互动排序取高质量帖，markdown 直出
+$OC search "AI agent workflow" --product top --limit 15 --top-by-engagement 5 -f md
+#   过滤器：--from <user> 限作者 / --has media|links / --exclude replies,retweets / --product live(最新) top photos videos
+# ② 盯人（watchlist 作者最新推文）
+$OC tweets --username <handle> --limit 10 --top-by-engagement 5 -f md
+# ③ 抓整条长推串（多图长推译介源）
+$OC thread --tweet-id <url_or_id> --limit 30 -f md
+# ④ 抓长文 Article → Markdown（最优正文源）
+$OC article --tweet-id <url_or_id>
+# ⑤ 蹭热点：趋势话题 / 首页流
+$OC trending --limit 20 -f md
+$OC timeline --type following --limit 20 --top-by-engagement 10 -f md
+# ⑥ 下载媒体（配图/封面参考，可选）
+$OC ... ; opencli --profile edge twitter download --username <handle> --limit 10 --output <dir>
+```
+`search` / `tweets` 输出列：`id, author, bio, text, created_at, likes, views, url, has_media, media_urls, quoted_tweet` —— `text` 即正文，可直接入 `data/raw`；`likes/views` 作信号权重。
+
+### 一键脚本
+- `scripts/collect_twitter.py`（薄封装 collect_github.py 风格）：
+  - 搜赛道词：`python scripts/collect_twitter.py --mode search --queries "AI agent workflow,MCP servers,Claude Code tips" --top-n 5`
+  - 盯作者：`python scripts/collect_twitter.py --mode watch`（读 `data/x_watchlist.md`）
+  - 产物：命中写 `data/raw/{日期}/{序号}_x_{author}.md`（frontmatter 齐全，`source: twitter`, `source_type: twitter_search|watchlist`），高互动帖标题另进 `data/titles_pool.jsonl`。
+
+### 分流纪律
+- **英文源头优先**（同 YouTube 策略）：X 是英文 AI 内容的一手源头，命中优先 `collect`（正文译介）。
+- 只进标题信号不入正文的情况：纯转发 / 软广卖课（如"评论 AI 送课"类）→ 只取标题进 `titles_pool` 或直接 `discard`。
+- watchlist 联动：`x_watchlist.md` 存已知优质作者，search 中连续 2 次命中的作者自动提名进候选。
+
 ### GitHub API 源（三通道：trending 风向标 + topic 高 star 正文 + watch 个人收藏）
 
 > 接入依据：reviews/2026-07-08_github_source.md + 用户 2026-07-08 指令（加风向标/增长快/个人收藏/2000阈值）。GitHub 比公众号友好：README 无反爬可直接抓，api.github.com 匿名拿 star/pushed_at 信号（无需 Key）。用户确认：高 star 库的 README 介绍写得好、是优质内容源；且用户自己收藏了很多库，应单独成一路。
@@ -120,8 +161,8 @@ agent_created: true
 
 ### agent-reach 深水区搜索（英文一手实测，抢首发金矿）
 - Reddit（**firecrawl 抓不到 reddit 正文，一律走 opencli**）：搜 `opencli reddit search "AI agent workflow n8n" -f yaml --limit 15`；抓单帖+评论全文 `opencli reddit read <post-id> -f md`（免登录直出真实帖，带读者真实反应，拆写法比 firecrawl 强）
-- X：`opencli twitter search "AI写作 去AI味" -f yaml --limit 15`（复用 Chrome 登录态，抓热帖 + thread）
-- 命中 X 长文 / 文章 URL → firecrawl `scrape` 穿透抓全文（firecrawl 抗 X 反爬，已验证可读推文 / 文章）。
+- X：`opencli --profile edge twitter search "AI agent workflow" --product top --limit 15 --top-by-engagement 5 -f md`（**走 Edge 登录态，见下方「X/Twitter 采集」专节**，免费不耗额度，抓热帖 + thread）
+- 命中 X 长文 / 文章 URL → 优先 `opencli --profile edge twitter article --tweet-id <url>`（直接导 Markdown，免费）；opencli 抓不动再用 firecrawl `scrape` 穿透（省付费额度）。
 
 ## 信号源（独立流，非发现入口）：小红书
 
@@ -166,7 +207,7 @@ opencli xiaohongshu feed --type user --id <user_id> -f yaml
 ### ⚠️ 工具选型优先级 + firecrawl 额度纪律（2026-07-08 用户强调：fire 就那点额度要省着用）
 - **firecrawl 是付费额度（Key: fc-97a52f...，存 mcp.json），严禁浪费**。能走 opencli(agent-reach) 免费抓的源，**一律走 opencli**：
   - Reddit → `opencli reddit read/search`（免登录直出真实帖+评论；firecrawl 对 reddit 域名 403，抓不到还浪费额度）
-  - X/Twitter → `opencli twitter`（复用 Chrome 登录态）；仅 firecrawl 能穿透的长文 Article 才用 firecrawl `scrape`
+  - X/Twitter → `opencli --profile edge twitter`（走 Edge 登录态，免费，见「X/Twitter 采集」专节）；`article`/`thread` 也能免费直出，仅 opencli 抓不动的才退 firecrawl `scrape`
   - 小红书 → `opencli xiaohongshu`（仅信号，不抓正文）
   - YouTube/B站 → `opencli youtube` / `opencli bilibili` + yt-dlp
 - **firecrawl 只留给 opencli 抓不到的源**：公众号（搜狗微信）、SoPilot 长文穿透、任意网页（Jina 为降级）、以及无 opencli 适配的陌生 URL。
@@ -202,7 +243,8 @@ collected: "YYYY-MM-DD"
 ## 工具依赖（当前环境实测状态，2026-07-07）
 - ✅ **agent-reach v1.5.0 已装**（venv: `C:\Users\liuxi\.agent-reach-venv`），`doctor` 实测 **10/15 渠道可用**：
   - ✅ GitHub（gh，完整）/ V2EX（公开 API）/ RSS（feedparser）/ 任意网页（Jina Reader）
-  - ✅ X/Twitter、Reddit、B站、Facebook、Instagram、**小红书**（均经 OpenCLI，复用 Chrome 登录态）
+  - ✅ **X/Twitter（2026-07-13 打通，免费直采）**：opencli 内置完整 twitter CLI，走 **Edge 登录态**（profile alias `edge` / contextId `wwwrh6sz`，账号 `@AdelaideMilne1`）。命令须带 `--profile edge`。read 命令全可用：search/tweets/thread/article/timeline/trending/download。**不消耗 firecrawl/agentkey 付费额度**。
+  - ✅ Reddit、B站、Facebook、Instagram、**小红书**（均经 OpenCLI；小红书走 Chrome profile `kzbaq3xs`）
   - ✅ YouTube：opencli `youtube transcript` 直采字幕已跑通（无需 cookies），yt-dlp + cookies.txt 仅作兜底（venv 已装 yt-dlp）。搜索发现用 `opencli youtube search`，订阅频道用 `collect_youtube_watchlist`。
   - [X] 全网语义搜索（Exa via mcporter）：mcporter 已装但 Exa 未 `config add`，需 `mcporter config add exa https://mcp.exa.ai/mcp`
 - ✅ SoPilot RSS：feedparser，`scripts/collect.py` 已实现
