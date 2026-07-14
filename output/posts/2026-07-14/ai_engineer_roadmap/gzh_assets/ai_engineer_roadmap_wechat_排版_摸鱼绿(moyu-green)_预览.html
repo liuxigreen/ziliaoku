@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ai_engineer_roadmap_wechat_排版_摸鱼绿(moyu-green) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 封面 cover-breaking（无右侧图片版） -->
+  <section style="margin:0 0 32px;background:#fff;border:1.5px solid rgba(5,150,105,0.15);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);width:100%;">
+    <section style="padding:32px 28px 28px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <span style="width:6px;height:6px;background:#059669;border-radius:50%;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:#059669;"><span leaf="">DEEP DIVE · 拆解</span></span>
+        <section style="flex:1;height:1px;overflow:hidden;background:linear-gradient(to right,rgba(5,150,105,0.12),transparent);"><span leaf=""><br></span></section>
+        <span style="font-size:10px;color:#D1D5DB;font-weight:600;"><span leaf="">2026.07</span></span>
+      </section>
+      <section>
+        <p style="font-size:15px;color:#D1D5DB;margin:0 0 6px;text-decoration:line-through;letter-spacing:0.5px;">
+          <span leaf="">收藏 = 学会？</span>
+        </p>
+        <p style="font-size:24px;font-weight:900;color:#111827;margin:0;line-height:1.05;letter-spacing:-2px;">
+          <span leaf="">6个月用AI</span>
+          <span style="color:#059669;"><span leaf="">练成工程师？</span></span>
+        </p>
+        <p style="font-size:24px;font-weight:900;color:#059669;margin:0 0 16px;line-height:1.05;letter-spacing:-2px;">
+          <span leaf="">普通人能抄的路线图</span>
+        </p>
+        <section style="width:48px;height:3px;background:linear-gradient(to right,#059669,#34D399);border-radius:2px;margin-bottom:12px;">
+          <span leaf=""><br></span>
+        </section>
+        <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;letter-spacing:0.5px;">
+          <span leaf="">老外6月路线图 · 普通人落地清单</span>
+        </p>
+      </section>
+    </section>
+    <section style="background:linear-gradient(135deg,#059669,#10B981);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.9);margin:0;font-weight:600;letter-spacing:0.5px;">
+        <span leaf="">打工人北北</span>
+      </p>
+      <section style="display:flex;gap:4px;">
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">AI工程师</span></span>
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">路线图</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 2. 目录 toc-scroll -->
+  <section style="margin:0 20px 32px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <p style="font-size:10px;color:#9CA3AF;margin:0;text-transform:uppercase;letter-spacing:2px;font-weight:600;">
+        <span leaf="">📦 4 Parts + Conclusion</span>
+      </p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;">
+        <span leaf="">👉 滑动</span>
+      </p>
+    </section>
+    <section style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:8px;">
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px;margin:0 0 5px;">
+          <span leaf="">PART 01</span>
+        </p>
+        <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;">
+          <span leaf="">第1月·地基月</span>
+        </p>
+        <p style="font-size:10px;color:rgba(255,255,255,0.7);margin:0;">
+          <span leaf="">别急着冲大模型</span>
+        </p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;margin-right:8px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;">
+          <span leaf="">PART 02</span>
+        </p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;">
+          <span leaf="">第2月·碰LLM</span>
+        </p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;">
+          <span leaf="">会指挥不在会调</span>
+        </p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;margin-right:8px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;">
+          <span leaf="">PART 03</span>
+        </p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;">
+          <span leaf="">第3-4月·RAG+Agent</span>
+        </p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;">
+          <span leaf="">学什么时候不该用</span>
+        </p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;margin-right:8px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;">
+          <span leaf="">PART 04</span>
+        </p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;">
+          <span leaf="">第5-6月·部署选方向</span>
+        </p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;">
+          <span leaf="">从会做到能交付</span>
+        </p>
+      </section>
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:110px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px;box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;">
+          <span leaf="">PART ///</span>
+        </p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;">
+          <span leaf="">写在最后</span>
+        </p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;">
+          <span leaf="">普通人能抄什么</span>
+        </p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 3. 开头引言 + 前言正文 -->
+  <section style="padding:0 20px;">
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="font-size:12px;color:#9CA3AF;margin:0 0 6px;line-height:1.5;">
+        <span leaf="">最近刷到个老外 @sairahul1 发的「6个月成为 AI 工程师路线图」</span>
+      </p>
+      <p style="margin:0;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">19.7 万浏览、2400+ 赞，我没当收藏帖划走，逐月拆给你看</span></span>
+      </p>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">一张火遍全网的图，19.7 万浏览、2400+ 赞。但火不等于能落地。我没划走，而是逐月拆了一遍——哪些普通人真能抄，哪些看着漂亮其实劝退。今天把拆完的结论原样给你。</span>
+    </p>
+  </section>
+
+  <!-- 4. 第一章 PART 01 -->
+  <section style="margin-top:16px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;">
+          <span leaf="">01</span>
+        </p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;">
+          <span leaf="">PART</span>
+        </p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;">
+          <span leaf="">第 1 个月：地基月，别急着冲大模型</span>
+        </p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;">
+          <span leaf="">MONTH 1 · FOUNDATION</span>
+        </p>
+      </section>
+    </section>
+  </section>
+  <section style="padding:0 20px;">
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">路线图第 1 个月，要你先搞顺的不是 <strong style="color:#059669;"><span leaf="">AI</span></strong>，而是<strong style="color:#059669;"><span leaf="">编程地基</span></strong>。这一步最容易被跳过，但也最值钱。</span>
+    </p>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">Python 真写顺</span></span>
+      </p>
+      <p style="font-size:13px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;">
+        <span leaf="">不是会 print，是能写脚本处理真实数据</span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">Git + GitHub</span></span>
+      </p>
+      <p style="font-size:13px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;">
+        <span leaf="">版本管理、协作、看别人代码</span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">命令行 / 终端基础</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">JSON、API、HTTP、异步基础</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">基础 SQL</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">pandas 处理数据</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">虚拟环境、包管理、错误处理</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">FastAPI 或 Flask 起个接口</span></span>
+      </p>
+    </section>
+    <section style="padding:6px 0 4px;margin-bottom:16px;">
+      <p style="margin-bottom:6px;font-size:12px;font-weight:700;color:#9CA3AF;letter-spacing:1px;">
+        <span style="color:#059669;"><span leaf="">✦ 我的理解</span></span>
+      </p>
+      <p style="font-size:13px;color:#374151;margin:0;line-height:1.7;">
+        <span leaf="">我见过太多人第 1 天就 <span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:13px;font-weight:600;"><span leaf="">pip install langchain</span></span> 搞 agent，结果连 <strong style="color:#059669;"><span leaf="">JSON</span></strong> 都 parse 不明白，一报错就卡死。<span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">地基不牢，上面盖什么都是危房</span></span>。</span>
+      </p>
+    </section>
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="margin:0;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">宁可能慢，别假会——碎片时间就把一个月拉长到两个月</span></span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 5. 第二章 PART 02 -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;">
+          <span leaf="">02</span>
+        </p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;">
+          <span leaf="">PART</span>
+        </p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;">
+          <span leaf="">第 2 个月：正式碰 LLM，重点在会指挥不在会调</span>
+        </p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;">
+          <span leaf="">MONTH 2 · PROMPTING</span>
+        </p>
+      </section>
+    </section>
+  </section>
+  <section style="padding:0 20px;">
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">这月才是 AI 核心，但他特意强调：不是背 API，是搞懂这几个<strong style="color:#059669;"><span leaf="">机制</span></strong>：</span>
+    </p>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">提示词基础（prompting fundamentals）</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">system 指令 vs user 指令的区别</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">结构化输出 / JSON schema</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">function / tool calling（让模型调你的函数）</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">流式响应（streaming）</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">对话状态管理</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">成本 / 延迟 / token 基础</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">失败处理</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">提示注入意识（prompt injection awareness）</span></span>
+      </p>
+      <p style="font-size:13px;color:#4B5563;margin:0;line-height:1.7;text-align:justify;">
+        <span leaf="">← 这点是真良心，务必刻进脑子</span>
+      </p>
+    </section>
+    <section style="padding:6px 0 4px;margin-bottom:16px;">
+      <p style="margin-bottom:6px;font-size:12px;font-weight:700;color:#9CA3AF;letter-spacing:1px;">
+        <span style="color:#059669;"><span leaf="">✦ 我的理解</span></span>
+      </p>
+      <p style="font-size:13px;color:#374151;margin:0;line-height:1.7;">
+        <span leaf="">最后这条我单独拎出来讲，因为它和我们上一篇「用 AI 读代码被反杀」是<strong style="color:#059669;"><span leaf="">同一个坑</span></strong>——你以为在指挥 AI，其实是别人在代码里<span style="border-bottom:2px solid #FECACA;"><span leaf="">藏了句话指挥 AI</span></span>。</span>
+      </p>
+    </section>
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="margin:0 0 6px;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">别把来路不明的内容直接喂给 AI 当指令</span></span>
+      </p>
+      <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.5;">
+        <span leaf="">这是第 2 个月最该刻进脑子的一课，比多背两个 API 有用</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 6. 第三章 PART 03 -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;">
+          <span leaf="">03</span>
+        </p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;">
+          <span leaf="">PART</span>
+        </p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;">
+          <span leaf="">第 3-4 个月：RAG + Agent，学什么时候不该用</span>
+        </p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;">
+          <span leaf="">MONTH 3-4 · RAG &amp; AGENT</span>
+        </p>
+      </section>
+    </section>
+  </section>
+  <section style="padding:0 20px;">
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">进入 <strong style="color:#059669;"><span leaf="">RAG</span></strong> 与 <strong style="color:#059669;"><span leaf="">Agent</span></strong> 阶段，要点密集：</span>
+    </p>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">embeddings（把文字变成可计算的向量）</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">chunking（怎么切分文档）</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">向量数据库</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">元数据过滤</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">reranking（重排序）</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">检索质量调优</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">减少幻觉</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">引用与溯源</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">agent 循环、工具选择、状态管理、重试</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">什么时候不该用 agent（这点比怎么用重要）</span></span>
+      </p>
+    </section>
+    <section style="padding:6px 0 4px;margin-bottom:16px;">
+      <p style="margin-bottom:6px;font-size:12px;font-weight:700;color:#9CA3AF;letter-spacing:1px;">
+        <span style="color:#059669;"><span leaf="">✦ 我的理解</span></span>
+      </p>
+      <p style="font-size:13px;color:#374151;margin:0;line-height:1.7;">
+        <span leaf="">很多人学到这就开始<span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">无脑堆 agent</span></span>，啥任务都套个循环。路线图专门写了 <strong style="color:#059669;"><span leaf="">when NOT to use agents</span></strong>——这才是真懂。</span>
+      </p>
+    </section>
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="margin:0 0 6px;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">80% 的场景，一个好提示词 + 一次调用就够</span></span>
+      </p>
+      <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.5;">
+        <span leaf="">用 agent 反而慢还贵，别被 agent 很酷带偏</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 7. 第四章 PART 04 -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;">
+          <span leaf="">04</span>
+        </p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;">
+          <span leaf="">PART</span>
+        </p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;">
+          <span leaf="">第 5-6 个月：部署 + 选方向，从会做到能交付</span>
+        </p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;">
+          <span leaf="">MONTH 5-6 · SHIP &amp; PICK</span>
+        </p>
+      </section>
+    </section>
+  </section>
+  <section style="padding:0 20px;">
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">最后两个月，从<strong style="color:#059669;"><span leaf="">会做</span></strong>走向<strong style="color:#059669;"><span leaf="">能交付</span></strong>：</span>
+    </p>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">FastAPI 生产模式</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">Docker</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">后台任务、队列</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">鉴权 + API key 安全</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">日志、可观测性</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">提示词 / 版本管理</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">评估看板</span></span>
+      </p>
+    </section>
+    <section style="margin-bottom:14px;">
+      <p style="margin:0 0 6px;">
+        <span style="display:inline-block;font-size:13px;font-weight:700;color:#059669;background:rgba(5,150,105,0.08);padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#059669;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">成本监控、速率限制、缓存</span></span>
+      </p>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">然后三个方向选一深挖：</span>
+    </p>
+    <section style="background:#F9FAFB;padding:16px;border-radius:12px;border:1px solid #F3F4F6;margin-bottom:28px;">
+      <section style="display:flex;align-items:stretch;justify-content:center;gap:6px;">
+        <section style="flex:1;text-align:center;padding:10px 8px;background:linear-gradient(135deg,#059669,#10B981);border-radius:8px;">
+          <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;">
+            <span leaf="">方向1</span>
+          </p>
+          <p style="font-size:10px;color:rgba(255,255,255,0.8);margin:0;line-height:1.5;">
+            <span leaf="">AI 产品工程师 · 想快速进创业公司，偏 LLM 应用、RAG、agent、部署、产品 UX</span>
+          </p>
+        </section>
+        <section style="flex:1;text-align:center;padding:10px 8px;background:#fff;border:1px solid #E5E7EB;border-radius:8px;">
+          <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;">
+            <span leaf="">方向2</span>
+          </p>
+          <p style="font-size:10px;color:#9CA3AF;margin:0;line-height:1.5;">
+            <span leaf="">应用型 ML / LLM 工程师 · 微调、何时微调 vs 提示、评估、推理优化、开源模型、训练管线</span>
+          </p>
+        </section>
+        <section style="flex:1;text-align:center;padding:10px 8px;background:#fff;border:1px solid #E5E7EB;border-radius:8px;">
+          <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;">
+            <span leaf="">方向3</span>
+          </p>
+          <p style="font-size:10px;color:#9CA3AF;margin:0;line-height:1.5;">
+            <span leaf="">AI 自动化工程师 · 工作流编排、业务流程自动化、多工具系统、CRM、文档、邮件、客服、运营场景</span>
+          </p>
+        </section>
+      </section>
+    </section>
+    <section style="padding:6px 0 4px;margin-bottom:16px;">
+      <p style="margin-bottom:6px;font-size:12px;font-weight:700;color:#9CA3AF;letter-spacing:1px;">
+        <span style="color:#059669;"><span leaf="">✦ 我的理解</span></span>
+      </p>
+      <p style="font-size:13px;color:#374151;margin:0;line-height:1.7;">
+        <span leaf=""><strong style="color:#059669;"><span leaf="">方向 3</span></strong> 其实最贴近打工人用 AI 替自己打工——你不需要进大厂，把本职的重复活（报表、客服初筛、文档整理）用工作流自动化掉，就是<span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">实打实的产出</span></span>。</span>
+      </p>
+    </section>
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="margin:0 0 6px;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">半年从运营转成了 AI 产品</span></span>
+      </p>
+      <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.5;">
+        <span leaf="">关键不是他多聪明，是每个月都拿真实项目练，不是收藏吃灰</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 8. 结语章 写在最后 -->
+  <section style="margin-top:48px;margin-bottom:32px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;">
+          <span leaf="">///</span>
+        </p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;">
+          <span leaf="">LAST</span>
+        </p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;">
+          <span leaf="">写在最后</span>
+        </p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;">
+          <span leaf="">WRAP-UP</span>
+        </p>
+      </section>
+    </section>
+  </section>
+  <section style="padding:0 20px;">
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">这张图值不值？值。但它最大的陷阱是：看着清晰，容易让人以为<span style="border-bottom:2px solid #FECACA;"><span leaf="">收藏 = 学会</span></span>。</span>
+    </p>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">普通人能抄的只有一件事——把它当 checklist，每个月逼自己交付<span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">一个真实小项目</span></span>，而不是又存进以后看的收藏夹。</span>
+    </p>
+    <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+      <p style="margin:0;line-height:1.6;">
+        <span style="font-size:15px;color:#059669;font-weight:bold;border-bottom:3px solid #FDE68A;padding-bottom:2px;"><span leaf="">每个月逼自己交付一个真实小项目，而不是又存进以后看的收藏夹</span></span>
+      </p>
+    </section>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">我自己的判断：<strong style="color:#059669;"><span leaf="">第 1 个月地基</span></strong> + <strong style="color:#059669;"><span leaf="">第 2 个月会指挥 LLM + 提示注入意识</span></strong> 是<span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">性价比最高的两段</span></span>，打工人碎片时间优先啃这两块就够打开局面；RAG / agent / 部署那些，等真碰到需求再补，别为了学完而学。</span>
+    </p>
+    <p style="margin-bottom:16px;font-size:14px;line-height:1.9;text-align:justify;">
+      <span leaf="">我是<strong style="color:#059669;"><span leaf="">打工人北北</span></strong>，一个用 AI 替自己打工的普通人。专挑老外在用的好工具，我先 replicate 一遍，再告诉你能不能落地。实测 · 避坑 · 不画饼，每周更。</span>
+    </p>
+  </section>
+
+  <!-- 9. 互动三连 footer-cta -->
+  <section style="background:radial-gradient(circle at center,#F9FAFB 0%,#FFFFFF 100%);border:1px solid #E5E7EB;border-radius:16px;padding:32px 20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.03);margin:0 0 24px;">
+    <p style="font-size:13px;font-weight:bold;color:#111827;margin-bottom:20px;line-height:1.6;">
+      <span leaf="">既然看到这里了，如果觉得有用，随手点个赞、在看、转发三连吧。</span>
+    </p>
+    <section style="display:flex;justify-content:center;gap:24px;margin-bottom:16px;">
+      <section style="text-align:center;cursor:pointer;color:#4B5563;">
+        <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.05);border:1px solid #F3F4F6;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+        </section>
+        <span style="font-size:10px;font-weight:600;"><span leaf="">点赞</span></span>
+      </section>
+      <section style="text-align:center;cursor:pointer;color:#4B5563;">
+        <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.05);border:1px solid #F3F4F6;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+        </section>
+        <span style="font-size:10px;font-weight:600;"><span leaf="">在看</span></span>
+      </section>
+      <section style="text-align:center;cursor:pointer;color:#059669;">
+        <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#ECFDF5;border-radius:12px;box-shadow:0 2px 4px rgba(5,150,105,0.15);border:1px solid #A7F3D0;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-4a8 8 0 0 1 8-8h8"></path><polyline points="16 2 20 6 16 10"></polyline></svg>
+        </section>
+        <span style="font-size:10px;font-weight:600;"><span leaf="">转发</span></span>
+      </section>
+    </section>
+    <p style="font-size:10px;color:#9CA3AF;letter-spacing:1px;margin:0;">
+      <span leaf="">THANKS FOR READING</span>
+    </p>
+  </section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>
