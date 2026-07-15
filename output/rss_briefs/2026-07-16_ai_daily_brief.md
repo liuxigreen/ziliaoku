@@ -1,18 +1,18 @@
 # AI 日报 | 2026-07-16
 
 > 自动抓取 14 个英文信息源，筛选过去 36h 的 AI/工具/工作流相关内容。
-> 生成时间: 2026-07-16 00:29 (北京时间)
+> 生成时间: 2026-07-16 00:30 (北京时间)
 
 ## 今日概览
 
 | 指标 | 数值 |
 |------|------|
-| 抓取文章 | 156 篇 |
-| 时间窗内 | 140 篇 |
-| 去重后 | 140 篇 |
+| 抓取文章 | 131 篇 |
+| 时间窗内 | 118 篇 |
+| 去重后 | 118 篇 |
 | 信源数 | 14 个 |
-| 成功抓取 | 8 个 |
-| 热门标签 | LLM(63) · 开源(56) · 编程(40) · Agent(35) · 模型(34) · RAG(28) |
+| 成功抓取 | 7 个 |
+| 热门标签 | LLM(57) · 开源(50) · Agent(32) · 编程(29) · 工具(26) · RAG(25) |
 
 ## Top 8（按相关度排序）
 
@@ -58,19 +58,19 @@
 
 ## 按来源分组
 
-### Hacker News (29 篇)
+### Hacker News (26 篇)
 
 - [Open-source memory for coding agents, synced over SSH](https://github.com/vshulcz/deja-vu/) `#Agent` `#开源` `#编程`
-- [OpenAI loses trademark dispute at EU court](https://dpa-international.com/economics/urn:newsml:dpa.com:20090101:260715-930-389143/)
 - [Show HN: StyleSeed – a design-rules engine so AI agents stop building generic UI](https://github.com/bitjaru/styleseed) `#Agent`
 - [SendLang: A DSL for Email Automation](https://www.sendlang.com) `#工具`
-- [Weathergotchi – an open-source climate Tamagotchi](https://github.com/Michael-Manning/E-Paper-Climate-Logger) `#开源`
-- [Briar Is in Maintenance Mode](https://briarproject.org/news/2026-maintenance-mode/)
-- [Jiga (YC W21) is hiring the best people to make manufacturing great again](https://jiga.io/about-us/)
 - [J-space comparisons across open models](https://eliebak.com/viz/jspace-open-v2) `#模型`
+- [Weathergotchi – an open-source climate Tamagotchi](https://github.com/Michael-Manning/E-Paper-Climate-Logger) `#开源`
+- [Jiga (YC W21) is hiring the best people to make manufacturing great again](https://jiga.io/about-us/)
+- [Briar Is in Maintenance Mode](https://briarproject.org/news/2026-maintenance-mode/)
 - [Show HN: 18KB ls alternative in no_std rust and Libc](https://crates.io/crates/fli-tool)
-- [The Three-Second Theft: Why AI Voice Fraud Outruns Every Defence](https://smarterarticles.co.uk/the-three-second-theft-why-ai-voice-fraud-outruns-every-defence)
-- ...还有 19 篇
+- [Using Go for Mobile Apps](https://www.davidsobsessions.com/p/one-year-of-gomobile/)
+- [Sleep regularity is a stronger predictor of mortality risk than sleep duration (2023)](https://academic.oup.com/sleep/article/47/1/zsad253/7280269)
+- ...还有 16 篇
 
 ### Reddit r/LocalLLaMA (24 篇)
 
@@ -128,27 +128,12 @@
 - [PostHog/posthog](https://github.com/PostHog/posthog) `#LLM` `#开源` `#工具` `#编程`
 - ...还有 9 篇
 
-### Reddit r/MachineLearning (18 篇)
-
-- [Chain of Thought is a scaling trap. the next wave is latent reasoning (Coconut / HRM / RecrusiveMAS)... but then we hit the black box wall. Where does BDH fit? [D]](https://www.reddit.com/r/MachineLearning/comments/1uviru5/chain_of_thought_is_a_scaling_trap_the_next_wave/) `#LLM` `#Agent` `#RAG` `#编程`
-- [[N] AMA Reminder: Raffi Krikorian (CTO, Mozilla)](https://www.reddit.com/r/MachineLearning/comments/1uw2do8/n_ama_reminder_raffi_krikorian_cto_mozilla/) `#Agent` `#开源` `#编程` `#模型`
-- [GPUHedge: Hedging serverless GPU providers improves cold start p95 latency from 117s to 30s [P]](https://www.reddit.com/r/MachineLearning/comments/1uvlb6h/gpuhedge_hedging_serverless_gpu_providers/) `#开源` `#工具` `#编程` `#模型`
-- [LLM hallucination paper(using math) accepted to ICML workshop[R]](https://www.reddit.com/r/MachineLearning/comments/1uw4j6a/llm_hallucination_paperusing_math_accepted_to/) `#LLM` `#开源` `#微调` `#模型`
-- [New LLM Coordination Benchmark - Benchmarking Open-Ended Multi-Agent Coordination in Language Agents [R]](https://www.reddit.com/r/MachineLearning/comments/1uwc6ni/new_llm_coordination_benchmark_benchmarking/) `#LLM` `#Agent` `#开源` `#RAG`
-- [Cloud-vLLM Benchmark Differences [R]](https://www.reddit.com/r/MachineLearning/comments/1uw2j9e/cloudvllm_benchmark_differences_r/) `#LLM` `#编程` `#模型`
-- [AI/ML Research - What Does it Really Take? [D]](https://www.reddit.com/r/MachineLearning/comments/1ux64ub/aiml_research_what_does_it_really_take_d/) `#LLM` `#编程`
-- [PyTorch model running 170x slower on T4 vs A100. What could cause a bottleneck this extreme? [D]](https://www.reddit.com/r/MachineLearning/comments/1ux6a9x/pytorch_model_running_170x_slower_on_t4_vs_a100/) `#编程` `#模型`
-- [How do you mathematically model an Unstoppable Force hitting an Immovable Object? [P]](https://www.reddit.com/r/MachineLearning/comments/1ux7wsa/how_do_you_mathematically_model_an_unstoppable/) `#LLM` `#开源` `#编程` `#模型`
-- [Things I got wrong building an incremental indexing pipeline [P]](https://www.reddit.com/r/MachineLearning/comments/1uwnb3g/things_i_got_wrong_building_an_incremental/) `#编程` `#模型`
-- ...还有 8 篇
-
-### The Verge AI (10 篇)
+### The Verge AI (9 篇)
 
 - [OpenAI finally launches hardware… for Codex](https://www.theverge.com/ai-artificial-intelligence/965901/openai-hardware-codex-micro-launch) `#编程`
 - [SpaceXAI&#8217;s Grok programming tool was uploading its users&#8217; entire codebase to cloud storage](https://www.theverge.com/ai-artificial-intelligence/965600/spacexai-grok-build-repository-upload) `#RAG` `#工具` `#编程`
 - [OpenAI may announce a ChatGPT smart speaker this year](https://www.theverge.com/ai-artificial-intelligence/965670/openai-chatgpt-ai-smart-speaker-hardware-device) `#LLM`
 - [Google’s Demis Hassabis says it’s time for a global AI watchdog — led by the US](https://www.theverge.com/tech/965270/google-deepmind-demis-hassabis-global-ai-watchdog) `#模型`
-- [Siri AI is already changing how I use my iPhone](https://www.theverge.com/tech/964714/siri-ai-public-beta-preview-ios-27-hands-on)
 - [Meta accused of using biased AI targeting for mass layoffs](https://www.theverge.com/tech/965486/meta-lawsuit-former-employees-ai-layoffs) `#工具`
 - [Sam Altman didn’t need another lawsuit](https://www.theverge.com/ai-artificial-intelligence/965294/openai-apple-trade-secrets-lawsuit-sam-altman-ipo)
 - [New York becomes the first state to enact a data center moratorium](https://www.theverge.com/policy/965110/new-york-ai-data-center-moratorium) `#编程`
