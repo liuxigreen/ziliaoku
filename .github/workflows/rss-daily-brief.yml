@@ -1,0 +1,45 @@
+name: RSS AI Daily Brief
+
+on:
+  schedule:
+    # 每天 UTC 00:00 = 北京时间 08:00
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: write # 需要写权限来 commit 日报回仓库
+
+jobs:
+  generate-brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          pip install -r tools/rss_daily_brief/requirements.txt
+
+      - name: Generate daily brief
+        run: |
+          cd tools/rss_daily_brief
+          python generate_brief.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/rss_briefs/
+          if git diff --cached --quiet; then
+            echo "没有新内容，跳过提交"
+          else
+            git commit -m "AI 日报 $(date -u -d '+8 hours' '+%Y-%m-%d')"
+            git push
+          fi
