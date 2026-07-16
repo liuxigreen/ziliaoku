@@ -1,0 +1,52 @@
+==================================================
+爆文采集 v3 — Reddit + YouTube — 2026-07-09
+==================================================
+输出目录: D:\WorkBuddyProjects\ziliaoku\data\raw\2026-07-09
+已存在去重 URL 数: 59
+起始编号: 81
+
+[Reddit] 开始，6 个 query × 4 条
+  → reddit search: Claude Code workflow tips  [赛道1-AI工具]
+    采到 4 条（累计 0）
+  → reddit search: n8n automation workflow tutorial  [赛道1-AI工具/自动化]
+    采到 4 条（累计 0）
+  → reddit search: ComfyUI image generation workflow  [赛道2-AI创作]
+    采到 4 条（累计 0）
+  → reddit search: AI video generation Sora Kling  [赛道2-AI视频]
+    采到 4 条（累计 0）
+  → reddit search: AI side hustle passive income  [信号源-副业标题公式]
+    采到 4 条（累计 0）
+  → reddit search: AI content creation strategy  [赛道3-自媒体]
+    采到 4 条（累计 0）
+[Reddit] 完成，新增 0 条
+
+[YouTube-WL] 订阅频道采集，1 个频道
+  → channel: @TechWithTim  [Claude Code 教程源头（英语原创）]
+    ✓ Claude Code - Full Tutorial fo | origin:english_source
+    ✓ How to Build an App With Claud | origin:english_source
+    ✓ FULL Claude Code Tutorial for  | origin:english_source
+[YouTube-WL] 完成，新增 3 条
+
+[YouTube] 开始（无 cookies.txt → opencli 发现降级，无字幕），6 query × 2 视频
+  → youtube: Claude Code workflow tips  [赛道1-AI工具]
+    ✓ 32 Tricks to Level Up Claude C | 字幕:False lang:None
+    ✓ Claude Code Crash Course For D | 字幕:False lang:None
+  → youtube: ComfyUI image generation workflow  [赛道2-AI创作]
+    ✓ How to use ComfyUI for beginne | 字幕:False lang:None
+    ✓ How to Use ComfyUI (Step-by-St | 字幕:False lang:None
+  → youtube: AI video generation Sora Kling  [赛道2-AI视频]
+    ✓ Timestamp Prompts: Narrative C | 字幕:False lang:None
+    ✓ Sora 2 vs Kling vs Veo 3: The  | 字幕:False lang:None
+  → youtube: n8n automation workflow tutorial  [赛道1/4-自动化]
+    (无数据/解析失败，跳过)
+  → youtube: content creator growth strategy  [赛道3-自媒体]
+    ✓ This is how you'll become a co | 字幕:False lang:None
+    ✓ The Top 7 Content Strategies T | 字幕:False lang:None
+  → youtube: AI side hustle one person business  [信号源-副业标题公式]
+    ✓ The Best AI Side Hustle Ideas  | 字幕:False lang:None
+    ✓ 7 Claude AI Side Hustles That  | 字幕:False lang:None
+[YouTube] 完成，新增 10 条
+
+==================================================
+采集完成: Reddit +0  YouTube +10  →  D:\WorkBuddyProjects\ziliaoku\data\raw\2026-07-09
+==================================================

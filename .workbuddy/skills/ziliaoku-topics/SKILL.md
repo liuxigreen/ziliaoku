@@ -22,7 +22,9 @@ agent_created: true
 每个选题：
 ```json
 {
+  "topic_id": "T{week}-{n}",
   "topic": "选题一句话",
+  "platforms": ["xhs", "wechat"],
   "title_candidates": ["标题1", "标题2"],
   "hook_draft": "开头前3句草稿",
   "structure_ref": "推荐结构骨架（优先 universal）",
@@ -30,11 +32,34 @@ agent_created: true
   "fit_score": 8,
   "fit_dimensions": {"喜欢":5, "擅长":4, "难复制":4, "风口上升":4},
   "urgency": "蹭热点(3天内发) | 常青",
-  "monetization_role": "引流 | 信任 | 转化"
+  "monetization_role": "引流 | 信任 | 转化",
+  "format_hint": "图文(默认) | 长文(深读类，给用户完整拆解)",
+  "_task_note": "可选备注：搜索/信任/互动/证明/转化/留存（launch-pack 任务分类，可由 monetization_role 推导，不强制填）",
+  "_audience_tag": "可选标签：目标读者一句描述，谁会在刷到时停下来"
 }
 ```
 
+## 选题任务分类（launch-pack 参考，已降为可选备注，2026-07-10 收敛）
+> **收敛说明**：审计发现 `task`(搜索/信任/互动/证明/转化/留存) 与 `monetization_role`(引流/信任/转化) 是同一漏斗的"双编码"，且 `task` 可由 `monetization_role` 推导，属冗余。故 `task` 不再强制、降为 JSON 里的 `_task_note` 可选备注；`audience` 降为 `_audience_tag` 可选标签。**冻结 I/O 不破**：原 11 字段结构保留，`platforms` 为新增字段（见下），`_task_note`/`_audience_tag` 以下划线前缀表示可选。
+> 来源：launch-pack `xiaohongshu-account-launch-expert` / `wechat-account-launch-expert` 的 `references/launch-playbook.md` 第 10 节「选题库」（已存入 `vendor/launch-pack`，详见 `strategy/README.md`）。
+
+六类含义（小红书口径；公众号把"互动"拆为"故事/情绪"，本质同源），仅作备注参考：
+- **搜索**：承接主动需求（"[品类]怎么选""[场景]避坑攻略"）。
+- **信任**：证明专业度（案例拆解、过程公开、错误复盘）。
+- **互动**：收集评论、训练受众信号（提问、投票、经验分享）。
+- **证明**：降低购买犹豫（前后对比、客户故事、对照表、清单）。
+- **转化**：把合格用户推向下一步（服务说明、FAQ、真实但不过度的名额/安排）。
+- **留存**：让用户记住账号（系列、个人观察、幕后记录）。
+
+`task` 与 `monetization_role` 的推导映射（写 `_task_note` 时参考，不强制）：
+- 搜索/互动/留存 → 多归 `引流`（拉新涨粉）。
+- 信任/证明 → 多归 `信任`（蓄水）。
+- 转化 → 必归 `转化`（临门一脚）。
+
+**组合完整性要求**（仍沿用，作用于 `monetization_role` 而非 `task`）：20 个选题里六类 `task` 映射后的漏斗角色都至少出现 1 次；纯"转化"堆砌（缺引流）会导致没人进来，纯"引流"堆砌（缺信任/转化）会导致留不住。
+
 ## 硬性要求
+- 每个选题必须带稳定 `topic_id`（格式 `T{week}-{n}`，n 为 1-20 序号），用于效果回填闭环（见 `docs/run.md`）；`draft` 成稿须携带同一 ID，`review` 按它归因。
 - **无 `evidence` 不许出现**任何选题——每个选题必须能追到爆文或趋势。
 - `fit_score` < 6 不输出；`fit_score` 由四维合成：`喜欢(你愿写)` / `擅长(有实操)` / `难复制(别人难抄)` / `风口上升(趋势向上)`，每维 1-5 分，四者均值四舍五入为 `fit_score`。某维 ≤2 须在 `evidence` 备注风险（如"风口上升=2，蹭热点需快"）。
 - 至少 5 个为**资源型 / 获得感**（冷启动"给"型内容，利于涨粉）。

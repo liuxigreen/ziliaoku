@@ -20,3 +20,6 @@ cookies.example.txt
 config/github_token.txt
 *.token
 .token
+
+# launch-pack 上游（git clone 拉取，不进版本库，便于刷新）
+vendor/

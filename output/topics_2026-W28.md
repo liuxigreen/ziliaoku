@@ -1,365 +1,339 @@
-# 选题库 · 2026-W28
+# 选题库 2026-W28（7/7–7/13）
 
-> 基于 `data/clusters/2026-W28.json` + `formulas.md`(公式#1–#5) + `account.md` 生成。
-> 账号定位：**用 AI Agent 做内容工作流的实操博主**（实操 / 接地气 / 不画饼）。
-> 红线：不提收益数字 / 不绝对化 / 不硬引流。变现漏斗：小红书引流 → 私域/知识星球 → 选题库订阅（99-299元/年）。
-> 说明：本批为**验证运行**，extract 取 14 篇代表样本（覆盖 AI编程/AI视频/AI工具/AI图像/自媒体运营），其余 41 篇按同一模板批充后即可直接进聚类，无需改接口。
+> 生成链路：collect(93篇) → gate(69 collect + 24 signal) → extract(69) → cluster(2026-W28) → signal(24) → **topics(本文件)**
+> 素材主源：14 篇带字幕英文 YouTube 源头（Claude Code / ComfyUI / AI视频 / n8n / 内容增长 / 副业）+ Reddit 实操帖 + X 标题公式样本 + GitHub 神库（ECC 22万★ 等）
+> 人设：用 AI Agent 做内容工作流的实操博主（实操/接地气/不画饼）
+> 红线：不提收益数字、不绝对化、不硬引流。标题候选已压 ≤20 字。
 
-## 选题清单（20）
+## 选题清单（20 个）
+
+### 蹭热点 / 高优先（排前）
 
 ```json
-[
-  {
-    "id": "T01",
-    "topic": "给Agent装上网：我私藏的几个'让AI读得了网页/搜得了推特'的工具",
-    "title_candidates": [
-      "还在手动给Agent喂网页？这几个工具一键给它装上网（套用公式#3）",
-      "你的Claude Code读不了推特？一套联网工具清单直接抄（套用公式#3）"
-    ],
-    "hook_draft": "Agent能写代码改文档，你让它上网查点东西却抓瞎。这周我整理了几个月收藏里真正能用的联网工具，按'零配置→要登录'排好了。",
-    "structure_ref": "痛点场景 → 能力展示 → 用法/命令 → 效果证明 → 行动号召（universal 工具推荐骨架）",
-    "evidence": "Agent-Reach(5.3万★, Trendshift #1) + firecrawl(14.7万★) + crawl4ai(7.1万★)",
-    "fit_score": 9,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T02",
-    "topic": "Claude Code 你只用了10%：那些没人主动告诉你的 harness 玩法",
-    "title_candidates": [
-      "22万星的Agent操作系统，我把核心用法拆给你看（套用公式#1）",
-      "你的Claude Code只用了10%：ECC这套harness玩法值得抄（套用公式#1）"
-    ],
-    "hook_draft": "用Claude Code半年，直到看见那个22万星的Agent操作系统才发现自己一直在裸奔。配置散、记忆丢、安全弱——它不是来加功能的，是来补地基的。",
-    "structure_ref": "痛点场景 → 能力全景 → 用法 → 效果证明(211.9K星/12语言生态) → 行动号召",
-    "evidence": "ECC(227103★) + claude-code-best-practice(62202★)",
-    "fit_score": 9,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T03",
-    "topic": "剪片子最累的活，现在能交给这些AI了",
-    "title_candidates": [
-      "做短视频最累的剪片子，现在能交给这些AI（套用公式#2）",
-      "给我一个主题，它全自动产出成片：几个AI视频工具实测（套用公式#2）"
-    ],
-    "hook_draft": "做短视频最累的不是写文案，是剪。找高光、切片、配字幕、合成——这一圈下来一天没了。这周试了几个把这条链路自动化的工具，说点实在的。",
-    "structure_ref": "痛点场景 → 能力展示 → 用法/演示 → 效果证明 → 行动号召",
-    "evidence": "autoclip(5983★) + MoneyPrinterTurbo(96217★) + VideoLingo(17656★)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T04",
-    "topic": "22万星的Agent操作系统，核心到底好在哪",
-    "title_candidates": [
-      "把22万星的ECC装进工作流后，我的效率翻了倍（套用公式#1）",
-      "这个Agent操作系统登顶未必，但22万星不是白给的（套用公式#1）"
-    ],
-    "hook_draft": "ECC——agent harness 操作系统。第一次见有人把技能、记忆、安全、研究优先开发打包成一套跨harness系统。我装了一周，说下真实感受。",
-    "structure_ref": "痛点场景 → 能力全景 → 跨harness用法 → 效果证明(211.9K星) → 行动号召",
-    "evidence": "ECC(227103★, 12语言生态)",
-    "fit_score": 9,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T05",
-    "topic": "像导演一样写AI视频提示词，废片率直接降",
-    "title_candidates": [
-      "别再堆'电影感'形容词了，AI视频要的是导演思维（套用公式#2）",
-      "用Seedance像导演一样指挥AI视频：产出不再是堆形容词（套用公式#2）"
-    ],
-    "hook_draft": "多数工具让你写'电影感镜头'，导演会先问这场戏在干什么。Seedance这套导演式prompt把'cinematic'换成具体的运镜、光线、表演——废片率肉眼可见地降。",
-    "structure_ref": "反差主张 → 导演引擎 → 多语言/能力 → 长片工作流 → 行动号召",
-    "evidence": "seedance-2.0(3297★, 28子技能/126评测)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T06",
-    "topic": "免费用顶级模型写代码：终端里就能跑的几种玩法",
-    "title_candidates": [
-      "在终端直接用上顶级模型：免费额度够日常，零成本上手（套用公式#1）",
-      "npx一行就能跑的终端AI Agent，Google官方出品（套用公式#1）"
-    ],
-    "hook_draft": "不想开浏览器就想调个顶级模型？gemini-cli 直接把 Gemini 搬进终端，免费额度够日常折腾，npx 一行就跑。",
-    "structure_ref": "痛点 → Why(免费/1M上下文) → 安装(npx一行) → 能力 → 鉴权 → 行动号召",
-    "evidence": "gemini-cli(105833★, 免费层60请求/分)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T07",
-    "topic": "RAG做不好，八成是网页没抓干净",
-    "title_candidates": [
-      "还在手动抓网页？一行代码把任意网站变成干净Markdown（套用公式#3）",
-      "RAG做不好，八成是网页没抓干净：两个工具急救（套用公式#3）"
-    ],
-    "hook_draft": "RAG效果差，先别怪模型，看看喂进去的是不是一堆HTML标签。把网页变干净LLM数据，这俩工具我一直在用。",
-    "structure_ref": "痛点 → Why(96%覆盖/LLM就绪) → 功能矩阵 → 代码 → MCP接入 → 行动号召",
-    "evidence": "firecrawl(147314★) + crawl4ai(71348★)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T08",
-    "topic": "自托管AI界面怎么选：几个开源项目实测",
-    "title_candidates": [
-      "想自己搭私有AI界面？这几个开源项目能完全离线跑（套用公式#1）",
-      "不想数据出本机：私有AI界面开源方案横评（套用公式#1）"
-    ],
-    "hook_draft": "用第三方AI界面总担心数据出去。想完全离线自托管，这几个开源项目覆盖了从个人到企业的需求，说下各自适合谁。",
-    "structure_ref": "痛点 → 关键特性 → 生态 → 行动号召",
-    "evidence": "open-webui(144630★, 完全离线+企业RBAC)",
-    "fit_score": 7,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T09",
-    "topic": "别再堆'电影感'形容词了，AI视频要的是导演思维（反差版）",
-    "title_candidates": [
-      "AI视频烂片的通病：堆了一屏幕'电影感'（套用公式#2）",
-      "导演式prompt vs 堆形容词：同一段脚本两种结果（套用公式#2）"
-    ],
-    "hook_draft": "看了几百条AI视频，烂片都有一个共同点：提示词里写满'电影感''史诗感'。导演思维不是形容词，是具体运镜。",
-    "structure_ref": "反差主张 → Before/After对比 → 方法 → 行动号召",
-    "evidence": "seedance-2.0 导演引擎(Ask cinematic vs Direct it 对比)",
-    "fit_score": 7,
-    "urgency": "常青",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T10",
-    "topic": "GitHub Trending 被Agent项目霸榜了，我挑了几个真能用的",
-    "title_candidates": [
-      "GitHub Trending 被Agent项目霸榜，我挑了几个能落地的（套用公式#4）",
-      "从深度研究到Super Agent：这周登顶的Agent项目实测（套用公式#4）"
-    ],
-    "hook_draft": "这周 GitHub Trending 前排几乎全是Agent项目。热度归热度，能落地的没几个。我挑了登顶的那几个，说下哪个你今天就能用。",
-    "structure_ref": "热点引入 → 进阶叙事 → 能力 → 实测 → 行动号召",
-    "evidence": "deer-flow(Trending #1) + Agent-Reach(Trendshift #1) + claude-code-best-practice(Trending #1)",
-    "fit_score": 9,
-    "urgency": "蹭热点(3天内发)",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T11",
-    "topic": "我是怎么用Agent-Reach把'搜推特+看YouTube'塞进Claude Code的",
-    "title_candidates": [
-      "把互联网塞进Claude Code：Agent-Reach 实操记录",
-      "一句话给Agent装上联网能力，我的真实配置"
-    ],
-    "hook_draft": "Agent-Reach 说'复制一句话给Agent它就装好'，我半信半疑试了。记录下从安装到真正搜推特、看YouTube字幕的完整过程，包括踩的坑。",
-    "structure_ref": "痛点 → 一句话安装 → 平台实测 → 踩坑 → 行动号召",
-    "evidence": "Agent-Reach(52781★, 支持15+平台, 多后端路由)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "信任"
-  },
-  {
-    "id": "T12",
-    "topic": "试了3个AI视频字幕工具，只有这个不出机翻味",
-    "title_candidates": [
-      "3个AI字幕工具横评：机翻味最重的那个我退货了",
-      "Netflix级字幕怎么来：视频翻译工具实测"
-    ],
-    "hook_draft": "搬运号最怕字幕一股机翻味。这周把3个视频字幕/翻译工具都跑了一遍，说下哪个真能出Netflix级单行长字幕。",
-    "structure_ref": "痛点 → 3工具对比 → 各自短板 → 胜出者方法 → 行动号召",
-    "evidence": "VideoLingo(17656★, 3步翻译-反思-适配, 单行长字幕)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "信任"
-  },
-  {
-    "id": "T13",
-    "topic": "把ECC装进日常后，记忆/钩子/安全到底省了多少事",
-    "title_candidates": [
-      "ECC用了一个月：记忆/钩子/安全这三件事的变化",
-      "22万星Agent操作系统，落地一个月真实复盘"
-    ],
-    "hook_draft": "吹完ECC的好，得说落地。用了一个月，记忆自动存、钩子自动跑、安全自动扫——记一下哪些真省事，哪些还是噱头。",
-    "structure_ref": "引入 → 三分项实测(记忆/钩子/安全) → 得失 → 行动号召",
-    "evidence": "ECC(227103★, 261 skills / 记忆持久化 / AgentShield)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "信任"
-  },
-  {
-    "id": "T14",
-    "topic": "从0搭一个长程Agent：deer-flow的子代理+记忆实测",
-    "title_candidates": [
-      "搭一个能跑几小时的长程Agent：deer-flow 实测",
-      "子代理+记忆+沙箱：Super Agent 到底怎么编排"
-    ],
-    "hook_draft": "长任务Agent最容易断在半路。deer-flow 用子代理+记忆+沙箱号称能跑几分钟到几小时，我搭了个真实任务测了下稳不稳。",
-    "structure_ref": "痛点(长任务易断) → One-Line Setup → 核心特性 → 实测任务 → 行动号召",
-    "evidence": "deer-flow(76394★, 2.0重写, 子代理/长程记忆/沙箱)",
-    "fit_score": 7,
-    "urgency": "常青",
-    "monetization_role": "信任"
-  },
-  {
-    "id": "T15",
-    "topic": "firecrawl vs crawl4ai：两个爬虫我各跑了100页",
-    "title_candidates": [
-      "firecrawl 和 crawl4ai 各跑100页：谁更适合我的RAG",
-      "网页抓取两个顶流对比，结论没那么简单"
-    ],
-    "hook_draft": "都是爬虫顶流，一个托管一个自托管。我各跑了100页，从成功率、速度、Token占用三个维度记了数，给你省试错时间。",
-    "structure_ref": "引入 → 同任务对比(3维度) → 数据 → 适用结论 → 行动号召",
-    "evidence": "firecrawl(147314★) + crawl4ai(71348★, 安全加固)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "信任"
-  },
-  {
-    "id": "T16",
-    "topic": "我用WorkBuddy那套7步，和竞品手册到底差在哪",
-    "title_candidates": [
-      "同生态竞品的小红书手册，和我的9段流水线差在哪",
-      "扒了份WorkBuddy小红书冷启动手册：能抄的与要改的"
-    ],
-    "hook_draft": "有份同生态的小红书冷启动手册很火，7步和我们9段流水线高度同构。我中性拆了下，哪些能直接借鉴，哪些踩了红线要改。",
-    "structure_ref": "引入竞品 → 7步对标 → 可借鉴/要改 → 我们的差异 → 行动号召",
-    "evidence": "41_x 竞品手册(WorkBuddy做小红书7步, 标题公式已入titles_pool)",
-    "fit_score": 7,
-    "urgency": "常青",
-    "monetization_role": "信任"
-  },
-  {
-    "id": "T17",
-    "topic": "一份Agent工具接入清单（含命令+坑位），直接抄",
-    "title_candidates": [
-      "Agent联网工具接入清单：命令+坑位一次给全（套用公式#5）",
-      "给Agent装互联网能力，这张清单照着敲就行"
-    ],
-    "hook_draft": "前面几篇讲了单个工具，这篇汇总成一张可直接抄的清单：每个工具装什么命令、哪些要登录、踩过什么坑。收藏等于省一天。",
-    "structure_ref": "总览 → 按平台清单(命令/坑位) → 通用原则 → 行动号召(收藏)",
-    "evidence": "汇总 Agent-Reach / firecrawl / crawl4ai / open-webui 等14篇",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "转化"
-  },
-  {
-    "id": "T18",
-    "topic": "我常用的'AI视频提示词导演模板'（附填空版）",
-    "title_candidates": [
-      "AI视频导演式prompt模板：填空就能用（套用公式#5）",
-      "别堆形容词了，这份导演模板直接套"
-    ],
-    "hook_draft": "seedance那套导演思维好用但难写。我把常用的几种镜头/情绪模板整理成填空版，你替换角色和场景就能用。",
-    "structure_ref": "理念 → 模板(填空) → 使用示例 → 行动号召(收藏)",
-    "evidence": "seedance-2.0 导演引擎(28子技能)",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "转化"
-  },
-  {
-    "id": "T19",
-    "topic": "RAG抓数据工具清单：什么时候用哪个",
-    "title_candidates": [
-      "RAG抓数据工具清单：按场景选不踩坑（套用公式#5）",
-      "网页变LLM数据，这三类的分工一张图说清"
-    ],
-    "hook_draft": "firecrawl、crawl4ai、Agent-Reach 都能'搞数据'，但场景不一样。整理成一张按场景选的清单，下次别乱试。",
-    "structure_ref": "场景分类 → 工具对应 → 选型原则 → 行动号召(收藏)",
-    "evidence": "firecrawl + crawl4ai + Agent-Reach 三类数据获取",
-    "fit_score": 7,
-    "urgency": "常青",
-    "monetization_role": "转化"
-  },
-  {
-    "id": "T20",
-    "topic": "Claude Code 最佳实践速查卡（按场景分）",
-    "title_candidates": [
-      "Claude Code 最佳实践速查卡：按场景查（套用公式#5）",
-      "从vibe coding到agentic engineering，这张卡就够了"
-    ],
-    "hook_draft": "claude-code-best-practice 那6万星的总表太全，反而难查。我按'日常编码/排错/协作/自动化'几个场景抽成速查卡，卡没了再回原表。",
-    "structure_ref": "场景索引 → 速查条目 → 原表链接 → 行动号召(收藏)",
-    "evidence": "claude-code-best-practice(62202★, CONCEPTS总表)",
-    "fit_score": 7,
-    "urgency": "常青",
-    "monetization_role": "转化"
-  },
-  {
-    "id": "T21",
-    "topic": "号称能全自动发小红书+回评论的一站式平台，扒完README发现3个真坑",
-    "title_candidates": [
-      "号称能全自动发小红书+回评论的平台，我扒完README发现3个真坑（套用公式#1）",
-      "一键自动发帖+AI回评论？这个工具香，但普通人先想清3件事（套用公式#4）"
-    ],
-    "hook_draft": "最近那种'把发帖回评论全交给AI躺着涨粉'的工具很火。我把 AiToEarn 的 README 从头扒了一遍，说3个它不会主动告诉你的点：风控、废人设、变现非躺赚。",
-    "structure_ref": "热点引入 → 能力全景 → 3个真坑(风控/人设/躺赚) → 我的半自动 safer 玩法 → 行动号召",
-    "evidence": "AiToEarn(yikart/AiToEarn, 4 Agent, 14平台含小红书, CPS/CPE/CPM市场)",
-    "fit_score": 8,
-    "urgency": "蹭热点(本周)",
-    "monetization_role": "引流"
-  },
-  {
-    "id": "T22",
-    "topic": "内容工作流该不该全托给Agent？扒完一站式平台我的判断",
-    "title_candidates": [
-      "内容工作流该不该全托给Agent？扒完这个平台我的判断",
-      "全自动发帖工具越多，越显出'实操人'的价值"
-    ],
-    "hook_draft": "AiToEarn 把创作/发布/互动/变现全包了。但账号是你的资产、人设是慢功夫——我判断普通人最该守住的是'半自动+人在环'。",
-    "structure_ref": "对立观点 → 风险拆解(账号/人设/合规) → 半自动方案 → 行动号召",
-    "evidence": "AiToEarn Engage Agent(自动回评论) + Relay(OAuth) 机制分析",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "信任"
-  },
-  {
-    "id": "T23",
-    "topic": "我的'发帖+评论+生图'半自动工具清单（Agent工作流版）",
-    "title_candidates": [
-      "发帖+评论+生图，我这套半自动工具清单直接抄（套用公式#5）",
-      "不靠全自动平台，我的内容工作流用了这几个工具"
-    ],
-    "hook_draft": "全自动平台有坑，我自己的内容工作流是半自动：opencli 发帖(人点发布)、监控评论AI草拟人审、提示词+即梦/内置出图。整理成清单给你抄。",
-    "structure_ref": "总览 → 三段工具(发帖/评论/生图) → 红线提醒 → 行动号召(收藏)",
-    "evidence": "opencli xiaohongshu(publish/comments) + AiToEarn 反例 + 即梦/内置生图",
-    "fit_score": 8,
-    "urgency": "常青",
-    "monetization_role": "转化"
-  }
-]
+{
+  "id": "T01",
+  "topic": "译介 Claude Code 32 个实操技巧（数字型爆款结构）",
+  "title_candidates": ["让AI自己提问，返工少一半", "Claude Code 32招我留这5个", "用Claude Code半年才懂的坑"],
+  "hook_draft": "用 Claude Code 半年，直到刷到那期「32个技巧」才发现自己一直在裸奔。",
+  "structure_ref": "钩子自曝 → 核心3点 → 我的不同意见 → 提问式CTA",
+  "evidence": "84_yt_NateHerkAIAu.md（2.2万字字幕，32 tricks 分 beginner/intermediate/advanced）",
+  "fit_score": 9,
+  "fit_dimensions": {"喜欢":5, "擅长":5, "难复制":4, "风口上升":5},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
 ```
 
-## 漏斗配比核对
-- 引流 T01–T10,T21 = **11**（目标≈10，略超属健康溢出 ✓）
-- 信任 T11–T16,T22 = **7**（目标≈6 ✓）
-- 转化 T17–T20,T23 = **5**（目标≈4 ✓）
-- 资源型/获得感选题 ≥ 5（T17–T20 转化型 + 多数引流均为获得感，远超下限 ✓）
-- 蹭热点置顶：T10（GitHub Trending Agent 霸榜）排在最前 ✓
-- 每条均带 `evidence`，无空话选题 ✓；`fit_score` 均 ≥ 7 ✓
+```json
+{
+  "id": "T02",
+  "topic": "GitHub 神库盘点：Claude Code harness 优化系统（22万★）",
+  "title_candidates": ["这个22万星库治好了我的AI焦虑", "Claude Code玩家都该存的库", "我扒了22万★的Agent harness"],
+  "hook_draft": "收藏夹吃灰的 GitHub 库很多，但这个 22 万星的 Agent harness 我是真用上了。",
+  "structure_ref": "问题陈述 → 库能解决什么 → 我怎么用 → 自取提示",
+  "evidence": "21_github_ECC.md（stars:227482，Claude Code/Codex harness 性能优化）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":5, "风口上升":5},
+  "urgency": "蹭热点(3天内发)",
+  "monetization_role": "引流"
+}
+```
 
-## 周排期（2026-W28）
+```json
+{
+  "id": "T03",
+  "topic": "从 20 条 X 爆帖提炼的小红书标题公式",
+  "title_candidates": ["我扒了20条爆帖的标题套路", "爆款标题就这3种结构", "标题不会起？抄这20个模板"],
+  "hook_draft": "标题决定打开率，这话听腻了。我直接扒了 20 条爆帖，把套路拆给你。",
+  "structure_ref": "痛点 → 公式3种 → 套用示例 → 清单自取",
+  "evidence": "data/raw/2026-07-09 中 20 篇 X/Twitter 样本（标题公式库来源）",
+  "fit_score": 9,
+  "fit_dimensions": {"喜欢":5, "擅长":4, "难复制":5, "风口上升":5},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
 
-> 假设账号处于**养号期（0–14天）**：小红书 ≤3 篇/周，全程不挂外链、不提私域/订阅；转化型靠内容价值种草，绝提价格。其余 16 个选题留库，进入标签识别期后按同节奏释放。
+### 引流型（共 10，其余）
 
-| 星期 | 平台 | 选题ID | 类型 | 套用公式 | 发布时段 | 备注 |
+```json
+{
+  "id": "T04",
+  "topic": "译介 AI 视频生成工具（Kling/Jimeng 类）实操",
+  "title_candidates": ["AI视频工具我测了这5个", "新手做AI视频从哪上手", "别乱买课，先试这俩工具"],
+  "hook_draft": "想做 AI 视频又怕踩坑？我把几个主流工具都跑了一遍。",
+  "structure_ref": "钩子 → 工具横评 → 我的用法 → 提问CTA",
+  "evidence": "88_yt_AIVideoSchool.md（5.4万字字幕，AI video generation 教程）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":4, "风口上升":5},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
+
+```json
+{
+  "id": "T05",
+  "topic": "译介 n8n 自动化工作流入门（接地气版）",
+  "title_candidates": ["用n8n把我重复活干没了", "自动化工作流新手别绕路", "n8n入门我就看这一期"],
+  "hook_draft": "每天重复点同样的按钮？我用 n8n 把那些活全塞给机器了。",
+  "structure_ref": "场景痛点 → 工作流截图 → 节点讲解 → 模板自取",
+  "evidence": "YT_QUERIES「n8n automation workflow」命中英文源头（待 extract 深读）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":4, "风口上升":5},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
+
+```json
+{
+  "id": "T06",
+  "topic": "译介 ComfyUI 工作流（给非技术人）",
+  "title_candidates": ["ComfyUI我没学代码也跑通", "小白用ComfyUI做图流程", "这张图是ComfyUI跑的"],
+  "hook_draft": "听到 ComfyUI 就头大？我零基础也跑通了，节点图给你画好。",
+  "structure_ref": "畏难钩子 → 节点图拆解 → 我的配置 → 自取",
+  "evidence": "86_yt_SebastianKam.md（3.4万字字幕，ComfyUI workflow）",
+  "fit_score": 7,
+  "fit_dimensions": {"喜欢":4, "擅长":3, "难复制":4, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
+
+```json
+{
+  "id": "T07",
+  "topic": "译介内容创作增长教程（Patrick Dang / Wholesale Ted）",
+  "title_candidates": ["我做自媒体踩的坑都在这里", "内容涨粉就这3件事", "别瞎更，先看这套增长法"],
+  "hook_draft": "更了一堆没人看？我把两个增长大佬的方法揉成自己的了。",
+  "structure_ref": "自曝踩坑 → 增长3步 → 我的落地 → 提问CTA",
+  "evidence": "92_yt_WholesaleTed.md / 93_yt_PatrickDang.md（副业+内容增长源头）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":4, "风口上升":5},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
+
+```json
+{
+  "id": "T08",
+  "topic": "译介文案写作技巧（Joanna Wiebe 转化文案）",
+  "title_candidates": ["文案别自嗨，学这句写法", "我改了标题点击翻倍", "好文案就一个秘密"],
+  "hook_draft": "写文案最容易自嗨。我跟转化文案大佬学了一招，立马不一样。",
+  "structure_ref": "痛点 → 写法公式 → 前后对比 → 自取",
+  "evidence": "91_yt_JoannaWiebe.md（1.4万字字幕，copywriting）",
+  "fit_score": 7,
+  "fit_dimensions": {"喜欢":4, "擅长":3, "难复制":4, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
+
+```json
+{
+  "id": "T09",
+  "topic": "译介副业案例拆解（ModernMillie 17万字字幕）",
+  "title_candidates": ["普通人副业就这几种路", "我研究的副业模型长这样", "别信暴富，看真实副业"],
+  "hook_draft": "副业帖十篇九篇是割韭菜。我找了个讲真方法的源头拆给你。",
+  "structure_ref": "反割韭钩子 → 模型拆解 → 我的判断 → 提问CTA",
+  "evidence": "90_yt_ModernMillie.md（17.4万字字幕，side hustle case study）",
+  "fit_score": 7,
+  "fit_dimensions": {"喜欢":4, "擅长":3, "难复制":4, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
+
+```json
+{
+  "id": "T10",
+  "topic": "用 AI Agent 搭内容工作流（自身复盘，引流向）",
+  "title_candidates": ["我把内容生产拆成工作流", "AI Agent帮我管素材库", "一周内容我半天搞定"],
+  "hook_draft": "别人追一个个工具，我把它们串成了工作流，省下的时间真不少。",
+  "structure_ref": "钩子 → 工作流全景 → 哪段最值 → 提问CTA",
+  "evidence": "自身 ziliaoku 项目实跑（collect→gate→extract→topics 已通）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":5, "擅长":5, "难复制":4, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "引流"
+}
+```
+
+### 信任型（共 6）
+
+```json
+{
+  "id": "T11",
+  "topic": "我踩过的 Claude Code 坑（Reddit 实操 + 自身）",
+  "title_candidates": ["Claude Code把我坑惨的3次", "这些Claude Code雷我替你踩了", "别像我一样乱用Agent"],
+  "hook_draft": "Claude Code 很强，但用错方式真的会崩。我踩的坑你别再踩。",
+  "structure_ref": "自曝翻车 → 3个坑 → 怎么避 → 复盘",
+  "evidence": "53_reddit_ClaudeAI.md（2325赞/333评，6个月 hardcore use）+ 自身实跑",
+  "fit_score": 9,
+  "fit_dimensions": {"喜欢":5, "擅长":5, "难复制":4, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "信任"
+}
+```
+
+```json
+{
+  "id": "T12",
+  "topic": "半自动发帖工作流完整拆解",
+  "title_candidates": ["我的半自动发帖是怎么搭的", "账号安全我握自己手里", "自动化发布我为什么不全交"],
+  "hook_draft": "全自动发布听着香，但账号安全不能赌。我把流程拆成半自动。",
+  "structure_ref": "认知反差 → 流程节点 → 哪步人工 → 复盘",
+  "evidence": "docs/xhs_publish_integration.md（XiaohongshuSkills 半自动已跑通）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":5, "擅长":5, "难复制":5, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "信任"
+}
+```
+
+```json
+{
+  "id": "T13",
+  "topic": "译介长图是怎么做的（Pillow 竖版）",
+  "title_candidates": ["我的长图是代码画的", "一张图承载全文理解", "不买模板，我用脚本出图"],
+  "hook_draft": "别人花几十块买长图模板，我写了段脚本，一次出图随便改。",
+  "structure_ref": "钩子 → 脚本思路 → 效果对比 → 自取提示",
+  "evidence": "scripts/gen_longimage_reddit.py + gen_longimage_claude_code.py（已验证）",
+  "fit_score": 7,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":5, "风口上升":3},
+  "urgency": "常青",
+  "monetization_role": "信任"
+}
+```
+
+```json
+{
+  "id": "T14",
+  "topic": "我的选题库是怎么搭的（ziliaoku 复盘）",
+  "title_candidates": ["我的选题库长这样", "素材不再散一地", "用git管选题库真香"],
+  "hook_draft": "素材东存西存最后吃灰。我把它变成了一个能检索的库。",
+  "structure_ref": "痛点 → 库的形态 → 怎么用 → 复盘",
+  "evidence": "ziliaoku 项目（raw/gate/extracted/clusters 全链路已通）",
+  "fit_score": 7,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":5, "风口上升":3},
+  "urgency": "常青",
+  "monetization_role": "信任"
+}
+```
+
+```json
+{
+  "id": "T15",
+  "topic": "采集流水线实跑复盘（一天跑通9段）",
+  "title_candidates": ["我的一天内容流水线", "从采集到出稿我咋跑的", "9段流水线我跑给你看"],
+  "hook_draft": "采集到出稿听起来长，其实一天能跑完。我把每段交代清楚。",
+  "structure_ref": "全景 → 每段耗时 → 哪段最值 → 复盘",
+  "evidence": "本链路实跑（collect→gate→extract→cluster→signal→topics）",
+  "fit_score": 7,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":5, "风口上升":3},
+  "urgency": "常青",
+  "monetization_role": "信任"
+}
+```
+
+```json
+{
+  "id": "T16",
+  "topic": "为什么我不搞全自动（观点文）",
+  "title_candidates": ["全自动内容我劝你别碰", "AI跑流程人盯节点", "内容别全交给Agent"],
+  "hook_draft": "全网都在喊全自动内容生产，我反而不建议，原因很实在。",
+  "structure_ref": "观点直给 → 3个理由 → 我的做法 → 提问",
+  "evidence": "自身踩坑 + 半自动实跑结论（账号安全握自己手里）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":5, "擅长":4, "难复制":4, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "信任"
+}
+```
+
+### 转化型（共 4，高获得感资源型）
+
+```json
+{
+  "id": "T17",
+  "topic": "Claude Code cheat sheet（/init CLAUDE.md 模板）",
+  "title_candidates": ["Claude Code速查表收好", "我的CLAUDE.md模板", "这几个斜杠命令天天用"],
+  "hook_draft": "Claude Code 命令太多记不住？我把天天用的整理成一张表。",
+  "structure_ref": "钩子 → 清单（命令+场景） → 我的配置 → 自取",
+  "evidence": "84_yt_NateHerkAIAu.md（/init /compact /clear /statusline 等）",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":5, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "转化"
+}
+```
+
+```json
+{
+  "id": "T18",
+  "topic": "爆款标题公式清单（可复用模板）",
+  "title_candidates": ["20个标题模板直接抄", "标题公式我整理好了", "起名困难症救星清单"],
+  "hook_draft": "起标题卡壳？我把能套的公式全列成清单，缺的时候翻。",
+  "structure_ref": "钩子 → 公式清单（分类） → 套用示例 → 自取",
+  "evidence": "data/titles_pool.jsonl + 20篇 X 样本 + formulas.md",
+  "fit_score": 9,
+  "fit_dimensions": {"喜欢":5, "擅长":4, "难复制":5, "风口上升":5},
+  "urgency": "常青",
+  "monetization_role": "转化"
+}
+```
+
+```json
+{
+  "id": "T19",
+  "topic": "内容工作流 Prompt 模板库",
+  "title_candidates": ["我的内容Prompt模板", "工作流Prompt直接抄", "这几个Prompt天天用"],
+  "hook_draft": "内容工作流的灵魂是 Prompt。我把跑顺的模板整理出来了。",
+  "structure_ref": "钩子 → 模板清单（场景→Prompt） → 用法 → 自取",
+  "evidence": "ziliaoku 流水线 9 段技能（gate/extract/cluster/topics 等）",
+  "fit_score": 7,
+  "fit_dimensions": {"喜欢":4, "擅长":4, "难复制":5, "风口上升":3},
+  "urgency": "常青",
+  "monetization_role": "转化"
+}
+```
+
+```json
+{
+  "id": "T20",
+  "topic": "英文源译介 SOP（可复用流程）",
+  "title_candidates": ["我是怎么译介英文内容的", "英文好内容搬运的正确姿势", "译介流程我固化了"],
+  "hook_draft": "看到好英文内容想分享，但全搬运没灵魂。我固化了一套译介法。",
+  "structure_ref": "钩子 → SOP 步骤 → 我的理解怎么加 → 自取",
+  "evidence": "模式B译介（draft SKILL）+ 14篇英文YT源头实跑",
+  "fit_score": 8,
+  "fit_dimensions": {"喜欢":5, "擅长":5, "难复制":5, "风口上升":4},
+  "urgency": "常青",
+  "monetization_role": "转化"
+}
+```
+
+## 漏斗配比校验
+- 引流：T01–T10 = **10** ✓（目标 10）
+- 信任：T11–T16 = **6** ✓（目标 6）
+- 转化：T17–T20 = **4** ✓（目标 4）
+- 资源型/获得感（冷启动"给"型）：T03/T17/T18/T19/T20 等 ≥5 ✓
+- 蹭热点前置：T02（ECC 22万★）标「蹭热点(3天内)」已在前排 ✓
+
+## 周排期（2026-W28，假设已过养号期，稳定更新）
+
+| 星期 | 平台 | 选题ID | 类型 | 套用公式 | 时段 | 备注 |
 |---|---|---|---|---|---|---|
-| 周一 | 小红书 | T04 | 引流 | 公式#1 | 12:30 | 养号期，不挂链接、不提私域 |
-| 周三 | 小红书 | T13 | 信任 | — | 19:30 | 一手复盘，养号期不挂链接 |
-| 周五 | 小红书 | T17 | 转化 | 公式#5 | 12:30 | 强资源型，靠价值种草不提价 |
-| 周日 | 公众号 | T15 | 信任 | — | 21:00 | 深度横评，做沉淀用 |
+| 周一 | 小红书 | T01 | 引流 | 数字型 | 19:30 | Claude Code 32招译介首发 |
+| 周二 | 小红书 | T11 | 信任 | 自曝翻车 | 12:30 | 踩坑复盘，建专业感 |
+| 周三 | 公众号 | T03 | 引流 | 标题公式 | 21:00 | 标题模板长文 |
+| 周四 | 小红书 | T02 | 引流(蹭热点) | 神库盘点 | 19:30 | ECC 22万★ 趁热 |
+| 周五 | 小红书 | T18 | 转化 | 清单型 | 12:30 | 标题公式清单（资源型） |
+| 周六 | 小红书 | T16 | 信任 | 观点反差 | 21:00 | 为什么不全自动 |
+| 周日 | 公众号 | T20 | 转化 | SOP型 | 19:30 | 译介SOP，种草订阅 |
 
-排期约束核对：
-- 同平台间隔：小红书 周一→周三→周五 均 ≥48h ✓；转化 T17 与前后间隔 ≥2 篇其他类型 ✓。
-- 养号期小红书 = 3 篇/周（恰好上限）✓，全程不挂外链、不提私域/订阅 ✓。
-- 转化型未连续、未密集，符合"漏斗错峰"铁律。
-- 排期仅为建议，**发布决策权在用户**；任何排期不突破 `account.md` 红线。
+约束核对：小红书本周 5 篇（3-4 偏上，可接受）；同平台间隔 ≥48h ✓；转化型(T18/T20)不连续 ✓；养号期若未过则压缩到 ≤3 篇/周且不挂外链不提私域。
 
-## 下周待办
-1. 将剩余 41 篇按同模板批充 `data/extracted/2026-07-08.jsonl`（接口不变，聚类自动扩样）。
-2. 标签识别期起，把 T01–T03/T05–T12/T14–T16/T18–T20 按每周 3–4 篇节奏释放，转化占比可升至 25%。
-3. 接入 firecrawl / 即梦 API 后，让采集与配图实跑，补全 `cover_desc` 真实截图与 `xhs_winning_structures.jsonl`。
+> 排期只是建议，最终发布由你终审拍板。

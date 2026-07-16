@@ -81,7 +81,7 @@ for line in sub_lines:
     y = bbox[3] + int(out_h * 0.015)
 
 # Brand at bottom left, small and inside green area
-brand_text = "打工人北北"
+brand_text = "小木"
 font_brand = ImageFont.truetype(font_path, int(out_w * 0.028))
 by = out_h - int(out_h * 0.16)
 bx = x

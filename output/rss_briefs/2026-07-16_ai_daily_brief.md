@@ -1,18 +1,26 @@
 # AI 日报 | 2026-07-16
 
 > 自动抓取 14 个英文信息源，筛选过去 36h 的 AI/工具/工作流相关内容。
+<<<<<<< Updated upstream
 > 生成时间: 2026-07-16 09:21 (北京时间)
+=======
+> 生成时间: 2026-07-16 18:28 (北京时间)
+>>>>>>> Stashed changes
 
 ## 今日概览
 
 | 指标 | 数值 |
 |------|------|
-| 抓取文章 | 131 篇 |
-| 时间窗内 | 118 篇 |
-| 去重后 | 118 篇 |
+| 抓取文章 | 126 篇 |
+| 时间窗内 | 111 篇 |
+| 去重后 | 111 篇 |
 | 信源数 | 14 个 |
 | 成功抓取 | 7 个 |
+<<<<<<< Updated upstream
 | 热门标签 | LLM(61) · 开源(48) · Agent(34) · 工具(29) · 编程(29) · RAG(23) |
+=======
+| 热门标签 | LLM(55) · 开源(43) · Agent(33) · RAG(25) · 工具(25) · 编程(24) |
+>>>>>>> Stashed changes
 
 ## Top 8（按相关度排序）
 
@@ -36,24 +44,24 @@
 - **摘要**: 💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat,...  
 - **标签**: `#LLM` `#Agent` `#开源` `#RAG`
 
-### 5. [mksglu/context-mode](https://github.com/mksglu/context-mode)
+### 5. [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor)
+- **来源**: GitHub Trending (Python)  
+- **摘要**: DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.  
+- **标签**: `#LLM` `#Agent` `#开源` `#RAG`
+
+### 6. [mksglu/context-mode](https://github.com/mksglu/context-mode)
 - **来源**: GitHub Trending (TS)  
 - **摘要**: Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.Context Mode The other half...  
 - **标签**: `#LLM` `#Agent` `#开源` `#RAG`
 
-### 6. [Arindam200/awesome-ai-apps](https://github.com/Arindam200/awesome-ai-apps)
+### 7. [snap-stanford/Biomni](https://github.com/snap-stanford/Biomni)
 - **来源**: GitHub Trending (Python)  
-- **摘要**: A collection of projects showcasing RAG, agents, workflows, and other AI use cases Awesome AI Apps This repository is a comprehensive collection of 80+ practical examples, tutorials, and recipes for...  
+- **摘要**: Biomni: a general-purpose biomedical AI agent Biomni: A General-Purpose Biomedical AI Agent Overview Biomni is a general-purpose biomedical AI agent designed to autonomously execute a wide range of...  
 - **标签**: `#LLM` `#Agent` `#开源` `#RAG`
 
-### 7. [github/spec-kit](https://github.com/github/spec-kit)
+### 8. [github/spec-kit](https://github.com/github/spec-kit)
 - **来源**: GitHub Trending (Python)  
 - **摘要**: 💫 Toolkit to help you get started with Spec-Driven Development 🌱 Spec Kit Build high-quality software faster. An open source toolkit that allows you to focus on product scenarios and predictable...  
-- **标签**: `#LLM` `#Agent` `#开源` `#RAG`
-
-### 8. [Vexa-ai/vexa](https://github.com/Vexa-ai/vexa)
-- **来源**: GitHub Trending (Python)  
-- **摘要**: Open-source meeting transcription API for Google Meet, Microsoft Teams & Zoom. Auto-join bots, real-time WebSocket transcripts, MCP server for AI agents.  
 - **标签**: `#LLM` `#Agent` `#开源` `#RAG`
 
 ## 按来源分组
@@ -61,6 +69,7 @@
 ### Reddit r/LocalLLaMA (24 篇)
 
 - [Bonsai-27B & Ternary-Bonsai-27B - Updates (on PRs)](https://www.reddit.com/r/LocalLLaMA/comments/1ux4wrx/bonsai27b_ternarybonsai27b_updates_on_prs/) `#LLM` `#Agent` `#开源` `#RAG`
+<<<<<<< Updated upstream
 - [Maxing out 64GB of RAM - Qwen3.5 122B A10B at UD-Q2_K_XL w/ MTP fully replaced Qwen3 Next 80B at UD-Q4_K_XL for me](https://www.reddit.com/r/LocalLLaMA/comments/1uxkltr/maxing_out_64gb_of_ram_qwen35_122b_a10b_at_udq2_k/) `#LLM` `#Agent` `#RAG` `#编程`
 - [RL post-training on 14 Macs across 4 countries](https://www.reddit.com/r/LocalLLaMA/comments/1uxb3zn/rl_posttraining_on_14_macs_across_4_countries/) `#LLM` `#Agent` `#开源` `#工具`
 - [ExLlamaV3 v1.0.0 - Major Performance Upgrades](https://www.reddit.com/r/LocalLLaMA/comments/1uwylut/exllamav3_v100_major_performance_upgrades/) `#LLM` `#开源` `#模型`
@@ -84,25 +93,51 @@
 - [Nul Characters in Strings in SQLite](https://sqlite.org/nulinstr.html)
 - [Show HN: One More Letter](https://playonemoreletter.com/)
 - [Duskers, the scary command line game, is getting a sequel](https://elbowgreasegames.substack.com/p/misfits-attic-announces-duskers-20)
+=======
+- [NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B on 2x3090s](https://www.reddit.com/r/LocalLLaMA/comments/1uxuf99/nvidianemotronlabs3puzzle75ba9b_on_2x3090s/) `#LLM` `#RAG` `#工具` `#模型`
+- [RL post-training on 14 Macs across 4 countries](https://www.reddit.com/r/LocalLLaMA/comments/1uxb3zn/rl_posttraining_on_14_macs_across_4_countries/) `#LLM` `#Agent` `#开源` `#工具`
+- [Linus Torvalds tells people to stop attacking others for using AI](https://www.reddit.com/r/LocalLLaMA/comments/1uxbrw4/linus_torvalds_tells_people_to_stop_attacking/) `#LLM` `#开源` `#工具` `#编程`
+- [Is Hugging Face down for anyone else right now?](https://www.reddit.com/r/LocalLLaMA/comments/1uxwspz/is_hugging_face_down_for_anyone_else_right_now/) `#LLM` `#模型`
+- [Qwen3.5 122B-A10B · ROCmFP4 iMatrix](https://www.reddit.com/r/LocalLLaMA/comments/1uxqgke/qwen35_122ba10b_rocmfp4_imatrix/) `#LLM` `#RAG` `#编程`
+- [German AI consortium releases Soofi S, an open 30B model that tops benchmarks in both English and German](https://www.reddit.com/r/LocalLLaMA/comments/1uxao7y/german_ai_consortium_releases_soofi_s_an_open_30b/) `#LLM` `#模型`
+- [Hy3 1Bit 89-93 GB](https://www.reddit.com/r/LocalLLaMA/comments/1uxm2d8/hy3_1bit_8993_gb/) `#LLM` `#模型`
+- [kimi.ai teasing a video with lots of 3's in it](https://www.reddit.com/r/LocalLLaMA/comments/1uxm627/kimiai_teasing_a_video_with_lots_of_3s_in_it/) `#LLM` `#编程`
+- [Qwen 3.6 27B is solid up to 262K context. How high have you guys gone above that using Rope/Yarn scaling?](https://www.reddit.com/r/LocalLLaMA/comments/1uxstxs/qwen_36_27b_is_solid_up_to_262k_context_how_high/) `#LLM` `#工具` `#模型`
+>>>>>>> Stashed changes
 - ...还有 14 篇
+
+### Hacker News (22 篇)
+
+- [Where are YC founders now? OpenAI and Anthropic, mostly](https://joinedanthropic.com)
+- [High-Bandwidth Flash offers efficient storage for model weights](https://spectrum.ieee.org/high-bandwidth-flash) `#RAG` `#模型`
+- [Launch HN: Coasty (YC S26) – An API for computer-use agents](https://coasty.ai/docs) `#Agent` `#API`
+- [Governments, companies, nonprofits should invest in free, open source AI [pdf]](https://www.siegelendowment.org/wp-content/uploads/2026/07/fortune-david-siegel-open-source-ai.pdf) `#开源`
+- [SQLite should have (Rust-style) editions](https://mort.coffee/home/sqlite-editions/)
+- [The Tokio/Rayon Trap and Why Async/Await Fails Concurrency](https://pmbanugo.me/blog/why-async-await-complect-concurrency)
+- [Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers](https://arxiv.org/abs/2607.11859) `#LLM`
+- [Metal-Organic Frameworks, Chemistry's New Miracle Materials (2018)](https://chemistry.berkeley.edu/news/meet-metal-organic-frameworks-chemistry%E2%80%99s-new-miracle-materials) `#API`
+- [The lost joy of music piracy](https://www.pigeonsandplanes.com/read/music-piracy-what-cd-oink-nine-inch-nails-streaming)
+- [Reynard: A real Firefox web browser for iOS 13 or later](https://github.com/minh-ton/reynard-browser)
+- ...还有 12 篇
 
 ### GitHub Trending (TS) (20 篇)
 
 - [moeru-ai/airi](https://github.com/moeru-ai/airi) `#LLM` `#Agent` `#开源` `#RAG`
 - [mksglu/context-mode](https://github.com/mksglu/context-mode) `#LLM` `#Agent` `#开源` `#RAG`
+- [raroque/boop-agent](https://github.com/raroque/boop-agent) `#LLM` `#Agent` `#开源` `#工具`
 - [browseros-ai/BrowserOS](https://github.com/browseros-ai/BrowserOS) `#LLM` `#Agent` `#开源` `#工具`
 - [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) `#LLM` `#Agent` `#开源` `#RAG`
 - [zts212653/clowder-ai](https://github.com/zts212653/clowder-ai) `#LLM` `#Agent` `#开源` `#RAG`
 - [HenryNdubuaku/maths-cs-ai-compendium](https://github.com/HenryNdubuaku/maths-cs-ai-compendium) `#LLM` `#Agent` `#开源` `#RAG`
 - [AIEraDev/Clypra](https://github.com/AIEraDev/Clypra) `#开源` `#RAG` `#工具` `#编程`
-- [ColeMurray/background-agents](https://github.com/ColeMurray/background-agents) `#LLM` `#Agent` `#开源` `#工具`
 - [earendil-works/pi](https://github.com/earendil-works/pi) `#LLM` `#Agent` `#开源` `#工具`
-- [Crosstalk-Solutions/project-nomad](https://github.com/Crosstalk-Solutions/project-nomad) `#LLM` `#开源` `#RAG` `#工具`
+- [mcp-use/mcp-use](https://github.com/mcp-use/mcp-use) `#LLM` `#Agent` `#开源` `#RAG`
 - ...还有 10 篇
 
 ### TechCrunch AI (20 篇)
 
 - [Microsoft is reportedly training salespeople to talk down OpenAI and Anthropic](https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/) `#模型`
+<<<<<<< Updated upstream
 - [Amid hardware legal battle, OpenAI releases a $230 keyboard for Codex](https://techcrunch.com/2026/07/15/amid-hardware-legal-battle-openai-releases-a-230-keyboard-for-codex/) `#Agent` `#编程`
 - [Inside Ode with Anthropic, the startup betting AI services are the future of enterprise](https://techcrunch.com/video/inside-ode-with-anthropic-the-startup-betting-ai-services-are-the-future-of-enterprise/) `#LLM` `#编程`
 - [Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not just models](https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/) `#编程` `#模型`
@@ -112,32 +147,51 @@
 - [Apple opens its new Siri AI to everyone with the iOS 27 public beta](https://techcrunch.com/2026/07/14/apple-opens-its-new-siri-ai-to-everyone-with-the-ios-27-public-beta/)
 - [Thinking Machines amps up its bet against one-size-fits-all AI with its first open model, Inkling](https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/) `#模型`
 - [Hack suggests AI music generator Suno scraped YouTube for training data](https://techcrunch.com/2026/07/15/hack-suggests-ai-music-generator-suno-scraped-youtube-for-training-data/) `#模型`
+=======
+- [Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not just models](https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/) `#编程` `#模型`
+- [Amid hardware legal battle, OpenAI releases a $230 keyboard for Codex](https://techcrunch.com/2026/07/15/amid-hardware-legal-battle-openai-releases-a-230-keyboard-for-codex/) `#Agent` `#编程`
+- [Inside Ode with Anthropic, the startup betting AI services are the future of enterprise](https://techcrunch.com/video/inside-ode-with-anthropic-the-startup-betting-ai-services-are-the-future-of-enterprise/) `#LLM` `#编程`
+- [OpenAI researcher Miles Wang in talks to launch AI drug discovery startup valued at $2B](https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/)
+- [OpenAI’s first hardware device is reportedly a screenless speaker that can move](https://techcrunch.com/2026/07/14/openais-first-hardware-device-is-reportedly-a-screenless-speaker-that-can-move/) `#LLM`
+- [OpenAI’s new flagship model deletes files on its own, people keep warning](https://techcrunch.com/2026/07/14/openais-new-flagship-model-deletes-files-on-its-own-people-keep-warning/) `#LLM` `#模型`
+- [Applied Computing wants to give oil and gas operators an AI model for the entire plant](https://techcrunch.com/2026/07/15/applied-computing-wants-to-give-oil-and-gas-operators-an-ai-model-for-the-entire-plant/) `#模型`
+- [Reelful’s AI turns your camera roll into short-form videos for social media](https://techcrunch.com/2026/07/15/reelfuls-ai-turns-your-camera-roll-into-short-form-videos-for-social-media/) `#工具` `#编程`
+- [Vint Cerf is working on a plan to unleash AI agents on the open internet](https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/) `#Agent` `#编程`
+>>>>>>> Stashed changes
 - ...还有 10 篇
 
-### GitHub Trending (Python) (19 篇)
+### GitHub Trending (Python) (14 篇)
 
 - [HKUDS/Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) `#LLM` `#Agent` `#开源` `#RAG`
 - [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) `#LLM` `#Agent` `#开源` `#RAG`
 - [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) `#LLM` `#Agent` `#开源` `#RAG`
-- [Arindam200/awesome-ai-apps](https://github.com/Arindam200/awesome-ai-apps) `#LLM` `#Agent` `#开源` `#RAG`
+- [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor) `#LLM` `#Agent` `#开源` `#RAG`
+- [snap-stanford/Biomni](https://github.com/snap-stanford/Biomni) `#LLM` `#Agent` `#开源` `#RAG`
 - [github/spec-kit](https://github.com/github/spec-kit) `#LLM` `#Agent` `#开源` `#RAG`
-- [Vexa-ai/vexa](https://github.com/Vexa-ai/vexa) `#LLM` `#Agent` `#开源` `#RAG`
-- [smicallef/spiderfoot](https://github.com/smicallef/spiderfoot) `#开源` `#RAG` `#工具` `#编程`
-- [virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund) `#LLM` `#Agent` `#开源` `#RAG`
-- [microsoft/markitdown](https://github.com/microsoft/markitdown) `#LLM` `#开源` `#工具` `#编程`
-- [PostHog/posthog](https://github.com/PostHog/posthog) `#LLM` `#开源` `#工具` `#编程`
-- ...还有 9 篇
+- [HKUDS/nanobot](https://github.com/HKUDS/nanobot) `#LLM` `#Agent` `#开源` `#工具`
+- [PrimeIntellect-ai/prime-rl](https://github.com/PrimeIntellect-ai/prime-rl) `#LLM` `#Agent` `#开源` `#微调`
+- [vllm-project/vllm](https://github.com/vllm-project/vllm) `#LLM` `#开源` `#RAG` `#微调`
+- [triton-inference-server/server](https://github.com/triton-inference-server/server) `#Agent` `#开源` `#工具` `#编程`
+- ...还有 4 篇
 
 ### The Verge AI (10 篇)
 
 - [SpaceXAI&#8217;s Grok programming tool was uploading its users&#8217; entire codebase to cloud storage](https://www.theverge.com/ai-artificial-intelligence/965600/spacexai-grok-build-repository-upload) `#RAG` `#工具` `#编程`
 - [Suno snatched millions of songs from YouTube, Genius, and Deezer](https://www.theverge.com/ai-artificial-intelligence/966072/suno-ai-music-training-scraping-youtube-hack) `#编程` `#模型` `#API`
 - [OpenAI finally launches hardware… for Codex](https://www.theverge.com/ai-artificial-intelligence/965901/openai-hardware-codex-micro-launch) `#编程`
+<<<<<<< Updated upstream
 - [AI slop movies are the new direct-to-video cash grabs](https://www.theverge.com/entertainment/965616/ash-koosha-odysseus-the-fall-foundtain-zero-tilly-norwood) `#编程`
 - [OpenAI may announce a ChatGPT smart speaker this year](https://www.theverge.com/ai-artificial-intelligence/965670/openai-chatgpt-ai-smart-speaker-hardware-device) `#LLM`
 - [xAI sues a man for using Grok to generate CSAM &#8216;deepfakes&#8217;](https://www.theverge.com/ai-artificial-intelligence/966293/xai-grok-user-lawsuit-csam)
 - [Meta accused of using biased AI targeting for mass layoffs](https://www.theverge.com/tech/965486/meta-lawsuit-former-employees-ai-layoffs) `#工具`
 - [Sam Altman didn’t need another lawsuit](https://www.theverge.com/ai-artificial-intelligence/965294/openai-apple-trade-secrets-lawsuit-sam-altman-ipo)
+=======
+- [OpenAI may announce a ChatGPT smart speaker this year](https://www.theverge.com/ai-artificial-intelligence/965670/openai-chatgpt-ai-smart-speaker-hardware-device) `#LLM`
+- [AI slop movies are the new direct-to-video cash grabs](https://www.theverge.com/entertainment/965616/ash-koosha-odysseus-the-fall-foundtain-zero-tilly-norwood) `#编程`
+- [Meta accused of using biased AI targeting for mass layoffs](https://www.theverge.com/tech/965486/meta-lawsuit-former-employees-ai-layoffs) `#工具`
+- [Sam Altman didn’t need another lawsuit](https://www.theverge.com/ai-artificial-intelligence/965294/openai-apple-trade-secrets-lawsuit-sam-altman-ipo)
+- [xAI sues a man for using Grok to generate CSAM &#8216;deepfakes&#8217;](https://www.theverge.com/ai-artificial-intelligence/966293/xai-grok-user-lawsuit-csam)
+>>>>>>> Stashed changes
 - [Spotify is now an AI chatbot, too](https://www.theverge.com/entertainment/965358/spotify-ai-chatbot-interface-music-audiobooks-podcasts)
 - [The Google Images homepage will recommend photos even before you search](https://www.theverge.com/tech/965138/google-images-homepage-ai-overviews-search-nano-banana)
 

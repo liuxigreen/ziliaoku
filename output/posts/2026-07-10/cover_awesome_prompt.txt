@@ -1,0 +1,32 @@
+# 公众号封面提示词（摸鱼绿模板 G · gzh-cover-prompts）
+# 文章：GitHub 11.7万星 awesome-llm-apps —— 100+ 能直接跑的 AI 应用合集
+# 风格锚点：Apple-inspired premium editorial / flat vector editorial / 博物馆级平面设计
+# 比例：2.35:1（公众号大封面标准，输出 900x383）
+
+## 中文模板（可直接粘公众号后台 AI 配图，但优先用下方英文走 ImageGen）
+设计一张公众号封面首图，2.35:1。
+主视觉：一只极简机械手正托起一叠悬浮的磨砂玻璃应用窗口卡片，每张卡片边缘有一道极淡的绿色电路光，象征「100+ 能直接跑的 AI 应用模板」词典。
+光照：minimal studio lighting，右上柔光，柔和真实阴影。
+材质：磨砂玻璃面板、丝网印颗粒、纸纤维，锐利轮廓。
+布局：纯白背景带极淡绿色光晕，聪明留白（>70%），主体居中偏下。
+色彩：受限色板——翡翠绿 #10B981 + 薄荷绿 + 纯白。
+风格：flat vector editorial、博物馆级平面设计、强层级、少元素。
+约束：无文字、无数字、无乱码、无装饰图标；避免卡通感、塑料感、3D 光泽、杂乱拼贴。
+输出：2.35:1 高分辨率封面。
+
+## 英文（实际用于 ImageGen，已验证）
+Apple-inspired premium editorial cover image. Main visual: a minimalist matte-metal robotic hand
+presenting a neat stack of floating frosted-glass app-window cards, each card edged with a tiny
+glowing green circuit line, suggesting a library of ready-to-run AI app templates. Lighting: minimal
+studio lighting, soft light from top-right, soft realistic shadow. Material: frosted glass panels,
+screen-print grain, paper fiber, sharp silhouette. Layout: pure white background with very faint
+emerald green glow, smart negative space over 70 percent, subject centered lower. Palette: limited —
+emerald #10B981 + mint green + pure white. Style: flat vector editorial, museum-grade graphic design,
+strong hierarchy, few elements, bold flat color regions. Constraints: no text, no numbers, no
+gibberish, no decoration icons; avoid cartoonish, plastic, 3D glossy, cluttered collage. Output:
+high-resolution wide WeChat cover.
+
+## 工作流（gzh-cover-prompts 推荐）
+1. ImageGen 出图（size 1536x1024, quality high）→ 裁成 2.35:1（见 make_cover.py）。
+2. 上传公众号后台「封面图」字段（后台可能自带 AI 水印，正常）。
+3. 正文粘贴 gzh_ecc 生成的 _预览.html 内容（自带文字封面卡，与图互补）。

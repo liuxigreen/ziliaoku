@@ -7,7 +7,10 @@ import os, sys, subprocess, pathlib
 
 OPENCLI_JS = "C:/Program Files/nodejs/node_global/node_modules/@jackwener/opencli/dist/src/main.js"
 NODE = "C:/Users/liuxi/.workbuddy/binaries/node/versions/22.22.2/node.exe"
-PROFILE = "kzbaq3xs"
+# 默认走 4tvh3uwd（用户自己的常开 Chrome，已装 Browser Bridge 扩展并设为默认）。
+# 过渡期曾用 kzbaq3xs（opencli 托管的 xhs_profile Chrome，非持久、会重开窗口），已弃用。
+# 如需临时切回可用环境变量：XHS_PROFILE=<contextId> python publish_xhs_draft.py ...
+PROFILE = os.environ.get("XHS_PROFILE", "4tvh3uwd")
 
 
 def parse_md(md_path):

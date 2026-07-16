@@ -102,10 +102,11 @@ gb3 = draw_shadow_text(gzh_draw, gx, gb2[3] + int(out_h * 0.04), g_sub, g_font_s
 
 # brand bottom right
 brand_font_gzh = ImageFont.truetype(font_path, int(out_w * 0.028))
-bw_g = gzh_draw.textlength(brand, font=brand_font_gzh)
+gzh_brand = "小木"
+bw_g = gzh_draw.textlength(gzh_brand, font=brand_font_gzh)
 bx_g = out_w - int(out_w * 0.035) - bw_g
 by_g = out_h - int(out_h * 0.14)
-draw_shadow_text(gzh_draw, bx_g, by_g, brand, brand_font_gzh, "#FFFFFF", "#00000055")
+draw_shadow_text(gzh_draw, bx_g, by_g, gzh_brand, brand_font_gzh, "#FFFFFF", "#00000055")
 
 gzh_out = os.path.join(gzh_assets, "gzh_header_roadmap.png")
 cropped.save(gzh_out)

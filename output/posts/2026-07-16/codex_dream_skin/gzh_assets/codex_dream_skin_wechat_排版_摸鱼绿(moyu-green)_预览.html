@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>codex_dream_skin_wechat · 摸鱼绿(moyu-green) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 封面 -->
+  <section style="margin:0 0 32px;background:#fff;border:1.5px solid rgba(5,150,105,0.15);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);width:100%;">
+    <section style="padding:32px 28px 28px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <span style="width:6px;height:6px;background:#059669;border-radius:50%;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:#059669;"><span leaf="">AI 工具 · 译介实测</span></span>
+        <section style="flex:1;height:1px;overflow:hidden;background:linear-gradient(to right,rgba(5,150,105,0.12),transparent);"><span leaf=""><br></span></section>
+        <span style="font-size:10px;color:#D1D5DB;font-weight:600;"><span leaf="">2026.07</span></span>
+      </section>
+      <section>
+        <p style="font-size:15px;color:#D1D5DB;margin:0 0 6px;text-decoration:line-through;letter-spacing:0.5px;"><span leaf="">从零造轮子？</span></p>
+        <p style="font-size:24px;font-weight:900;color:#111827;margin:0;line-height:1.05;letter-spacing:-2px;"><span leaf="">Codex 也能换皮肤</span></p>
+        <p style="font-size:24px;font-weight:900;color:#059669;margin:0 0 16px;line-height:1.05;letter-spacing:-2px;"><span leaf="">养宠物？</span></p>
+        <section style="width:48px;height:3px;background:linear-gradient(to right,#059669,#34D399);border-radius:2px;margin-bottom:12px;"><span leaf=""><br></span></section>
+        <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">免费开源方案，20 分钟让 Codex 穿上新皮肤</span></p>
+      </section>
+    </section>
+    <section style="background:linear-gradient(135deg,#059669,#10B981);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.9);margin:0;font-weight:600;letter-spacing:0.5px;"><span leaf="">个人创作者可复制</span></p>
+      <section style="display:flex;gap:4px;">
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">Codex</span></span>
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">换肤</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 2. 目录 -->
+  <section style="margin:0 20px 32px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <p style="font-size:10px;color:#9CA3AF;margin:0;text-transform:uppercase;letter-spacing:2px;font-weight:600;"><span leaf="">📑 3 Parts</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">👉 滑动</span></p>
+    </section>
+    <section style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:8px;">
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 01</span></p>
+        <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;"><span leaf="">01 Codex 换肤，到底在换什么</span></p>
+        <p style="font-size:10px;color:rgba(255,255,255,0.7);margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 02</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">02 为什么有人能拿这个卖课</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 03</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">03 两个方案，覆盖两种需求</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 04</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">04 我的安装复现过程</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 05</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">05 安全边界：能碰和不能碰的</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 06</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">06 我的选型建议</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 07</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">07 写在最后</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 3. 开篇引言 -->
+  <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 6px;line-height:1.5;"><span leaf="">开篇一句话</span></p>
+    <p style="margin:0;line-height:1.6;"><span leaf="">工具本身免费，课程就不应该成为入门门槛。</span></p>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">最近在 AI 编程圈子里，我看到一个挺有意思的现象：有人在卖「Codex 皮肤/宠物」课程，价格从几十到几百不等。我点开看了下课程内容，核心其实就是两个开源仓库的安装和使用。换句话说，你愿意自己动手，这笔钱完全可以省下来。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这篇文章我就把这个免费路径完整复现一遍。你照着做，20 分钟内就能让 Codex 穿上新皮肤。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">01 Codex 换肤，到底在换什么</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P01</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">Codex 是 OpenAI 推出的 AI 编程客户端，默认界面是一套干净但有点无聊的浅色风格。所谓「换肤」，不是修改它的模型能力，而是给这个客户端的界面换上自定义的视觉主题：背景图、配色方案、侧边栏样式、输入框装饰，有些主题还会加入可爱的动物或动漫形象，被大家戏称为「宠物」。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">它解决的不是生产力问题，是「每天盯着同一个窗口几小时，越看越累」的问题。对长期坐在电脑前的人来说，界面顺眼一点，心情真的会好一点。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">02 为什么有人能拿这个卖课</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P02</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这件事能卖课，主要是因为信息差。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">Codex 本身没有官方皮肤市场，换肤需要借助外部工具。普通用户第一次听到「CDP 注入」「运行 PowerShell 脚本」这些词会本能觉得复杂，而卖课的人只是把 GitHub 仓库的 README 翻译了一遍、录了个安装视频，然后打包出售。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">但真正动手之后你会发现，整个过程就是下载、运行脚本、点切换。不需要写代码，也不需要懂前端。两个开源项目都把难度降到了最低。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">03 两个方案，覆盖两种需求</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P03</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我找到的两个项目定位不同，但都是免费开源。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>Fei-Away/Codex-Dream-Skin：开箱即用的主题包</strong></span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这个仓库更像一个「皮肤商店」的开源替代品。它内置了十几个主题，包括：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">月薪喵：一只趴在电脑前打工的猫，适合自嘲打工人</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">中国水墨：山水、宣纸、毛笔质感</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">财神打工版：过年氛围拉满</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">初音未来、海贼王、红白科幻、舞台黑金等 IP/风格主题</span></p></section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">Mac 和 Windows 都有对应脚本，下载后按平台运行即可。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>CodeDrobe/skills：更系统的换肤框架</strong></span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这个项目走得更远。它提供了一套完整的 Codex 主题 Skill，包含：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">跨平台的 `@codedrobe/core` 运行时</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">可安装的 `codedrobe-theme` Skill</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">AI 辅助生成主题的工作流</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">支持 Codex 和 Tencent WorkBuddy 两个应用</span></p></section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">如果你只是换个皮肤，Dream Skin 更轻量；如果你想自己设计主题、甚至批量生成不同风格，CodeDrobe 更适合。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">04 我的安装复现过程</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P04</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我先用 Windows 把 Dream Skin 跑了一遍，全程不到 10 分钟。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第一步，下载仓库。</strong> 可以直接 `git clone`，也可以下载 zip 解压。仓库按平台分了 `macos/` 和 `windows/` 两个目录。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第二步，运行安装脚本。</strong> Windows 下以管理员身份打开 PowerShell，进 `windows/` 目录，先执行 `scripts/install-dream-skin.ps1`，再执行 `start-dream-skin.ps1`。Mac 更简单，双击 `Install Codex Dream Skin.command` 就行。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第三步，打开 Codex 切换主题。</strong> 脚本会启动一个皮肤管理器界面，左侧是皮肤库，中间显示已安装的皮肤。挑一个主题点「一键切换」，界面立刻生效。点「恢复原厂」就能回到默认外观。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">如果想换另一个主题，不用重新安装，直接再点「一键切换」即可。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">CodeDrobe 的路线稍微不同：先全局安装核心运行时 `npm install --global @codedrobe/core`，然后用 `npx skills add CodeDrobe/skills --skill codedrobe-theme --global --agent codex` 安装主题 Skill，最后用 `codedrobe apply --app codex --theme /path/to/theme.codedrobe-theme` 应用主题。它还多了一个 `codedrobe verify` 命令，可以截图验证主题有没有正确应用。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">05</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">05 安全边界：能碰和不能碰的</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P05</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">虽然这两个项目都不改官方安装包，但还是要把安全边界说清楚：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>只拉可信仓库。</strong> 主题会注入到客户端界面里，来路不明的主题包可能夹带恶意代码。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>只在本地跑。</strong> CDP 只绑定 127.0.0.1，主题运行期间不要同时运行来路不明的本机程序。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>不要把换肤当成性能优化。</strong> 它只是外观美化，不会让 Codex 写代码更快。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>商用再分发需谨慎。</strong> 仓库效果图里的动漫、IP 形象只是主题示意，公开商用或二次分发要自行确认肖像权和商标授权。</span></p></section>
+  </section>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">06</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">06 我的选型建议</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P06</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">如果你只是想让自己每天用的 Codex 好看一点，选 <strong>Dream Skin</strong>。它主题多、安装简单、一键切换，10 分钟搞定。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">如果你想深入玩主题、甚至自己做一套主题卖或分享，选 <strong>CodeDrobe</strong>。它的生态更完整，有 AI 生成主题的能力，未来可能会形成一个真正的主题市场。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">对我来说，目前 Dream Skin 已经够用。我换了一个「月薪喵」主题，看着屏幕上那只同样在电脑前打工的猫，写代码的心情莫名好了点。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">07</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">07 写在最后</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P07</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">回到开头那个卖课的现象。我的态度一直很简单：工具本身免费，课程就不应该成为入门门槛。尤其是这种「跟着 README 做一遍就会」的东西，与其花钱看别人演示，不如自己花 20 分钟动手。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">Codex 换肤这件事，免费开源方案已经做得很好。你完全可以自己试试，然后再决定要不要深入。</span></p>
+
+  <section style="margin:24px 20px 8px;padding:16px 18px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;"><p style="margin:0 0 10px;font-size:13px;font-weight:800;color:#059669;letter-spacing:0.5px;"><span leaf="">想复现？给 AI 的极简指令</span></p></section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">用两个开源仓库免费给 Codex 换肤/宠物主题，无需付费课程：
+· 方案 A（开箱即用）：clone Fei-Away/Codex-Dream-Skin → 按平台跑 install/start 脚本 → 在 Codex 皮肤管理器里切换/恢复主题
+· 方案 B（进阶/AI 生成主题）：全局安装 @codedrobe/core → 用 npx skills 装 CodeDrobe/skills 的 codedrobe-theme → 用 codedrobe apply 应用 .codedrobe-theme 文件，可用 codedrobe verify 验证
+· 安全：本机 CDP 注入，不改官方包与签名；只拉可信仓库、不碰来路不明主题包</span></p>
+
+  <!-- 签名 -->
+  <section style="margin:40px 20px 8px;padding:20px 0 0;border-top:1px solid #E5E7EB;">
+    <p style="margin:0 0 6px;font-size:14px;font-weight:800;color:#111827;"><span leaf="">我是 小木</span></p>
+    <p style="margin:0;font-size:13px;color:#9CA3AF;line-height:1.7;"><span leaf="">用 AI 把内容工作流跑起来。译介英文一手好文，讲人话的落地理解，不画饼。</span></p>
+  </section>
+</section>
+
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

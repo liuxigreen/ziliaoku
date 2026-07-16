@@ -1,16 +1,173 @@
 {
   "week": "2026-W28",
-  "summary": "本周 gate 共 55 篇 verdict=collect + 1 篇追加 verdict=signal（AiToEarn，用户指定接入）。常驻风向由 github_curated / github_starred watchlist 作为持续趋势观测源；signal 通道承接 gate=signal 的 GitHub/工具类条目（现 1 条：AiToEarn，验证'发帖+评论自动化'已成红海卖点）。",
   "signals": [
     {
-      "id": "S-AiToEarn",
-      "source_file": "data/raw/2026-07-08/56_github_AiToEarn.md",
-      "type": "tool_launch",
-      "title": "AiToEarn：一站式 AI 内容营销智能体（含小红书自动发帖 + AI 回评论）",
-      "signal": "内容工作流自动化从'单点工具'走向'全链路平台'；自动发帖 + AI 回评论成为标配卖点",
-      "evidence": "GitHub yikart/AiToEarn, MIT, 14 平台, 4 Agent(Create/Publish/Engage/Monetize), 自带 CPS/CPE/CPM 内容交易市场",
-      "relevance": "高——直接对标账号定位'AI内容工作流博主'，且验证'发帖+评论自动化'已成红海卖点；账号差异化应落在 human-in-loop / 账号安全",
-      "watch_action": "观察其 OpenClaw/MCP 生态采纳度与更新频率；作为'全自动 vs 实操'对立面选题源"
+      "source": "github",
+      "item": "affaan-m/ECC",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "227482★ | The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development f"
+    },
+    {
+      "source": "github",
+      "item": "affaan-m/ECC",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "227480★ | The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development f"
+    },
+    {
+      "source": "github",
+      "item": "NousResearch/hermes-agent",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "211693★ | The agent that grows with you"
+    },
+    {
+      "source": "github",
+      "item": "firecrawl/firecrawl",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "147933★ | The API to search, scrape, and interact with the web at scale. 🔥"
+    },
+    {
+      "source": "github",
+      "item": "langchain-ai/langchain",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "141340★ | The agent engineering platform."
+    },
+    {
+      "source": "github",
+      "item": "google-gemini/gemini-cli",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "105850★ | An open-source AI agent that brings the power of Gemini directly into your terminal."
+    },
+    {
+      "source": "github",
+      "item": "browser-use/browser-use",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "103767★ | 🌐 Make websites accessible for AI agents. Automate tasks online with ease."
+    },
+    {
+      "source": "github",
+      "item": "thedotmack/claude-mem",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "86479★ | Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it"
+    },
+    {
+      "source": "github",
+      "item": "langgenius/dify",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "148241★ | Production-ready platform for agentic workflow development."
+    },
+    {
+      "source": "github",
+      "item": "Shubhamsaboo/awesome-llm-apps",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "116891★ | 100+ AI Agent & RAG apps you can actually run — clone, customize, ship."
+    },
+    {
+      "source": "github",
+      "item": "PaddlePaddle/PaddleOCR",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI工具神库推荐/工具盘点」选题",
+      "evidence": "85053★ | Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the ga"
+    },
+    {
+      "source": "github",
+      "item": "Graphify-Labs/graphify",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "80581★ | AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL sch"
+    },
+    {
+      "source": "github",
+      "item": "f/prompts.chat",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "165110★ | f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-hos"
+    },
+    {
+      "source": "github",
+      "item": "DietrichGebert/ponytail",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "78202★ | Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote."
+    },
+    {
+      "source": "github",
+      "item": "dair-ai/Prompt-Engineering-Guide",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "76309★ | 🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents."
+    },
+    {
+      "source": "github",
+      "item": "headroomlabs-ai/headroom",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "57943★ | Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library"
+    },
+    {
+      "source": "github",
+      "item": "asgeirtj/system_prompts_leaks",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "54383★ | Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thi"
+    },
+    {
+      "source": "github",
+      "item": "elder-plinius/CL4R1T4S",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "45068★ | LEAKED SYSTEM PROMPTS FOR CHATGPT, CLAUDE, GEMINI, GROK, PERPLEXITY, CURSOR, LOVABLE, REPLIT, AND MORE! - AI SYSTEMS TRA"
+    },
+    {
+      "source": "github",
+      "item": "ollama/ollama",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI工具神库推荐/工具盘点」选题",
+      "evidence": "175765★ | Get up and running with Kimi-K2.6, GLM-5.1, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models."
+    },
+    {
+      "source": "github",
+      "item": "huggingface/transformers",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI工具神库推荐/工具盘点」选题",
+      "evidence": "162398★ | 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and "
+    },
+    {
+      "source": "github",
+      "item": "ruvnet/ruflo",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "63612★ | 🌊 The leading agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build con"
+    },
+    {
+      "source": "github",
+      "item": "Mintplex-Labs/anything-llm",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "62950★ | Stop renting your intelligence. Own it with AnythingLLM. Everything you need for a powerful local-first agent experience"
+    },
+    {
+      "source": "github",
+      "item": "shanraisshan/claude-code-best-practice",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "62301★ | from vibe coding to agentic engineering - practice makes claude perfect"
+    },
+    {
+      "source": "github",
+      "item": "FlowiseAI/Flowise",
+      "why_signal": "README 无 how-to 内容，降级风向标",
+      "action_hint": "可做「AI Agent神库推荐/工具盘点」选题",
+      "evidence": "54450★ | Build AI Agents, Visually"
     }
   ]
 }

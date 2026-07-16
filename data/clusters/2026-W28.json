@@ -1,27 +1,171 @@
 {
   "week": "2026-W28",
   "industry_clusters": [
-    {"industry": "AI编程", "count": 4, "top_title_types": ["数字型", "资源型"], "top_emotions": ["获得感"], "common_topics": ["Agent harness/操作系统", "终端AI Agent", "Claude Code最佳实践", "Super Agent长程任务"]},
-    {"industry": "AI视频", "count": 4, "top_title_types": ["资源型", "痛点型", "数字型"], "top_emotions": ["获得感"], "common_topics": ["AI视频导演式prompt", "二创自动切片", "主题→短视频一键生成", "Netflix级字幕翻译配音"]},
-    {"industry": "AI工具", "count": 4, "top_title_types": ["数字型", "痛点型"], "top_emotions": ["获得感"], "common_topics": ["网页抓取变LLM数据", "私有自托管AI界面", "Agent联网能力层", "LLM友好爬虫"]},
-    {"industry": "AI图像", "count": 1, "top_title_types": ["资源型"], "top_emotions": ["获得感"], "common_topics": ["单图零训练保身份生成"], "_weak_signal": true},
-    {"industry": "自媒体运营", "count": 1, "top_title_types": ["资源型"], "top_emotions": ["共鸣", "获得感"], "common_topics": ["WorkBuddy做小红书冷启动7步"], "_weak_signal": true}
+    {
+      "industry": "X/Twitter",
+      "count": 20,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "AI工具",
+      "count": 12,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "AI创作",
+      "count": 8,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "AI视频",
+      "count": 6,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "信号源-副业标题公式",
+      "count": 6,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "自媒体",
+      "count": 6,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "AI Agent",
+      "count": 4,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "AI工具/自动化",
+      "count": 4,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    },
+    {
+      "industry": "Claude Code 教程源头（英语原创）",
+      "count": 3,
+      "top_title_types": [
+        "数字型",
+        "共鸣型"
+      ],
+      "top_emotions": [
+        "获得感",
+        "共鸣"
+      ],
+      "common_topics": []
+    }
   ],
-  "structure_clusters": [
-    {"template": "痛点场景 → 能力/特性展示 → 用法/代码/命令 → 效果证明(star数/案例/对比图) → 行动号召(star/clone/装)", "count": 13, "cross_industry": 4, "universal": true},
-    {"template": "变现倒推 → 拆爆款 → 建账号档案 → 建选题库 → 生成内容 → 去AI味+合规 → 排期复盘(7步手册)", "count": 1, "cross_industry": 1, "universal": false, "_weak_signal": true}
-  ],
+  "structure_clusters": [],
   "title_formulas": [
-    {"formula": "{工具名}：{数字/免费/离线/零Key}，{人群}{具体收益}", "applicable_industries": ["AI编程", "AI工具"], "emotion": "获得感", "instances": 5},
-    {"formula": "给我{极低门槛输入}，{工具名}一键产出{高质量结果}", "applicable_industries": ["AI视频", "AI图像", "AI工具"], "emotion": "获得感", "instances": 5},
-    {"formula": "还在{痛点动作}？{工具名}一句/一行{方案}", "applicable_industries": ["AI工具"], "emotion": "获得感", "instances": 2, "_weak_signal": true},
-    {"formula": "从{现状}到{目标}：{工具名}用{核心能力}搞定{耗时任务}", "applicable_industries": ["AI编程"], "emotion": "获得感", "instances": 1, "_weak_signal": true},
-    {"formula": "0基础用{工具}做{平台}：{数字}步完整手册+模板直接抄", "applicable_industries": ["自媒体运营"], "emotion": "共鸣", "instances": 1, "_weak_signal": true}
+    {
+      "formula": "{数字}{对象}{动作/结果}，如「32个技巧让我{结果}」",
+      "applicable_industries": [
+        "AI Agent",
+        "AI创作",
+        "AI工具",
+        "AI工具/自动化",
+        "AI视频",
+        "Claude Code 教程源头（英语原创）",
+        "X/Twitter",
+        "信号源-副业标题公式",
+        "自媒体"
+      ],
+      "emotion": "共鸣",
+      "instances": 66
+    },
+    {
+      "formula": "{场景}时，{共鸣点}，如「用Agent半年才发现的坑」",
+      "applicable_industries": [
+        "AI工具",
+        "X/Twitter"
+      ],
+      "emotion": "共鸣",
+      "instances": 2
+    },
+    {
+      "formula": "你以为{常识}，其实{真相}，如「{反直觉做法}反而{结果}」",
+      "applicable_industries": [
+        "信号源-副业标题公式"
+      ],
+      "emotion": "共鸣",
+      "instances": 1
+    }
   ],
   "cover_patterns": [
-    {"type": "技术主视觉徽章(D)", "text_ratio": "标语占图约30%，徽章行占20%", "color_tendency": "深色调科技感/项目主色"},
-    {"type": "痛点对比卡(E)", "text_ratio": "对比说明占图50%+", "color_tendency": "左灰右亮/高对比"},
-    {"type": "成果演示三联(F)", "text_ratio": "样例占图70%，标题占20%", "color_tendency": "真实截图原色"}
+    {
+      "type": "大字报封面",
+      "text_ratio": "标题占图60%",
+      "color_tendency": "高饱和纯色底"
+    },
+    {
+      "type": "分点清单封面",
+      "text_ratio": "标题+3个要点",
+      "color_tendency": "白底黑字+强调色"
+    }
   ],
   "trend_vs_last_week": {
     "rising_industries": [],
@@ -29,14 +173,10 @@
     "rising_structures": [],
     "cooling_structures": [],
     "rising_emotions": [],
-    "cooling_emotions": [],
-    "_note": "首周运行（2026-W28），data/clusters/ 仅本周文件，无上周基线可对比，趋势留空；下周起可对比升温/退潮。"
+    "cooling_emotions": []
   },
   "weak_signals": [
-    "Agent-Reach式痛点提问标题 弱信号(2篇: firecrawl, Agent-Reach)",
-    "deer-flow式进阶叙事标题 弱信号(1篇)",
-    "41_x式0基础手册标题 弱信号(1篇，且与 titles_pool 资源型同源)",
-    "自媒体运营行业 弱信号(1篇: 41_x 竞品)",
-    "AI图像行业 弱信号(1篇: InstantID)"
+    "公式「{场景}时，{共鸣点}，如「用Agent…」弱信号(2实例)",
+    "公式「你以为{常识}，其实{真相}，如「{反直…」弱信号(1实例)"
   ]
 }
