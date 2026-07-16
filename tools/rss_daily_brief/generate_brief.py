@@ -17,6 +17,7 @@ import re
 import sys
 import time
 import hashlib
+import random
 from datetime import datetime, timedelta, timezone
 from collections import defaultdict
 from urllib.parse import urlparse
@@ -27,7 +28,7 @@ import feedparser
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import (
     FEEDS, SOURCE_WEIGHTS, KEYWORDS,
-    LOOKBACK_HOURS, TOP_N, REQUEST_TIMEOUT, USER_AGENT,
+    LOOKBACK_HOURS, TOP_N, REQUEST_TIMEOUT, USER_AGENT, FETCH_INTERVAL_SEC,
 )
 
 
@@ -134,8 +135,13 @@ def fetch_all_feeds():
         except Exception as e:
             print(f"❌ 网络错误: {e}")
             results.append((name, []))
-        # 礼貌延迟，避免被 ban
-        time.sleep(0.5)
+        # 礼貌延迟：每个信源之间拉开间隔，降低瞬时触发限流的概率。
+        # 间隔 = 配置值 + 随机抖动，节奏更像人类而非脚本连发。
+        # 环境变量 RSS_FETCH_INTERVAL 可覆盖（设 0 则跳过全部延迟，用于本地快速测试）。
+        env_interval = os.environ.get("RSS_FETCH_INTERVAL")
+        interval = float(env_interval) if env_interval is not None else FETCH_INTERVAL_SEC
+        if interval > 0:
+            time.sleep(interval + random.uniform(0, 1.5))
     return results
 
 def filter_and_score(entries, source_name, cutoff_time):

@@ -73,3 +73,9 @@ REQUEST_TIMEOUT = 20
 
 # User-Agent（部分 RSS 拒绝默认 UA）
 USER_AGENT = "Mozilla/5.0 (compatible; RSS-Daily-Brief/1.0; +https://github.com/liuxigreen/ziliaoku)"
+
+# 每个信源之间的礼貌间隔（秒）。
+# 拉大间隔 = 请求节奏更温和，不容易瞬时触发限流（Reddit 等连发子版尤其受益）。
+# 代价是每日总运行时间变长（14 源 × 间隔，GitHub Actions 免费额度完全够）。
+# 本地测试可用环境变量覆盖：RSS_FETCH_INTERVAL=0 跳过全部延迟。
+FETCH_INTERVAL_SEC = 3
