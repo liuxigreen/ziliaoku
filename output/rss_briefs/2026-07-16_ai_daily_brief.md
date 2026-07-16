@@ -1,7 +1,7 @@
 # AI 日报 | 2026-07-16
 
 > 自动抓取 14 个英文信息源，筛选过去 36h 的 AI/工具/工作流相关内容。
-> 生成时间: 2026-07-16 00:30 (北京时间)
+> 生成时间: 2026-07-16 09:21 (北京时间)
 
 ## 今日概览
 
@@ -12,7 +12,7 @@
 | 去重后 | 118 篇 |
 | 信源数 | 14 个 |
 | 成功抓取 | 7 个 |
-| 热门标签 | LLM(57) · 开源(50) · Agent(32) · 编程(29) · 工具(26) · RAG(25) |
+| 热门标签 | LLM(61) · 开源(48) · Agent(34) · 工具(29) · 编程(29) · RAG(23) |
 
 ## Top 8（按相关度排序）
 
@@ -58,32 +58,32 @@
 
 ## 按来源分组
 
-### Hacker News (26 篇)
-
-- [Open-source memory for coding agents, synced over SSH](https://github.com/vshulcz/deja-vu/) `#Agent` `#开源` `#编程`
-- [Show HN: StyleSeed – a design-rules engine so AI agents stop building generic UI](https://github.com/bitjaru/styleseed) `#Agent`
-- [SendLang: A DSL for Email Automation](https://www.sendlang.com) `#工具`
-- [J-space comparisons across open models](https://eliebak.com/viz/jspace-open-v2) `#模型`
-- [Weathergotchi – an open-source climate Tamagotchi](https://github.com/Michael-Manning/E-Paper-Climate-Logger) `#开源`
-- [Jiga (YC W21) is hiring the best people to make manufacturing great again](https://jiga.io/about-us/)
-- [Briar Is in Maintenance Mode](https://briarproject.org/news/2026-maintenance-mode/)
-- [Show HN: 18KB ls alternative in no_std rust and Libc](https://crates.io/crates/fli-tool)
-- [Using Go for Mobile Apps](https://www.davidsobsessions.com/p/one-year-of-gomobile/)
-- [Sleep regularity is a stronger predictor of mortality risk than sleep duration (2023)](https://academic.oup.com/sleep/article/47/1/zsad253/7280269)
-- ...还有 16 篇
-
 ### Reddit r/LocalLLaMA (24 篇)
 
 - [Bonsai-27B & Ternary-Bonsai-27B - Updates (on PRs)](https://www.reddit.com/r/LocalLLaMA/comments/1ux4wrx/bonsai27b_ternarybonsai27b_updates_on_prs/) `#LLM` `#Agent` `#开源` `#RAG`
-- [OvisOCR2 (0.8B): first end-to-end model to top OmniDocBench - I threw 827 real scanned medical docs at it, here's everything I learned](https://www.reddit.com/r/LocalLLaMA/comments/1ux3nps/ovisocr2_08b_first_endtoend_model_to_top/) `#LLM` `#RAG` `#编程` `#模型`
-- [PrismML’s new Ternary Qwen3.6 27B runs near fp16 precision on 10GB of memory!!!](https://www.reddit.com/r/LocalLLaMA/comments/1uwehzt/prismmls_new_ternary_qwen36_27b_runs_near_fp16/) `#LLM` `#Agent` `#开源` `#RAG`
-- [Kimi K3 in the next few hours. Deepseek V4 GA later in the week. New Liquid models. New Mistral models sometime this month. And some rumours suggest GLM 5.5 is coming in August. Openweight AI is eating good.](https://www.reddit.com/r/LocalLLaMA/comments/1uwe542/kimi_k3_in_the_next_few_hours_deepseek_v4_ga/) `#LLM` `#Agent` `#RAG` `#编程`
+- [Maxing out 64GB of RAM - Qwen3.5 122B A10B at UD-Q2_K_XL w/ MTP fully replaced Qwen3 Next 80B at UD-Q4_K_XL for me](https://www.reddit.com/r/LocalLLaMA/comments/1uxkltr/maxing_out_64gb_of_ram_qwen35_122b_a10b_at_udq2_k/) `#LLM` `#Agent` `#RAG` `#编程`
+- [RL post-training on 14 Macs across 4 countries](https://www.reddit.com/r/LocalLLaMA/comments/1uxb3zn/rl_posttraining_on_14_macs_across_4_countries/) `#LLM` `#Agent` `#开源` `#工具`
 - [ExLlamaV3 v1.0.0 - Major Performance Upgrades](https://www.reddit.com/r/LocalLLaMA/comments/1uwylut/exllamav3_v100_major_performance_upgrades/) `#LLM` `#开源` `#模型`
-- [ggml-zendnn : add Q8_0 quantization support by z-sachin · Pull Request #23414 · ggml-org/llama.cpp](https://www.reddit.com/r/LocalLLaMA/comments/1ux4co7/ggmlzendnn_add_q8_0_quantization_support_by/) `#LLM` `#开源` `#编程` `#模型`
 - [Some of y'all wonder why anyone would self host AI. Would you accept the opinion of the CEO of Microsoft?](https://www.reddit.com/r/LocalLLaMA/comments/1uwqgqs/some_of_yall_wonder_why_anyone_would_self_host_ai/) `#LLM` `#编程` `#模型` `#API`
-- [[audio.cpp] 10 hours of audio generated in 3 minutes on RTX 5090 (demo included)! C++/GGML based Supertonic 3, MOSS-TTS, IndexTTS2, and Irodori-TTS released](https://www.reddit.com/r/LocalLLaMA/comments/1uwpvt9/audiocpp_10_hours_of_audio_generated_in_3_minutes/) `#LLM` `#开源` `#RAG` `#模型`
+- [Linus Torvalds tells people to stop attacking others for using AI](https://www.reddit.com/r/LocalLLaMA/comments/1uxbrw4/linus_torvalds_tells_people_to_stop_attacking/) `#LLM` `#开源` `#工具` `#编程`
+- [Agents-A1-4B (Qwen3.7-4B ???) : Scaling the Horizon, Not the Parameters](https://www.reddit.com/r/LocalLLaMA/comments/1uxb9zv/agentsa14b_qwen374b_scaling_the_horizon_not_the/) `#LLM` `#Agent` `#工具` `#模型`
 - [tencent/Hy-Embodied-RxBrain-1.0 · Hugging Face](https://www.reddit.com/r/LocalLLaMA/comments/1ux0x0v/tencenthyembodiedrxbrain10_hugging_face/) `#LLM` `#编程` `#模型`
 - [German AI consortium releases Soofi S, an open 30B model that tops benchmarks in both English and German](https://www.reddit.com/r/LocalLLaMA/comments/1uxao7y/german_ai_consortium_releases_soofi_s_an_open_30b/) `#LLM` `#模型`
+- [Hy3 1Bit 89-93 GB](https://www.reddit.com/r/LocalLLaMA/comments/1uxm2d8/hy3_1bit_8993_gb/) `#LLM` `#模型`
+- ...还有 14 篇
+
+### Hacker News (24 篇)
+
+- [Governments, companies, nonprofits should invest in free, open source AI [pdf]](https://www.siegelendowment.org/wp-content/uploads/2026/07/fortune-david-siegel-open-source-ai.pdf) `#开源`
+- [Brainless: Shadcn components that look like Claude Code, Codex and Grok](https://brainless.swerdlow.dev) `#LLM`
+- [SQLite should have (Rust-style) editions](https://mort.coffee/home/sqlite-editions/)
+- [Grok Build is open source](https://github.com/xai-org/grok-build) `#开源`
+- [Metal-Organic Frameworks, Chemistry's New Miracle Materials](https://chemistry.berkeley.edu/news/meet-metal-organic-frameworks-chemistry%E2%80%99s-new-miracle-materials) `#API`
+- [LLM Networking with MikroTik](https://blog.greg.technology/2026/07/14/llm-networking-with-mikrotik.html) `#LLM`
+- [Inkling: Our Open-Weights Model](https://thinkingmachines.ai/news/introducing-inkling/) `#模型`
+- [Nul Characters in Strings in SQLite](https://sqlite.org/nulinstr.html)
+- [Show HN: One More Letter](https://playonemoreletter.com/)
+- [Duskers, the scary command line game, is getting a sequel](https://elbowgreasegames.substack.com/p/misfits-attic-announces-duskers-20)
 - ...还有 14 篇
 
 ### GitHub Trending (TS) (20 篇)
@@ -102,16 +102,16 @@
 
 ### TechCrunch AI (20 篇)
 
+- [Microsoft is reportedly training salespeople to talk down OpenAI and Anthropic](https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/) `#模型`
+- [Amid hardware legal battle, OpenAI releases a $230 keyboard for Codex](https://techcrunch.com/2026/07/15/amid-hardware-legal-battle-openai-releases-a-230-keyboard-for-codex/) `#Agent` `#编程`
+- [Inside Ode with Anthropic, the startup betting AI services are the future of enterprise](https://techcrunch.com/video/inside-ode-with-anthropic-the-startup-betting-ai-services-are-the-future-of-enterprise/) `#LLM` `#编程`
 - [Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not just models](https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/) `#编程` `#模型`
-- [Apple Intelligence approved for launch in China with Alibaba’s Qwen AI](https://techcrunch.com/2026/07/15/apple-intelligence-approved-for-launch-in-china-with-alibabas-qwen-ai/) `#模型`
-- [Reelful’s AI turns your camera roll into short-form videos for social media](https://techcrunch.com/2026/07/15/reelfuls-ai-turns-your-camera-roll-into-short-form-videos-for-social-media/) `#工具` `#编程`
-- [Vint Cerf is working on a plan to unleash AI agents on the open internet](https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/) `#Agent` `#编程`
-- [Microsoft patches record number of security vulnerabilities, citing its use of AI](https://techcrunch.com/2026/07/15/microsoft-patches-record-number-of-security-vulnerabilities-citing-its-use-of-ai/)
-- [Indian AI coding startup Emergent becomes a unicorn with $130M Series C](https://techcrunch.com/2026/07/15/indian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch/) `#编程`
 - [OpenAI researcher Miles Wang in talks to launch AI drug discovery startup valued at $2B](https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/)
 - [OpenAI’s first hardware device is reportedly a screenless speaker that can move](https://techcrunch.com/2026/07/14/openais-first-hardware-device-is-reportedly-a-screenless-speaker-that-can-move/) `#LLM`
 - [OpenAI’s new flagship model deletes files on its own, people keep warning](https://techcrunch.com/2026/07/14/openais-new-flagship-model-deletes-files-on-its-own-people-keep-warning/) `#LLM` `#模型`
 - [Apple opens its new Siri AI to everyone with the iOS 27 public beta](https://techcrunch.com/2026/07/14/apple-opens-its-new-siri-ai-to-everyone-with-the-ios-27-public-beta/)
+- [Thinking Machines amps up its bet against one-size-fits-all AI with its first open model, Inkling](https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/) `#模型`
+- [Hack suggests AI music generator Suno scraped YouTube for training data](https://techcrunch.com/2026/07/15/hack-suggests-ai-music-generator-suno-scraped-youtube-for-training-data/) `#模型`
 - ...还有 10 篇
 
 ### GitHub Trending (Python) (19 篇)
@@ -128,17 +128,22 @@
 - [PostHog/posthog](https://github.com/PostHog/posthog) `#LLM` `#开源` `#工具` `#编程`
 - ...还有 9 篇
 
-### The Verge AI (9 篇)
+### The Verge AI (10 篇)
 
-- [OpenAI finally launches hardware… for Codex](https://www.theverge.com/ai-artificial-intelligence/965901/openai-hardware-codex-micro-launch) `#编程`
 - [SpaceXAI&#8217;s Grok programming tool was uploading its users&#8217; entire codebase to cloud storage](https://www.theverge.com/ai-artificial-intelligence/965600/spacexai-grok-build-repository-upload) `#RAG` `#工具` `#编程`
+- [Suno snatched millions of songs from YouTube, Genius, and Deezer](https://www.theverge.com/ai-artificial-intelligence/966072/suno-ai-music-training-scraping-youtube-hack) `#编程` `#模型` `#API`
+- [OpenAI finally launches hardware… for Codex](https://www.theverge.com/ai-artificial-intelligence/965901/openai-hardware-codex-micro-launch) `#编程`
+- [AI slop movies are the new direct-to-video cash grabs](https://www.theverge.com/entertainment/965616/ash-koosha-odysseus-the-fall-foundtain-zero-tilly-norwood) `#编程`
 - [OpenAI may announce a ChatGPT smart speaker this year](https://www.theverge.com/ai-artificial-intelligence/965670/openai-chatgpt-ai-smart-speaker-hardware-device) `#LLM`
-- [Google’s Demis Hassabis says it’s time for a global AI watchdog — led by the US](https://www.theverge.com/tech/965270/google-deepmind-demis-hassabis-global-ai-watchdog) `#模型`
+- [xAI sues a man for using Grok to generate CSAM &#8216;deepfakes&#8217;](https://www.theverge.com/ai-artificial-intelligence/966293/xai-grok-user-lawsuit-csam)
 - [Meta accused of using biased AI targeting for mass layoffs](https://www.theverge.com/tech/965486/meta-lawsuit-former-employees-ai-layoffs) `#工具`
 - [Sam Altman didn’t need another lawsuit](https://www.theverge.com/ai-artificial-intelligence/965294/openai-apple-trade-secrets-lawsuit-sam-altman-ipo)
-- [New York becomes the first state to enact a data center moratorium](https://www.theverge.com/policy/965110/new-york-ai-data-center-moratorium) `#编程`
 - [Spotify is now an AI chatbot, too](https://www.theverge.com/entertainment/965358/spotify-ai-chatbot-interface-music-audiobooks-podcasts)
 - [The Google Images homepage will recommend photos even before you search](https://www.theverge.com/tech/965138/google-images-homepage-ai-overviews-search-nano-banana)
+
+### VentureBeat AI (1 篇)
+
+- [Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem — and most are calling chatbots agents](https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents) `#LLM` `#Agent` `#RAG` `#工具`
 
 ---
 *由 RSS + AI 自动生成 | `tools/rss_daily_brief` | GitHub Actions 每日定时执行*
