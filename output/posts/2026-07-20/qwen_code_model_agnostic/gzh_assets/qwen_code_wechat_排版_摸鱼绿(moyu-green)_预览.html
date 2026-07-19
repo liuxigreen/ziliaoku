@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>qwen_code_wechat · 摸鱼绿(moyu-green) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 封面 -->
+  <section style="margin:0 0 32px;background:#fff;border:1.5px solid rgba(5,150,105,0.15);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);width:100%;">
+    <section style="padding:32px 28px 28px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <span style="width:6px;height:6px;background:#059669;border-radius:50%;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:#059669;"><span leaf="">AI 工具 · 译介实测</span></span>
+        <section style="flex:1;height:1px;overflow:hidden;background:linear-gradient(to right,rgba(5,150,105,0.12),transparent);"><span leaf=""><br></span></section>
+        <span style="font-size:10px;color:#D1D5DB;font-weight:600;"><span leaf="">2026.07</span></span>
+      </section>
+      <section>
+        <p style="font-size:15px;color:#D1D5DB;margin:0 0 6px;text-decoration:line-through;letter-spacing:0.5px;"><span leaf="">从零造轮子？</span></p>
+        <p style="font-size:24px;font-weight:900;color:#111827;margin:0;line-height:1.05;letter-spacing:-2px;"><span leaf="">AI 编程 Agent</span></p>
+        <p style="font-size:24px;font-weight:900;color:#059669;margin:0 0 16px;line-height:1.05;letter-spacing:-2px;"><span leaf="">不再绑定模型</span></p>
+        <section style="width:48px;height:3px;background:linear-gradient(to right,#059669,#34D399);border-radius:2px;margin-bottom:12px;"><span leaf=""><br></span></section>
+        <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">开源 qwen-code 一行配置换「大脑」，月费省了</span></p>
+      </section>
+    </section>
+    <section style="background:linear-gradient(135deg,#059669,#10B981);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.9);margin:0;font-weight:600;letter-spacing:0.5px;"><span leaf="">个人创作者可复制</span></p>
+      <section style="display:flex;gap:4px;">
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">qwen-code</span></span>
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">开源免费</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 2. 目录 -->
+  <section style="margin:0 20px 32px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <p style="font-size:10px;color:#9CA3AF;margin:0;text-transform:uppercase;letter-spacing:2px;font-weight:600;"><span leaf="">📑 3 Parts</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">👉 滑动</span></p>
+    </section>
+    <section style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:8px;">
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 01</span></p>
+        <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;"><span leaf="">01 什么是"去模型化"</span></p>
+        <p style="font-size:10px;color:rgba(255,255,255,0.7);margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 02</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">02 qwen-code：开源终端 AI 编程 Agent</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 03</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">03 我的安装实测</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 04</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">04 怎么换模型省钱</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 05</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">05 和 Cursor / Claude Code 的区别</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 06</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">06 几个避坑点</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 07</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">07 写在最后</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 3. 开篇引言 -->
+  <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 6px;line-height:1.5;"><span leaf="">开篇一句话</span></p>
+    <p style="margin:0;line-height:1.6;"><span leaf="">模型正在变成可插拔的配件，月费不再是唯一选项。</span></p>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">做 AI 编程这件事，最让人纠结的从来不是「用什么工具」，而是「用什么模型」。Cursor 深度绑定 GPT，Claude Code 天然绑定 Claude，GitHub Copilot 背靠 Azure OpenAI——你选了一个工具，就等于选了背后那个模型厂商，月费从 $10 到 $200 不等，实质是模型 API 费用加一层封装溢价。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">但 2026 年 7 月，这个局面正在被打破。一批开源 AI 编程 Agent 开始做「去模型化」——模型变成可插拔的配件，你随时能换“大脑”。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">01 什么是"去模型化"</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P01</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">先说清楚这个概念。过去两年，AI 编程工具的商业模式建立在模型锁定上。你选 Cursor，背后就是 GPT；选 Claude Code，背后就是 Claude。想换模型？换工具。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">「去模型化」的意思是：Agent 框架和模型解耦。框架负责任务拆解、上下文管理、工具调用、错误恢复——这些跟用哪个模型无关。模型只是一个可替换的组件，改一行配置就能从 GPT 切到 Qwen，再切到本地部署的小模型，无缝衔接。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">就像手机可以换 SIM 卡一样，你的编程 Agent 可以随时换“大脑”。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这件事在 2024 年看起来只是「为了兼容性」。到了 2026 年 7 月，当国产模型的编程能力全面追平、Token 价格远低于闭源模型时，「多协议」变成了最锋利的商业武器。你不需要换 Agent，只需要在配置里改一行 model 参数。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">02 qwen-code：开源终端 AI 编程 Agent</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P02</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我挑了其中一个最具代表性的来实测：qwen-code。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">它是阿里通义千问团队开源的终端 AI 编程 Agent，25000+ 星标，Apache 2.0 协议，完全免费。最新版本 v0.20.0 在 7 月 19 日发布，迭代非常活跃（7500+ commits）。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">核心能力跟 Claude Code、Gemini CLI 是同一级别：终端原生、Plan 模式、沙箱执行、多会话管理、PR 自动审查。但区别在于——它从架构层面做了多协议抽象层，同时支持 OpenAI、Anthropic、Gemini、Qwen 四种模型协议。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这意味着你可以在一个命令里从 GPT 切到 Qwen，再切到本地 Ollama 部署的小模型，Agent 的行为逻辑不变，只是“大脑”换了。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">03 我的安装实测</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P03</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我在 Windows 上跑了一遍，整个过程不到 5 分钟。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第一步，安装。</strong> 最简单的方式是 npm 全局安装：</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">`npm install -g @qwen-code/qwen-code`</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">需要 Node.js 22 以上。如果你不想装 Node，它还提供了独立安装包，Windows / Mac / Linux 五个平台都有，一键脚本直接跑。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第二步，配 API Key。</strong> 这步是关键。你可以配任何一个模型的 Key——OpenAI 的、Anthropic 的、Google 的、阿里通义的，甚至本地 Ollama 的。哪个便宜配哪个，哪个顺手配哪个。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第三步，终端启动。</strong> 输入 `qwen-code`，它会在你的项目目录里启动一个终端交互界面，跟 Claude Code 的体验几乎一样：你说需求，它拆任务、改代码、跑测试。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">它不止终端。还有桌面应用、Web Shell、VS Code 插件、Zed 编辑器扩展，多端覆盖。如果你习惯了 IDE 里的体验，装 VS Code 插件就行。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">04 怎么换模型省钱</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P04</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这是「去模型化」真正值钱的地方。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">实际使用中，不是所有任务都需要最贵的模型。一个简单的 CRUD 接口、一段格式化脚本、一个配置文件修改——用国产小模型完全够用，而它们的 Token 价格远低于闭源大模型。只有在做复杂架构推理、跨文件重构这种硬核场景时，才需要切到大模型。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">qwen-code 让这件事变得很简单：改一行配置里的 model 参数，就完成切换。你甚至可以配合智能路由（比如 OpenSquilla 的 SquillaRouter），按任务难度自动选模型——简单的用小的，复杂的用大的，综合成本能砍掉一大半。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">对比一下三种路线的成本结构：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>Cursor $20/月</strong>：固定月费，不管你用多用少都这个价。适合重度用户，轻度用户亏。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>Claude Code 按 token</strong>：用多少烧多少。Claude 的 token 价格不低，复杂任务跑一天可能几十刀。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>qwen-code + 国产模型</strong>：0 元框架 + 国产模型 API（Token 价格远低于闭源）。日常用小模型，硬核场景临时切大模型。综合成本最低。</span></p></section>
+  </section>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">05</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">05 和 Cursor / Claude Code 的区别</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P05</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">不是非此即彼，是定位不同：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>Cursor</strong>：IDE 形态，体验打磨最好，适合不想碰终端的人。代价是闭源 + 绑定 GPT + 月费。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>Claude Code</strong>：终端 Agent，体验流畅，Claude 模型编程能力强。代价是闭源 + 绑定 Claude + token 贵。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>qwen-code</strong>：开源终端 Agent，多模型协议，免费。代价是早期版本有 bug、需要自己配 Key、终端形态有学习门槛。</span></p></section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我的建议：如果你是重度专业用户、公司报销，Cursor 或 Claude Code 的体验确实更好。如果你是个人开发者、学生、或者不想被月费绑架，qwen-code 是目前最灵活的选择。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">06</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">06 几个避坑点</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P06</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">开源不等于没有坑。这几条是我踩过或看到的：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>早期版本不稳定。</strong> 7500+ commits 意味着迭代极快，也意味着可能引入新 bug。别拿生产环境直接上，先用个人项目试。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>国产模型不是全面超越。</strong> 编程能力追平了，但在某些复杂场景（超长上下文、罕见语言）仍有差距。该切大模型就切，别为了省钱硬扛。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>API Key 安全。</strong> 别把 Key 硬编码进项目，用环境变量管理。这是所有 AI 编程工具的通用安全底线。</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>终端形态有门槛。</strong> 如果你从来没碰过命令行，qwen-code 的学习曲线会比 Cursor 陡。但它有 VS Code 插件可以过渡。</span></p></section>
+  </section>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">07</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">07 写在最后</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P07</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">回到开头那个问题：AI 编程工具该选哪个？</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我的判断是：2026 年下半年，「绑定模型」正在变成一个过时的商业模式。开源框架把模型变成了可插拔的配件，你可以用最便宜的模型干日常活，需要时再切最强大的。这比任何固定月费都划算。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">qwen-code 不是完美的，但它的方向——让开发者掌控「用什么模型」的选择权——是对的。试一试，至少让你知道：月费不是唯一选项。</span></p>
+
+  <section style="margin:24px 20px 8px;padding:16px 18px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;"><p style="margin:0 0 10px;font-size:13px;font-weight:800;color:#059669;letter-spacing:0.5px;"><span leaf="">想复现？给 AI 的极简指令</span></p></section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">用开源 AI 编程 Agent qwen-code 实现模型自由切换，不再被月费绑定：
+· 安装：npm install -g @qwen-code/qwen-code（需 Node.js ≥ 22），或用官方独立安装包（Win/Mac/Linux 五平台）
+· 配置：设环境变量 API Key（支持 OpenAI / Anthropic / Gemini / Qwen 四协议，任选其一）→ 改 model 参数即可切换“大脑”
+· 省钱策略：日常任务用国产小模型（Token 远低于闭源），复杂场景切大模型；可配智能路由按难度自动选模型
+· 注意：开源 ≠ 无 bug，先个人项目试再上生产；API Key 用环境变量管理勿硬编码</span></p>
+
+  <!-- 签名 -->
+  <section style="margin:40px 20px 8px;padding:20px 0 0;border-top:1px solid #E5E7EB;">
+    <p style="margin:0 0 6px;font-size:14px;font-weight:800;color:#111827;"><span leaf="">我是 小木</span></p>
+    <p style="margin:0;font-size:13px;color:#9CA3AF;line-height:1.7;"><span leaf="">用 AI 把内容工作流跑起来。译介英文一手好文，讲人话的落地理解，不画饼。</span></p>
+  </section>
+</section>
+
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>
