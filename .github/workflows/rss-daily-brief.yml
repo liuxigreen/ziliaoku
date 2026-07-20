@@ -6,6 +6,11 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch: # 支持手动触发
 
+# 防重叠：同一时间只允许一个采集任务跑，避免并发提交互相撞车产生冲突标记
+concurrency:
+  group: rss-daily-brief
+  cancel-in-progress: false
+
 permissions:
   contents: write # 需要写权限来 commit 日报回仓库
 
@@ -36,6 +41,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # 先拉取远端最新，避免本机/其他动作并发 push 时撞车（non-fast-forward / 冲突标记）
+          git pull --rebase origin "${GITHUB_REF_NAME}" || git pull --rebase
           git add output/rss_briefs/
           if git diff --cached --quiet; then
             echo "没有新内容，跳过提交"
