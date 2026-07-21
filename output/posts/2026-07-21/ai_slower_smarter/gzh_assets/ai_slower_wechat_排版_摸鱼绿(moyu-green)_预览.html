@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ai_slower_wechat · 摸鱼绿(moyu-green) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 封面 -->
+  <section style="margin:0 0 32px;background:#fff;border:1.5px solid rgba(5,150,105,0.15);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);width:100%;">
+    <section style="padding:32px 28px 28px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <span style="width:6px;height:6px;background:#059669;border-radius:50%;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:#059669;"><span leaf="">AI 编程 · 认知实测</span></span>
+        <section style="flex:1;height:1px;overflow:hidden;background:linear-gradient(to right,rgba(5,150,105,0.12),transparent);"><span leaf=""><br></span></section>
+        <span style="font-size:10px;color:#D1D5DB;font-weight:600;"><span leaf="">2026.07</span></span>
+      </section>
+      <section>
+        <p style="font-size:15px;color:#D1D5DB;margin:0 0 6px;text-decoration:line-through;letter-spacing:0.5px;"><span leaf="">从零造轮子？</span></p>
+        <p style="font-size:24px;font-weight:900;color:#111827;margin:0;line-height:1.05;letter-spacing:-2px;"><span leaf="">用AI写代码</span></p>
+        <p style="font-size:24px;font-weight:900;color:#059669;margin:0 0 16px;line-height:1.05;letter-spacing:-2px;"><span leaf="">我反而变笨了</span></p>
+        <section style="width:48px;height:3px;background:linear-gradient(to right,#059669,#34D399);border-radius:2px;margin-bottom:12px;"><span leaf=""><br></span></section>
+        <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">3周实测 · 3个把思考抢回来的动作</span></p>
+      </section>
+    </section>
+    <section style="background:linear-gradient(135deg,#059669,#10B981);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.9);margin:0;font-weight:600;letter-spacing:0.5px;"><span leaf="">打工人可复制</span></p>
+      <section style="display:flex;gap:4px;">
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">更快≠更强</span></span>
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">思考别外包</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 2. 目录 -->
+  <section style="margin:0 20px 32px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <p style="font-size:10px;color:#9CA3AF;margin:0;text-transform:uppercase;letter-spacing:2px;font-weight:600;"><span leaf="">📑 3 Parts</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">👉 滑动</span></p>
+    </section>
+    <section style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:8px;">
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 01</span></p>
+        <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;"><span leaf="">01 一个反差：写代码快了，脑子却慢了</span></p>
+        <p style="font-size:10px;color:rgba(255,255,255,0.7);margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 02</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">02 三个"变笨"的具体表现（实测记录）</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 03</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">03 为什么会这样：你把"思考"外包了</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 04</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">04 我做了 3 周自救实验</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 05</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">05 打工人怎么落地：我的 3 条原则</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 06</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">06 写在最后</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 3. 开篇引言 -->
+  <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 6px;line-height:1.5;"><span leaf="">开篇一句话</span></p>
+    <p style="margin:0;line-height:1.6;"><span leaf="">AI 让我产出更快，却没让我更强。这 3 周我刻意把"思考"抢回来，记下了三个真实变化和三个自救动作——AI 是加速器，不是脑子。</span></p>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">做内容的人也写代码——脚本、自动化、抓取小工具，多少都沾点。从去年开始，我把 AI 编程助手当成了标配：丢个需求过去，它出实现；遇到报错，它给修法；连变量名都替我想好了。效率是真高，以前要磨一下午的小工具，现在半小时交差。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">但上个月一次线上排查，给了我当头一棒。一个数据同步脚本偶发报错，我盯着自己（其实是 AI）写的代码看了整整十分钟，硬是没看出问题在哪。最后还是 AI 帮我定位的——可那一刻我冒出的不是庆幸，是后怕：这段代码的逻辑链，我根本没走通。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这半年，“写”被 AI 包了，“想”好像也被它顺手收走了。我决定做个实验：连续 3 周，刻意把“思考”抢回来，记录下到底发生了什么。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">01 一个反差：写代码快了，脑子却慢了</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P01</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">先说结论：AI 确实让我“产出更快”，但没让我“更强”。这两件事被很多人混为一谈。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">产出快，是因为把实现成本压到了极低——你不用再查文档、不用再翻 Stack Overflow、不用再为变量命名纠结。但“强”指的是：你能独立诊断问题、能判断方案好坏、能在没有 AI 时照样把活干完。后者，才是真本事。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">而我发现自己正在失去后者。最明显的信号，就是那次十分钟看不出 bug。代码能跑、功能能交付，但我对它的“理解深度”是空的——像背下了答案，却没理解推导。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">02 三个"变笨"的具体表现（实测记录）</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P02</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这 3 周我特意回看了自己的工作状态，记下了三个真实变化：</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第一，写得快了，debug 却更慢。</strong> 代码不是我一行行推出来的，是 AI 一次性给的。一旦出错，我得先“反编译”它的思路，才能定位问题——等于每次 debug 都要先做阅读理解。以前自己写的代码，断点打在哪、边界在哪，心里门儿清。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第二，基础语法开始忘。</strong> 连个稍复杂的正则、一个 pandas 的 groupby 参数，我都要问 AI。手生得离谱。短期看是省事，长期看是把“肌肉记忆”退化成了“依赖记忆”。哪天断网或公司禁 AI，我连干活都费劲。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>第三，一没 AI 就慌。</strong> 最吓人的是这个。现在打开编辑器，如果补全和助手不在，我会有种被抽了拐杖的虚浮感——不是不会写，是不敢写了。这种“AI 依赖焦虑”，Reddit 的 r/ExperiencedDevs 上早有人聊过，叫“skill atrophy（技能萎缩）”。不是个例。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">03 为什么会这样：你把"思考"外包了</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P03</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">根子不在 AI，在我自己的用法。我把“写代码”当成了“提需求”，把 AI 当成了“执行外包”，却把最值钱的那一步——<strong>判断和需求拆解</strong>——也交了出去。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">举个例：以前我要写个爬虫，得先想清楚“要抓什么、怎么防封、数据存哪”，这些思考逼着我理解业务。现在我说“写个爬虫”，AI 给全套，我复制粘贴跑通就完事。需求是我想的，但<strong>把需求落到实现的推理过程</strong>，我跳过了。跳过的多了，这部分能力就锈住了。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">还有一个隐蔽陷阱：AI 太会“顺着你说”。你方向偏了，它很少硬拦，而是帮你把错的方向走得更顺。没有第二个人 review，你连自己错了都不知道——这比写不出代码更危险。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">04 我做了 3 周自救实验</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P04</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">意识到问题后，我没卸载 AI（那不现实，也没必要），而是改了用法。3 周下来，三个动作亲测有用：</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>动作一：关键模块自己先写一遍，再让 AI 改。</strong> 不再“丢需求等实现”，而是我先出初稿——哪怕丑、哪怕慢。AI 的角色从“代写”变成“审稿人”。所有权拿回来，逻辑链就在我自己脑子里走通了。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>动作二：每天留 30 分钟“零 AI 时间”。</strong> 手写一个小功能，不允许开任何助手。一开始很别扭，像重新学走路；两周后，那种“手感”慢慢回来了，连变量命名都开始有自己的风格。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>动作三：逼 AI 讲“为什么”，不复读答案。</strong> 每次它给方案，我多问一句“为什么这么写、有没有别的选法”。它一旦开始解释权衡，我就被迫跟着推理，而不是机械接收。这一条最能防“顺着你说”的陷阱。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">3 周结束，我的主观感受：写同样的功能，时间比纯 AI 代写多了约 20%，但 debug 时间砍了一半，而且——最重要的是——代码我“敢负责”了。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">05</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">05 打工人怎么落地：我的 3 条原则</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P05</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">不想把 AI 戒了，也不该戒。但得立规矩，把“思考”留住：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>核心逻辑自己写</strong>：涉及业务判断、数据安全、关键算法的部分，先自己推一遍，AI 只做润色和兜底；</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>每天留“零 AI 时间”</strong>：哪怕 20 分钟，手写点东西，手感不能丢，这是你的底线能力；</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf=""><strong>把 AI 当审稿人，不是代笔</strong>：让它给方案，但必须讲清理由，你来做最终判断。</span></p></section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">说白了：AI 是加速器，不是脑子。把“写”外包可以，把“想”外包，迟早把自己架空。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">06</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">06 写在最后</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P06</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">回到开头那次十分钟看不出 bug。现在我回头看那段代码，逻辑清清楚楚——因为我重新走了一遍。AI 没有让我变笨，是我一度把“变强”的机会让了出去。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">工具越聪明，越要守住“自己想”的那口气。不然有一天你会发现：活儿是干完了，但长本事的，是 AI。</span></p>
+
+  <section style="margin:24px 20px 8px;padding:16px 18px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;"><p style="margin:0 0 10px;font-size:13px;font-weight:800;color:#059669;letter-spacing:0.5px;"><span leaf="">想复现？给 AI 的极简指令</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">逻辑：AI 是加速器不是脑子；把"写"可外包，把"想"必须留给自己</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">关键动作：关键模块自己先写初稿再让 AI 改（夺回所有权）· 每天 30 分钟零 AI 时间手写（防手生）· 逼 AI 讲"为什么"而非复读答案（防顺着你说）</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">落地清单：核心逻辑/数据安全/关键算法自己推 → 每天留零 AI 时间 → AI 给方案必须解释理由你做判断</span></p></section>
+
+  <!-- 签名 -->
+  <section style="margin:40px 20px 8px;padding:20px 0 0;border-top:1px solid #E5E7EB;">
+    <p style="margin:0 0 6px;font-size:14px;font-weight:800;color:#111827;"><span leaf="">我是 小木</span></p>
+    <p style="margin:0;font-size:13px;color:#9CA3AF;line-height:1.7;"><span leaf="">用 AI 把内容工作流跑起来。译介一手好工具，讲人话的落地理解，不画饼。</span></p>
+  </section>
+</section>
+
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>
