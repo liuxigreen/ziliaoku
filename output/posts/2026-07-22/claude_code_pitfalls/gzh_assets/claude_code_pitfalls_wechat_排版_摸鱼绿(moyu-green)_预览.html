@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>claude_code_pitfalls_wechat · 摸鱼绿(moyu-green) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 封面 -->
+  <section style="margin:0 0 32px;background:#fff;border:1.5px solid rgba(5,150,105,0.15);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);width:100%;">
+    <section style="padding:32px 28px 28px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <span style="width:6px;height:6px;background:#059669;border-radius:50%;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:#059669;"><span leaf="">AI 编程 · 避坑实测</span></span>
+        <section style="flex:1;height:1px;overflow:hidden;background:linear-gradient(to right,rgba(5,150,105,0.12),transparent);"><span leaf=""><br></span></section>
+        <span style="font-size:10px;color:#D1D5DB;font-weight:600;"><span leaf="">2026.07</span></span>
+      </section>
+      <section>
+        <p style="font-size:15px;color:#D1D5DB;margin:0 0 6px;text-decoration:line-through;letter-spacing:0.5px;"><span leaf="">从零造轮子？</span></p>
+        <p style="font-size:24px;font-weight:900;color:#111827;margin:0;line-height:1.05;letter-spacing:-2px;"><span leaf="">我用Claude Code</span></p>
+        <p style="font-size:24px;font-weight:900;color:#059669;margin:0 0 16px;line-height:1.05;letter-spacing:-2px;"><span leaf="">踩的3个坑</span></p>
+        <section style="width:48px;height:3px;background:linear-gradient(to right,#059669,#34D399);border-radius:2px;margin-bottom:12px;"><span leaf=""><br></span></section>
+        <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">半年 hardcore 实测 · 3次翻车复盘</span></p>
+      </section>
+    </section>
+    <section style="background:linear-gradient(135deg,#059669,#10B981);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.9);margin:0;font-weight:600;letter-spacing:0.5px;"><span leaf="">开发者可复制</span></p>
+      <section style="display:flex;gap:4px;">
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">Agent别甩</span></span>
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">思考别外包</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 2. 目录 -->
+  <section style="margin:0 20px 32px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <p style="font-size:10px;color:#9CA3AF;margin:0;text-transform:uppercase;letter-spacing:2px;font-weight:600;"><span leaf="">📑 3 Parts</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">👉 滑动</span></p>
+    </section>
+    <section style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:8px;">
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 01</span></p>
+        <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;"><span leaf="">一、先说结论：Agent 不是甩手掌柜</span></p>
+        <p style="font-size:10px;color:rgba(255,255,255,0.7);margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 02</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">二、坑一：把它当黑盒，甩句需求就等结果</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 03</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">三、坑二：不写开发文档，上下文一丢就失忆</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 04</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">四、坑三：全自动一把梭，报错雪崩</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 05</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">五、底层逻辑：Agent 是加速器，不是脑子</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 06</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">六、落地原则（可直接抄）</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 3. 开篇引言 -->
+  <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 6px;line-height:1.5;"><span leaf="">开篇一句话</span></p>
+    <p style="margin:0;line-height:1.6;"><span leaf="">用 CC 半年，踩的坑比教程都多。这 3 个坑我替你踩了：当黑盒甩需求、不写文档失忆、全自动一把梭雪崩。每个都附"怎么避"，Agent 是加速器，不是脑子。</span></p>
+  </section>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">一、先说结论：Agent 不是甩手掌柜</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P01</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">半年里我用 Claude Code（以下简称 CC）重写过一个不小的项目，也拿它跑内容生产的自动化流水线。踩的坑，比看过的教程都多。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">网上到处是“CC 真香”“一天出一个应用”的成功学，但没人跟你讲翻车。今天我反过来，把真金白银（主要是时间和头发）换来的三个坑摊开讲——每一个都让我在某个深夜怀疑人生。如果你也在用 CC，希望你能绕开。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">一个前提：我不是来劝你别用的。CC 现在是我的主力，离开它我效率直接腰斩。问题从来不在工具，在我的用法。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">二、坑一：把它当黑盒，甩句需求就等结果</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P02</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">最早我干过最蠢的事：丢一句“帮我做个 XX 功能”，然后就去摸鱼了，心想要不了一会儿就好。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">回来一看，它自作主张改了一堆不相干的文件，方向还偏了——本来要加个按钮，它顺手把我的目录结构也“优化”了，还把两个老接口给删了。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">为什么会这样？因为人一旦把“结果”甩出去，就容易进入“它应该懂我”的幻觉。CC 不会读心，它只会按你给的最稀薄的信息，往最省力的方向跑。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">代价很直接：返工比我自己写还累，而且信任一旦被透支，后面你就不敢放手了，又退回纯手写，白用。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>怎么避</strong>：别甩黑盒。先给它“方向 + 约束 + 验收标准”，让它先用 plan 模式列出步骤，你确认了再动手。具体点：让它先输出 3-5 步计划，标出会动哪些文件、动什么，我点头才跑。这一步多花两分钟，省下的是两小时返工。CC 强在“跟你一起干”，不是“替你干”。把决策权握在自己手里，它才是加速器。一句话：你当项目经理，它当执行。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">三、坑二：不写开发文档，上下文一丢就失忆</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P03</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">第二个坑更隐蔽。大项目跑个几天，会话一清，CC 把之前定好的架构、踩过的雷全忘了。同一个低级错误它能连犯三遍，你还以为是新 bug，又花两小时查。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">最坑的是：它看起来“很忙很有产出”，实际在重复踩雷。进度是假象，埋雷是真事。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我后来看到一个 Reddit 上单人跑通 30 万行项目的大佬，他的核心招之一就是“dev docs workflow that prevents Claude from losing the plot”——用一份开发文档，防止 CC 跑偏。我照做之后才反应过来：这份文档主要不是给人看的，是给 Agent 当锚的。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>怎么避</strong>：养一份 dev docs，内容很轻量——架构决策（为什么这么分）、关键约束（哪些不能动）、已踩的坑（别再试）。不用长篇大论，十行就够，重点是“哪些不能动”和“为什么”。每次开新会话先让它读这份文档。CC 一旦有了“记忆”，失忆式翻车就基本消失了。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">四、坑三：全自动一把梭，报错雪崩</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P04</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">第三个坑最痛。有过一次上头：让它一口气重构全站，想着“反正是它干，我睡一觉就好”。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">结果半夜被报错叫醒，连环炸，我一个人手动救火到天亮，最惨的一次直接通宵。问题不在 CC 能力，在于我取消了所有刹车。没有检查点，错误就层层叠加，最后根本收不了尾，只能推倒重来。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">那位大佬的解法很实在：用 PM2 + hooks 保证“zero errors left behind”（不留一个错误过夜），再配一支“专职 agent 部队”分工做评审、测试、规划。说白了，全是给失控加刹车。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>怎么避</strong>：拆小步 + 用 hooks / CI 卡错误 + 每步留检查点。比如提交前自动跑类型检查，红色报错立刻拦下，不让错误混进历史。别追求“一次跑完”，追求“每一步都能停、能回溯”。小步快跑，永远比一把梭稳。失控不可怕，怕的是失控了还没刹车。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">05</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">五、底层逻辑：Agent 是加速器，不是脑子</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P05</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">三个坑拆开看，根因是同一个——我把“思考、所有权、验收”这三件事外包了。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">让它想方向（思考外包）、让它定结构（所有权外包）、让它判对错（验收外包），那它当然会跑偏，因为没人掌舵。CC 越强，越要你掌舵。它替你跑腿、替你搬砖，但方向得你定、上下文得你记、质量得你卡。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">把 Agent 当同事，别当许愿池。同事你会给 briefing、会 review、会兜底；许愿池你只会等奇迹。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">06</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">六、落地原则（可直接抄）</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P06</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">1. 先计划后执行，绝不甩黑盒——你当 PM，它当执行。
+2. 文档当 Agent 的锚，不是给人看的摆设——失忆式翻车靠它灭。
+3. 小步快跑 + 检查点，拒绝一把梭——每一步都能停、能回溯。
+4. 关键模块自己把关，重复活交给 AI——脑子留给你，搬砖给它。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">这四条我现在天天用，踩坑频率降了一大半。CC 是好工具，但好工具也挑人——挑的是“愿不愿意自己先想清楚”的人。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">如果你现在就在用 CC，今天就能试一件小事：给当前项目建一份一页纸的 dev docs，下次开会话先让它读。三天后回来告诉我，翻车是不是少了。</span></p>
+
+  <!-- 签名 -->
+  <section style="margin:40px 20px 8px;padding:20px 0 0;border-top:1px solid #E5E7EB;">
+    <p style="margin:0 0 6px;font-size:14px;font-weight:800;color:#111827;"><span leaf="">我是 小木</span></p>
+    <p style="margin:0;font-size:13px;color:#9CA3AF;line-height:1.7;"><span leaf="">用 AI 把内容工作流跑起来。译介一手好工具，讲人话的落地理解，不画饼。</span></p>
+  </section>
+
+  <section style="margin:24px 20px 8px;padding:16px 18px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;"><p style="margin:0 0 10px;font-size:13px;font-weight:800;color:#059669;letter-spacing:0.5px;"><span leaf="">给 AI 的极简指令</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">受众：用 Claude Code 的开发者 / 独立开发者，有踩坑焦虑</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">核心动作：列 3 个最烧时间的真实坑 + 每个坑的"怎么避"</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">落地清单：先计划后执行 / 文档当锚 / 小步+检查点</span></p></section>
+</section>
+
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>
