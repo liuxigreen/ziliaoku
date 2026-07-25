@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>miora_guide_wechat · 摸鱼绿(moyu-green) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <!-- 1. 封面 -->
+  <section style="margin:0 0 32px;background:#fff;border:1.5px solid rgba(5,150,105,0.15);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);width:100%;">
+    <section style="padding:32px 28px 28px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <span style="width:6px;height:6px;background:#059669;border-radius:50%;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:#059669;"><span leaf="">AI 创意工具 · 新上线</span></span>
+        <section style="flex:1;height:1px;overflow:hidden;background:linear-gradient(to right,rgba(5,150,105,0.12),transparent);"><span leaf=""><br></span></section>
+        <span style="font-size:10px;color:#D1D5DB;font-weight:600;"><span leaf="">2026.07</span></span>
+      </section>
+      <section>
+        <p style="font-size:15px;color:#D1D5DB;margin:0 0 6px;text-decoration:line-through;letter-spacing:0.5px;"><span leaf="">从零造轮子？</span></p>
+        <p style="font-size:24px;font-weight:900;color:#111827;margin:0;line-height:1.05;letter-spacing:-2px;"><span leaf="">腾讯 Miora 全量上线</span></p>
+        <p style="font-size:24px;font-weight:900;color:#059669;margin:0 0 16px;line-height:1.05;letter-spacing:-2px;"><span leaf="">这个新工具值不值得冲</span></p>
+        <section style="width:48px;height:3px;background:linear-gradient(to right,#059669,#34D399);border-radius:2px;margin-bottom:12px;"><span leaf=""><br></span></section>
+        <p style="font-size:13px;color:#9CA3AF;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">注册送 1000 积分 · 攻略 + 我的判断</span></p>
+      </section>
+    </section>
+    <section style="background:linear-gradient(135deg,#059669,#10B981);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.9);margin:0;font-weight:600;letter-spacing:0.5px;"><span leaf="">打工人可复制</span></p>
+      <section style="display:flex;gap:4px;">
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">不是生图工具</span></span>
+        <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:3px;font-size:8px;color:#fff;font-weight:600;"><span leaf="">记忆 + 协同</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 2. 目录 -->
+  <section style="margin:0 20px 32px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <p style="font-size:10px;color:#9CA3AF;margin:0;text-transform:uppercase;letter-spacing:2px;font-weight:600;"><span leaf="">📑 3 Parts</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">👉 滑动</span></p>
+    </section>
+    <section style="overflow-x:scroll;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:8px;">
+      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:linear-gradient(135deg,#059669,#10B981);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 01</span></p>
+        <p style="font-size:13px;font-weight:800;color:#fff;margin:0 0 3px;"><span leaf="">一、它是什么：不是又一个生图工具</span></p>
+        <p style="font-size:10px;color:rgba(255,255,255,0.7);margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 02</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">二、三个真能打的能力</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 03</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">三、三个坑，注册前得有数</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 04</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">四、它和我们的内容工作流</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>      <section style="display:inline-block;white-space:normal;vertical-align:top;width:120px;background:#fff;border:1px solid #E5E7EB;box-shadow:0 2px 6px rgba(0,0,0,0.04);border-radius:12px;padding:12px;margin-right:8px;">
+        <p style="font-size:9px;font-weight:700;color:#9CA3AF;letter-spacing:1px;margin:0 0 5px;"><span leaf="">PART 05</span></p>
+        <p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">五、落地清单</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf=""></span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 3. 开篇引言 -->
+  <section style="background:#FFF;border:1px dashed #BBF7D0;border-radius:8px;padding:14px 16px;margin-bottom:24px;text-align:center;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 6px;line-height:1.5;"><span leaf="">开篇一句话</span></p>
+    <p style="margin:0;line-height:1.6;"><span leaf="">做内容卡在视觉上的时间，比写正文还多。腾讯刚全量上线 Miora、注册送 1000 积分，我扒完官方信息把"能干嘛、适合谁、坑在哪"整理了一遍，顺便说说它和咱内容工作流的关系。</span></p>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">做内容的人都有一个共识：卡在封面和视觉上的时间，比写正文还多。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">7 月 22 日，腾讯把自研的 AI 创意智能体「妙境 Miora」全量开放了，新用户注册直接送 1000 积分。我扒完官方信息和几篇深度报道，把“它到底能干嘛、适合谁、坑在哪”整理了一遍，顺便说说它和我们内容工作流的关系。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><blockquote style=“border-left:3px solid #BBF7D0;padding-left:12px;color:#6B7280;”>先说清楚：这篇是信息整理 + 我的判断，不是深度实测。我没法替你注册账号真跑一遍。你想看真·实测版，注册后把截图发我，我按你跑过的重写。</blockquote></span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">一、它是什么：不是又一个生图工具</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P01</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">Miora 的官方定位是“创意设计版的 WorkBuddy”。注意，它和咱们日常用的效率工具 WorkBuddy 是<strong>同源架构</strong>——所以写它，我天然有点发言权。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">传统生图工具的逻辑是：你写提示词 → 它出一张图。Miora 的逻辑是：你说一句需求，或者丢一份 brief → 它自己拆任务，把生图、音视频、3D、UI 分给不同的专家 Agent，最后在同一块画布上给你一整套视觉方案。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">它 7 月 13 日上过 Product Hunt 当日产品榜第一，7 月 22 日国内全量。时间很新，热度正旺。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">二、三个真能打的能力</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P02</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>1. 有记忆，记得住你的审美</strong>
+这是它和一般工具最大的区别。它不只是记你用过什么素材，而是理解你的审美偏好、品牌规范、创作方法。官方演示里最戳我的一幕：丢一张参考封面进去，它能把配色、版式、字体气质“逆向”拆出来，再照着这套风格生成新的。做系列内容的人都知道，风格统一是最费劲的事，它能接这活就值了。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>2. 多 Agent 协同，一次出整套</strong>
+目前上线的子 Agent 包括生图、音视频、3D 建模、视频渲染、UI 设计。你提一个完整需求，主 Agent 拆解后调度它们并行干，风格保持统一，总体消耗还更省。对“又要海报又要短视频又要 IP 全案”的内容人来说，这套打法省的是反复对齐的时间。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>3. 原生局部编辑，改哪儿指哪儿</strong>
+生成完不用重新跑。框选、圈画、局部微调、改角度、裁剪、擦除、高清放大都能直接在画布上做。这一点比“生成—不满意—重生成”的循环友好太多。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">还有一个值得说的能力：它搭了 <strong>Skills 开放平台</strong>。每个 Skill 封装了某个场景下的行为方式、专业知识、工作流程——品牌视觉全案、视频专家、电商内容生成都有内置模板。你把自己验证成功的工作流沉淀成专属 Skill，可复用、可分享。这对团队来说价值很大：一个人的踩坑经验，能变成团队的标准动作。这也和我们自己用 Skill 把双平台发布流程焊死的思路一致——把重复活固化下来，才是真提效。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">三、三个坑，注册前得有数</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P03</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>1. 积分不是无限的</strong>
+注册送 1000 看着多，但高阶功能按消耗抵扣，复杂项目（一套品牌全案 + 视频 + 3D）烧得很快。把它当“免费白嫖”会失望，当“低成本打样”才合理。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>2. 细节收尾还得人</strong>
+它像创意总监，不是执行。一次出整套很爽，但最后那 10% 的微调、品牌一致性卡点，还是得你上手。指望“一句话全搞定”不现实。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf=""><strong>3. 风格偶尔会漂</strong>
+多数时候风格统一，但重要项目别全托管。关键物料我自己卡一道，避免翻车。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">四、它和我们的内容工作流</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P04</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">说实话，Miora 能接的活，正好是我们内容生产里最耗时的那块：封面初稿、插画打样、品牌视觉全案。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我现在做封面靠 PIL 叠字 + ImageGen 出小黑插画，流程稳但每次都要写脚本。Miora 这类“说一句出一套”的工具，最适合拿来<strong>打初稿</strong>——把方向定下来，再自己精修定稿。它和 WorkBuddy 同源这点也顺：一个管创意生产，一个管办公效率，分工很清楚。</span></p>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">我的用法建议：<strong>拿它打样，自己定稿。</strong> 别把关键的品牌一致性全交给它。</span></p>
+
+  <section style="margin-top:40px;margin-bottom:6px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+      <section style="text-align:center;flex-shrink:0;">
+        <p style="margin:0;font-size:28px;font-weight:900;color:#059669;line-height:1;letter-spacing:-2px;"><span leaf="">05</span></p>
+        <p style="margin:0;font-size:8px;font-weight:700;color:#D1D5DB;letter-spacing:2px;"><span leaf="">PART</span></p>
+      </section>
+      <span style="width:1px;height:36px;background:#E5E7EB;flex-shrink:0;"><span leaf=""><br></span></span>
+      <section>
+        <p style="margin:0 0 1px;font-size:17px;font-weight:900;color:#111827;letter-spacing:0.3px;"><span leaf="">五、落地清单</span></p>
+        <p style="margin:0;font-size:11px;font-weight:600;color:#9CA3AF;letter-spacing:1.5px;"><span leaf="">P05</span></p>
+      </section>
+    </section>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">如果你也想试试，按这个顺序走：</span></p>
+
+  <section style="padding:0 20px;margin-bottom:8px;">
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">第一步：打开 miora.design，注册领 1000 积分（新用户默认送）</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">第二步：先丢一张你最常用的封面/海报当参考，看它“逆向”出的风格对不对味</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">第三步：用一句话需求试一套小全案（图 + 短视频脚本），感受多 Agent 协同</span></p></section>
+  <section style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;"><span style="color:#059669;font-weight:900;font-size:14px;flex-shrink:0;margin-top:2px;"><span leaf="">•</span></span><p style="margin:0;font-size:14px;line-height:1.8;color:#374151;"><span leaf="">第四步：关键物料自己框选微调定稿，别全托管</span></p></section>
+  </section>
+
+  <section style="margin:24px 20px 8px;padding:16px 18px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;"><p style="margin:0 0 10px;font-size:13px;font-weight:800;color:#059669;letter-spacing:0.5px;"><span leaf="">给 AI 的极简指令</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">一句话定位：Miora = 腾讯出的 AI 创意智能体，注册送 1000 积分，一句话出图/视频/3D/UI 整套视觉</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">三个能打：记忆审美 / 多 Agent 协同 / 原生局部编辑</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">三个坑：积分烧得快 / 细节要人收尾 / 风格偶漂</span></p><p style="margin:0 0 7px;font-size:13px;line-height:1.75;color:#374151;"><span leaf="">我的用法：拿它打封面初稿，定稿自己卡</span></p></section>
+
+  <!-- 签名 -->
+  <section style="margin:40px 20px 8px;padding:20px 0 0;border-top:1px solid #E5E7EB;">
+    <p style="margin:0 0 6px;font-size:14px;font-weight:800;color:#111827;"><span leaf="">我是 小木</span></p>
+    <p style="margin:0;font-size:13px;color:#9CA3AF;line-height:1.7;"><span leaf="">用 AI 把内容工作流跑起来。译介一手好工具，讲人话的落地判断，不画饼。</span></p>
+  </section>
+
+<p style="margin:0 0 14px;font-size:14px;line-height:1.9;text-align:justify;"><span leaf="">你注册试了没？体验怎么样，评论区告诉我。</span></p>
+</section>
+
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>
